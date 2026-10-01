@@ -58,14 +58,12 @@
   .authors a:hover{ color:var(--accent); text-decoration:underline; }
   .author-notes{ color:var(--muted); font-size:0.8rem; margin-top:6px; }
   .resource-links{ display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:22px; }
-  .resource-badge{ display:inline-flex; border:0; border-radius:4px; overflow:hidden; padding:0; color:#fff; font:600 14px/1.6 Verdana,sans-serif; text-decoration:none; text-shadow:0 1px 1px #0008; box-shadow:0 1px 2px #0003; }
-  .resource-badge span{ padding:4px 10px; background:linear-gradient(#666,#444); }
-  .resource-badge .badge-value{ background:linear-gradient(#78b30f,#599400); }
+  .resource-badge{ display:inline-flex; border:0; border-radius:4px; padding:0; background:transparent; text-decoration:none; }
+  .resource-badge img{ display:block; height:28px; width:auto; }
   .resource-badge:hover{ filter:brightness(1.12); }
   .resource-badge:focus-visible{ outline:3px solid var(--accent); outline-offset:4px; }
   .resource-badge:disabled{ cursor:default; }
   .resource-badge:disabled:hover{ filter:none; }
-  .resource-badge .badge-arxiv{ background:linear-gradient(#bc4848,#983333); }
   html{ scroll-behavior:smooth; }
   body{ padding-left:210px; }
   section{ scroll-margin-top:28px; }
@@ -274,8 +272,8 @@
     <div class="author-notes affiliations"><sup>1</sup> Seoul National University (SNU) &nbsp;&nbsp; <sup>2</sup> KAIST</div>
     <div class="author-notes"><sup>*</sup> Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup> Corresponding author</div>
     <div class="resource-links" aria-label="Project resources">
-      <a class="resource-badge" href="https://github.com/robotuse-team/RobotUse" target="_blank" rel="noopener" aria-label="GitHub: RobotUse source code"><span>GitHub</span><span class="badge-value">RobotUse</span></a>
-      <button class="resource-badge" type="button" disabled aria-label="arXiv: coming soon" title="Coming soon"><span>arXiv</span><span class="badge-arxiv">Coming soon</span></button>
+      <a class="resource-badge" href="https://github.com/robotuse-team/RobotUse" target="_blank" rel="noopener" aria-label="GitHub: RobotUse source code"><img src="assets/badges/github-robotuse.svg" alt="GitHub — RobotUse"></a>
+      <button class="resource-badge" type="button" disabled aria-label="arXiv: coming soon" title="Coming soon"><img src="assets/badges/arxiv-robotuse.svg" alt="arXiv — RobotUse (coming soon)"></button>
     </div>
 
   </header>
