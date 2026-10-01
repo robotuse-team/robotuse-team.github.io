@@ -1,0 +1,3 @@
+# Local download helpers and raw report data are not website assets.
+/assets/videos/*.py
+/assets/videos/*.json

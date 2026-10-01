@@ -1,0 +1,138 @@
+{
+  "order": [
+    "BlockStackingSpecifiedOrderTask",
+    "BowlStackingLeftOnRightTask",
+    "KeyboardOutOfBinTask",
+    "RubiksCubeInFrontOfBowlTask",
+    "BigPumpkinInBinTask"
+  ],
+  "tasks": {
+    "BlockStackingSpecifiedOrderTask": {
+      "objective": "Stack the blocks in the order from bottom to top: red, blue, green, yellow",
+      "rounds": [
+        {
+          "round": 0,
+          "status": "success",
+          "file": "BlockStackingSpecifiedOrderTask_v0.mp4"
+        },
+        {
+          "round": 1,
+          "status": "failure",
+          "file": "BlockStackingSpecifiedOrderTask_v1.mp4"
+        },
+        {
+          "round": 2,
+          "status": "failure",
+          "file": "BlockStackingSpecifiedOrderTask_v2.mp4"
+        },
+        {
+          "round": 3,
+          "status": "success",
+          "file": "BlockStackingSpecifiedOrderTask_v3.mp4"
+        }
+      ]
+    },
+    "BowlStackingLeftOnRightTask": {
+      "objective": "Stack the left bowl on the right bowl",
+      "rounds": [
+        {
+          "round": 0,
+          "status": "failure",
+          "file": "BowlStackingLeftOnRightTask_v0.mp4"
+        },
+        {
+          "round": 1,
+          "status": "success",
+          "file": "BowlStackingLeftOnRightTask_v1.mp4"
+        },
+        {
+          "round": 2,
+          "status": "success",
+          "file": "BowlStackingLeftOnRightTask_v2.mp4"
+        },
+        {
+          "round": 3,
+          "status": "success",
+          "file": "BowlStackingLeftOnRightTask_v3.mp4"
+        }
+      ]
+    },
+    "KeyboardOutOfBinTask": {
+      "objective": "Take the keyboard out of the bin and put it on the table",
+      "rounds": [
+        {
+          "round": 0,
+          "status": "failure",
+          "file": "KeyboardOutOfBinTask_v0.mp4",
+          "original_status": "unknown",
+          "status_note": "Displayed as failure at the author's request; original report status was unknown."
+        },
+        {
+          "round": 1,
+          "status": "failure",
+          "file": "KeyboardOutOfBinTask_v1.mp4"
+        },
+        {
+          "round": 2,
+          "status": "failure",
+          "file": "KeyboardOutOfBinTask_v2.mp4"
+        },
+        {
+          "round": 3,
+          "status": "success",
+          "file": "KeyboardOutOfBinTask_v3.mp4"
+        }
+      ]
+    },
+    "RubiksCubeInFrontOfBowlTask": {
+      "objective": "Put the rubiks cube in front of the bowl",
+      "rounds": [
+        {
+          "round": 0,
+          "status": "failure",
+          "file": "RubiksCubeInFrontOfBowlTask_v0.mp4"
+        },
+        {
+          "round": 1,
+          "status": "success",
+          "file": "RubiksCubeInFrontOfBowlTask_v1.mp4"
+        },
+        {
+          "round": 2,
+          "status": "success",
+          "file": "RubiksCubeInFrontOfBowlTask_v2.mp4"
+        },
+        {
+          "round": 3,
+          "status": "success",
+          "file": "RubiksCubeInFrontOfBowlTask_v3.mp4"
+        }
+      ]
+    },
+    "BigPumpkinInBinTask": {
+      "objective": "Put the bigger pumpkin in the bin",
+      "rounds": [
+        {
+          "round": 0,
+          "status": "failure",
+          "file": "BigPumpkinInBinTask_v0.mp4"
+        },
+        {
+          "round": 1,
+          "status": "success",
+          "file": "BigPumpkinInBinTask_v1.mp4"
+        },
+        {
+          "round": 2,
+          "status": "success",
+          "file": "BigPumpkinInBinTask_v2.mp4"
+        },
+        {
+          "round": 3,
+          "status": "success",
+          "file": "BigPumpkinInBinTask_v3.mp4"
+        }
+      ]
+    }
+  }
+}
