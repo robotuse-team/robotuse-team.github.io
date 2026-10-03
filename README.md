@@ -14,6 +14,10 @@ python3 -m http.server 8323 --bind 127.0.0.1
 
 The opening replay follows **language → point → gripper → inspection → execution**.
 Main agent, Subagent and Backend remain visible beside the recorded execution.
+Each replay starts with a sent instruction. The role boxes keep that instruction
+visible through the local visual choice, the subagent's report and backend output.
+Short captions condense recorded requests and reports; a collapsed disclosure
+shows their original wording, with backend-generated prompts attributed separately.
 `data/handoff.json` supplies the browser and downloadable videos with the same
 selected decisions, native tool images, source references and presentation timing.
 

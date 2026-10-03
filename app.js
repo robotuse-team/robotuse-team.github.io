@@ -19,7 +19,15 @@ function renderPhase() {
   currentPhase = index;
   document.querySelectorAll('[data-node]').forEach(node => node.classList.toggle('active', node.dataset.node === phase.active_node));
   document.querySelectorAll('[data-phase]').forEach(button => {const active = Number(button.dataset.phase) === index;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
-  Object.keys(defaults).forEach(node => {document.querySelector(`#${node}-message`).textContent = phase.messages[node] || (node === 'main' ? replay.task : defaults[node]);});
+  Object.keys(defaults).forEach(node => {
+   document.querySelector(`#${node}-message`).textContent = phase.messages[node] || (node === 'main' ? replay.task : defaults[node]);
+   document.querySelector(`#${node}-kind`).textContent = phase.node_labels[node];
+  });
+  const recorded = document.querySelector('#recorded-language');recorded.replaceChildren();
+  Object.values(phase.language_handoff).forEach(entry => {
+   const label=document.createElement('p');label.className='recorded-direction';label.textContent=`${entry.sender} → ${entry.recipient}`;
+   const quote=document.createElement('blockquote');quote.textContent=entry.text;recorded.append(label,quote);
+  });
   document.querySelector('#flow-label').textContent = phase.handoff_label;
   const down = document.querySelector('#handoff-down'), back = document.querySelector('#backend-arrow');
   const direct = phase.flow.includes('main') && phase.flow.includes('backend');
@@ -55,7 +63,7 @@ function renderPhase() {
 function renderPlayback() {toggle.textContent=video.paused?(video.ended?'Replay demo':'Play demo'):'Pause demo';toggle.setAttribute('aria-pressed',String(!video.paused));}
 function animate() {renderPhase();if(!video.paused)animationFrame=requestAnimationFrame(animate);}
 function jump(index) {video.pause();video.currentTime=phases[index].start_s;currentPhase=-1;renderPhase();}
-function chooseCase(id,step='Point') {
+function chooseCase(id,step='Request') {
  video.pause();replay=cases.find(item=>item.id===id)||cases[0];phases=replay.phases;currentPhase=-1;
  video.src=media(replay.video_file);video.poster=media(replay.poster_file);video.load();
  document.querySelector('#case-goal').textContent=replay.task;

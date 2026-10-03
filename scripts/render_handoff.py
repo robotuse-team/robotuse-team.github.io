@@ -14,11 +14,11 @@ import shutil
 import subprocess
 from PIL import Image, ImageDraw, ImageFont
 
-SIZE=(1600,900)
+SIZE=(1920,1080)
 INK='#151515';BLUE='#176bce';MUTED='#626262';LINE='#ccd2da';WASH='#edf4fc'
-VIDEO_BOX=(44,159,950,669)
-EVIDENCE_BOX=(979,159,1555,483)
-NODES={'main':(44,721,478,818),'subagent':(583,721,1017,818),'backend':(1122,721,1556,818)}
+VIDEO_BOX=(44,159,1150,781)
+EVIDENCE_BOX=(1180,159,1875,550)
+NODES={'main':(44,840,614,1015),'subagent':(676,840,1246,1015),'backend':(1308,840,1878,1015)}
 LABELS={'main':'Main agent','subagent':'Subagent','backend':'Backend'}
 DEFAULTS={'main':'Retain the task goal and reports.','subagent':'Choose and inspect the physical action.','backend':'Execute and return fresh observations.'}
 
@@ -52,9 +52,9 @@ def connection(flow):
     a,b=[NODES[x] for x in flow]
     if abs(list(NODES).index(flow[0])-list(NODES).index(flow[1]))==1:
         right=a[0]<b[0]
-        return [(a[2]+8 if right else a[0]-8,769),(b[0]-8 if right else b[2]+8,769)]
+        return [(a[2]+8 if right else a[0]-8,927),(b[0]-8 if right else b[2]+8,927)]
     # A separate upper path connects main and backend without passing through Subagent.
-    return [((a[0]+a[2])/2,713),((a[0]+a[2])/2,690),((b[0]+b[2])/2,690),((b[0]+b[2])/2,713)]
+    return [((a[0]+a[2])/2,832),((a[0]+a[2])/2,813),((b[0]+b[2])/2,813),((b[0]+b[2])/2,832)]
 
 def path_point(points,fraction):
     lengths=[math.dist(a,b) for a,b in zip(points,points[1:])]
@@ -72,24 +72,26 @@ def panel(replay,phase,index,count,fonts,visual):
     draw.text((263,38),'Language → visual choice → robot action',font=fonts['title'],fill=INK)
     draw.text((44,93),replay['task'],font=fonts['subtitle'],fill=MUTED)
     draw.text((44,132),replay['motion_label'].upper(),font=fonts['small_bold'],fill=MUTED)
-    draw.text((979,132),phase['visual']['label'].upper(),font=fonts['small_bold'],fill=BLUE)
+    draw.text((EVIDENCE_BOX[0],132),phase['visual']['label'].upper(),font=fonts['small_bold'],fill=BLUE)
     draw.rectangle(VIDEO_BOX,outline=INK,width=2);draw.rectangle(EVIDENCE_BOX,fill='#f8fafc',outline=INK,width=2)
     resized,pos=fit(visual,EVIDENCE_BOX);canvas.paste(resized,pos)
-    draw.text((979,504),phase['visual']['kind'].upper(),font=fonts['small_bold'],fill=BLUE)
-    y=537
-    for line in wrap(draw,phase['detail'],fonts['caption_bold'],565)[:3]:
-        draw.text((979,y),line,font=fonts['caption_bold'],fill=INK);y+=33
+    draw.text((EVIDENCE_BOX[0],572),phase['visual']['kind'].upper(),font=fonts['small_bold'],fill=BLUE)
+    y=605
+    for line in wrap(draw,phase['detail'],fonts['caption_bold'],685)[:3]:
+        draw.text((EVIDENCE_BOX[0],y),line,font=fonts['caption_bold'],fill=INK);y+=33
     y+=10
-    for line in wrap(draw,phase['visual']['note'],fonts['small'],565)[:2]:
-        draw.text((979,y),line,font=fonts['small'],fill=MUTED);y+=25
+    for line in wrap(draw,phase['visual']['note'],fonts['small'],685)[:2]:
+        draw.text((EVIDENCE_BOX[0],y),line,font=fonts['small'],fill=MUTED);y+=25
     for node,box in NODES.items():
         active=node==phase['active_node'];draw.rectangle(box,fill=WASH if active else 'white',outline=BLUE if active else LINE,width=3 if active else 2)
         draw.text((box[0]+17,box[1]+11),LABELS[node],font=fonts['node'],fill=BLUE if active else INK)
-        for i,line in enumerate(wrap(draw,phase['messages'].get(node,replay['task'] if node=='main' else DEFAULTS[node]),fonts['node_small'],400)[:2]):
-            draw.text((box[0]+17,box[1]+49+23*i),line,font=fonts['node_small'],fill=MUTED)
+        draw.text((box[0]+17,box[1]+46),phase['node_labels'][node],font=fonts['node_kind'],fill=BLUE)
+        body_font=fonts['node_instruction'] if node=='main' else fonts['node_small']
+        for i,line in enumerate(wrap(draw,phase['messages'].get(node,replay['task'] if node=='main' else DEFAULTS[node]),body_font,536)[:4]):
+            draw.text((box[0]+17,box[1]+72+25*i),line,font=body_font,fill=INK)
     arrow(draw,connection(phase['flow']))
-    draw.text((44,841),f'{index+1:02d} / {count:02d} · {phase["title"]}',font=fonts['caption_bold'],fill=BLUE)
-    draw.text((44,877),'Original tool images + recorded execution · Reading pauses added · Captions summarize logged decisions',font=fonts['footer'],fill=MUTED)
+    draw.text((44,1029),f'{index+1:02d} / {count:02d} · {phase["title"]}',font=fonts['caption_bold'],fill=BLUE)
+    draw.text((44,1064),'Condensed recorded instructions + native visual evidence · Reading pauses added',font=fonts['footer'],fill=MUTED)
     return canvas
 
 def read_exact(stream,length):
@@ -112,7 +114,7 @@ def main():
         if not shutil.which(name):raise RuntimeError(f'{name} required')
     directory=root/'assets/media';timeline_path=root/'data/handoff.json';timeline=json.loads(timeline_path.read_text())
     regular,bold=font_path(),font_path(True)
-    fonts={key:ImageFont.truetype(bold if weight else regular,size) for key,size,weight in [('brand',42,True),('title',34,False),('subtitle',25,False),('small_bold',18,True),('small',20,False),('node',27,True),('node_small',19,False),('caption_bold',25,True),('footer',16,False)]}
+    fonts={key:ImageFont.truetype(bold if weight else regular,size) for key,size,weight in [('brand',42,True),('title',34,False),('subtitle',25,False),('small_bold',18,True),('small',20,False),('node',27,True),('node_kind',16,False),('node_instruction',22,True),('node_small',22,False),('caption_bold',25,True),('footer',14,False)]}
     for replay in timeline['cases']:
         if args.case not in ('all',replay['id']):continue
         frames=[];source_fps=1
@@ -143,8 +145,8 @@ def main():
                     x,y=path_point(connection(phase['flow']),(n/args.fps*.8)%1)
                     draw=ImageDraw.Draw(canvas);draw.ellipse((x-6,y-6,x+6,y+6),fill=BLUE)
                     if cameras:
-                        draw.rectangle((45,635,949,668),fill='white')
-                        draw.text((58,641),f'Recorded camera observation · capture +{camera_sequence[camera_index]["offset_s"]:.1f} s',font=fonts['small'],fill=MUTED)
+                        draw.rectangle((VIDEO_BOX[0]+1,VIDEO_BOX[3]-34,VIDEO_BOX[2]-1,VIDEO_BOX[3]-1),fill='white')
+                        draw.text((VIDEO_BOX[0]+14,VIDEO_BOX[3]-28),f'Recorded camera observation · capture +{camera_sequence[camera_index]["offset_s"]:.1f} s',font=fonts['small'],fill=MUTED)
                     motion_encoder.stdin.write(source_frame.tobytes());composite_encoder.stdin.write(canvas.tobytes());output_count+=1
                 if index==1:canvas.save(poster,quality=92)
         finally:composite_encoder.stdin.close();motion_encoder.stdin.close()
