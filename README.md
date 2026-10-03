@@ -1,25 +1,73 @@
 # RobotUse project page
 
-Public project page: https://robotuse-team.github.io/
-
+Public page: https://robotuse-team.github.io/
 Code: https://github.com/robotuse-team/RobotUse
 
-Authors and contribution markers follow the code repository README. The arXiv button is disabled until a paper URL is available.
+One HTML file, one stylesheet and one JavaScript file. No framework, build step,
+package installation or analytics. GitHub Pages publishes the root on `main`.
 
-## Development
+```bash
+python3 -m http.server 8323 --bind 127.0.0.1
+```
 
-Static HTML, CSS, JavaScript, JSON, images, and MP4 video. No build step.
-Run `python -m http.server 8323 --bind 127.0.0.1` and open http://localhost:8323/.
+## Native visual handoffs
 
-GitHub Pages publishes the root of the `main` branch.
+The opening replay follows **language → point → gripper → inspection → execution**.
+Main agent, Subagent and Backend remain visible beside the recorded execution.
+`data/handoff.json` supplies the browser and downloadable videos with the same
+selected decisions, native tool images, source references and presentation timing.
 
-## Galleries
+Three executions are included:
 
-- Baseline comparison: 16 matched seed-0 tasks where RobotUse succeeds and at least one baseline fails.
-- Grasp ablation: three matched seed-1 tasks where RobotUse succeeds with and without grasp tools and CaP-X changes from success to failure. Only the corrected tools-only CaP-X condition is eligible.
-- Continual Harnessing: five tasks across rounds 0 through 3.
-- Galleries are selected qualitative examples. Aggregate figures report all 40 tasks.
+- RoboLab bowl stacking, September 23: original simulation video, native selection
+  cross/mask, three Contact-GraspNet mesh previews, selected 44 mm opening, fresh
+  pregrasp inspection and two recorded placement translations. The native task
+  verifier reports success. The release request ends with the episode.
+- Physical Panda pick/place, September 26: geometric mean proposals, selected
+  `g_009`, pregrasp check and prepared tray placement.
+- Physical Panda cube stacking, September 26: geometric median proposals,
+  selected `g_005`, pregrasp check and prepared placement on the green cube.
 
-## ORS simulation replay media
+Real replays use timestamped camera observations, with reading intervals. They
+are sampled stills. Completion is agent-reported; final images show the requested
+object relations. An independent physical task-success verifier is unavailable.
+One physical pick/place segment misses its arrival tolerance before a later
+segment reaches the target; command completion is distinct from task success.
 
-Four selected ORS seed-0 failures use logged-action simulation replays: PickGlassesTask, FruitsOnPlate3Task, Stack3RubiksCubeTask, and PickOrangeObjectTask. They replay saved robot commands without new LLM calls. All four replay verifiers reported failure, but trajectories differ from the original observations; these are not original recordings. The manifest preserves replay provenance and original outcomes; replay labels are omitted from the page at the author's request.
+Native cross/mask overlays and cyan gripper meshes are preserved. Enlarged crops
+link the full original tool images. Pose-editor crops show the actual SIDE / TOP /
+CLOSING PLANE panels; lower purple rotation examples do not represent applied
+edits. Both real pregrasp checks continue without a nudge. Captions summarize
+recorded tool arguments and assessments. Earlier retries are omitted from the
+compact replays. Model and planning waits are compressed.
+
+Learning from execution is one collapsed comparison of two separate complete
+bowl-stacking attempts. Aggregate results and conditions are in `data/results.json`.
+File hashes, native source identifiers and exact crop boxes are in `data/media.json`.
+Private provider logs, credentials, depth/calibration and server paths are excluded.
+
+## Media authoring
+
+Optional authoring requires Python 3.10+, Pillow, ffmpeg and ffprobe. Rebuild from
+curated public inputs:
+
+```bash
+python3 scripts/render_handoff.py
+# Or one execution:
+python3 scripts/render_handoff.py --case panda-stack-cubes
+```
+
+The script produces a browser execution track and a standalone video combining
+native previews, execution and the three agent/backend roles. Simulator motion
+stays in its original order with reading pauses; physical camera samples remain
+in capture order. Media provenance is updated for generated files. MP4s use
+H.264 with front-loaded metadata. Lower-section videos load when played.
+
+## Design reference
+
+VISTA's public page and source informed the masthead, large title, video-first
+opening, numbered sections and section rail:
+https://github.com/vista-research/vista-research.github.io
+
+This implementation is written for RobotUse. No VISTA code, fonts, images,
+recordings or research text are bundled.

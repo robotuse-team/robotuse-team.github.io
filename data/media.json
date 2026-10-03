@@ -1,0 +1,1334 @@
+{
+  "generated_on": "2026-10-04",
+  "project": "RobotUse",
+  "files": [
+    {
+      "file": "panda-pick-place.mp4",
+      "bytes": 1243371,
+      "sha256": "e86b4cec56509e0875ea25bd2d1d705fd0b7273f35a1a16fae080c02c68be75b",
+      "kind": "physical_robot_observation_timelapse",
+      "task": "Pick & Place",
+      "episode_id": "gui_20260926_112917_91cce9d7",
+      "source_date": "2026-09-26",
+      "capture_count": 12,
+      "captured_span_s": 478.144,
+      "representation": "All right-side camera observations in capture order. Each sample held 1 second; final sample held 2 seconds. Discrete observations, no motion interpolation. Header and footer are outside the original 1280x720 camera pixels.",
+      "playback_speed": "One second per observation, not real-time or a uniform motion speed.",
+      "outcome": "Agent reported completed; final camera observation visually confirms the requested object relation. No independent physical success flag.",
+      "outcome_detail": "Orange cube visible inside the tray after arm return.",
+      "privacy_review": "All exported right-side frames visually inspected. No people or readable private text observed.",
+      "source_frame_hashes": [
+        {
+          "capture": "capture_0001",
+          "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c",
+          "elapsed_s": 0.0
+        },
+        {
+          "capture": "capture_0002",
+          "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1",
+          "elapsed_s": 170.654
+        },
+        {
+          "capture": "capture_0003",
+          "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7",
+          "elapsed_s": 218.759
+        },
+        {
+          "capture": "capture_0004",
+          "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378",
+          "elapsed_s": 250.378
+        },
+        {
+          "capture": "capture_0005",
+          "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa",
+          "elapsed_s": 257.582
+        },
+        {
+          "capture": "capture_0006",
+          "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b",
+          "elapsed_s": 276.33
+        },
+        {
+          "capture": "capture_0007",
+          "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5",
+          "elapsed_s": 280.934
+        },
+        {
+          "capture": "capture_0008",
+          "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d",
+          "elapsed_s": 395.153
+        },
+        {
+          "capture": "capture_0009",
+          "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be",
+          "elapsed_s": 406.631
+        },
+        {
+          "capture": "capture_0010",
+          "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a",
+          "elapsed_s": 411.236
+        },
+        {
+          "capture": "capture_0011",
+          "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b",
+          "elapsed_s": 430.642
+        },
+        {
+          "capture": "capture_0012",
+          "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420",
+          "elapsed_s": 478.144
+        }
+      ],
+      "duration_s": 13.0,
+      "width": 1280,
+      "height": 840,
+      "codec": "h264",
+      "fps": "24/1"
+    },
+    {
+      "file": "panda-pick-place.jpg",
+      "bytes": 127681,
+      "sha256": "463e0293c455c875631b9650e1d1996856fa1d305c0fb9225c99757987cc4013",
+      "kind": "poster",
+      "episode_id": "gui_20260926_112917_91cce9d7",
+      "capture": "capture_0012",
+      "description": "Final unannotated camera observation."
+    },
+    {
+      "file": "panda-stack-cubes.mp4",
+      "bytes": 1180771,
+      "sha256": "847cf64fc5e64f8921196d3f03e550ebb123b1b0f3d051398c437e766cd7e552",
+      "kind": "physical_robot_observation_timelapse",
+      "task": "Cube Stacking",
+      "episode_id": "gui_20260926_121447_90cfdaad",
+      "source_date": "2026-09-26",
+      "capture_count": 11,
+      "captured_span_s": 400.906,
+      "representation": "All right-side camera observations in capture order. Each sample held 1 second; final sample held 2 seconds. Discrete observations, no motion interpolation. Header and footer are outside the original 1280x720 camera pixels.",
+      "playback_speed": "One second per observation, not real-time or a uniform motion speed.",
+      "outcome": "Agent reported completed; final camera observation visually confirms the requested object relation. No independent physical success flag.",
+      "outcome_detail": "Orange cube visible resting on the green cube after gripper release and arm retraction.",
+      "privacy_review": "All exported right-side frames visually inspected. No people or readable private text observed.",
+      "source_frame_hashes": [
+        {
+          "capture": "capture_0001",
+          "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc",
+          "elapsed_s": 0.0
+        },
+        {
+          "capture": "capture_0002",
+          "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef",
+          "elapsed_s": 140.709
+        },
+        {
+          "capture": "capture_0003",
+          "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9",
+          "elapsed_s": 185.609
+        },
+        {
+          "capture": "capture_0004",
+          "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198",
+          "elapsed_s": 208.164
+        },
+        {
+          "capture": "capture_0005",
+          "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8",
+          "elapsed_s": 215.764
+        },
+        {
+          "capture": "capture_0006",
+          "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08",
+          "elapsed_s": 229.376
+        },
+        {
+          "capture": "capture_0007",
+          "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753",
+          "elapsed_s": 234.112
+        },
+        {
+          "capture": "capture_0008",
+          "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f",
+          "elapsed_s": 340.26
+        },
+        {
+          "capture": "capture_0009",
+          "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c",
+          "elapsed_s": 352.807
+        },
+        {
+          "capture": "capture_0010",
+          "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c",
+          "elapsed_s": 357.407
+        },
+        {
+          "capture": "capture_0011",
+          "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b",
+          "elapsed_s": 400.906
+        }
+      ],
+      "duration_s": 12.0,
+      "width": 1280,
+      "height": 840,
+      "codec": "h264",
+      "fps": "24/1"
+    },
+    {
+      "file": "panda-stack-cubes.jpg",
+      "bytes": 141072,
+      "sha256": "b1010488ed56ee0767820053895640ac71e2e3a553eb1e31d31118f8f89f7bf1",
+      "kind": "poster",
+      "episode_id": "gui_20260926_121447_90cfdaad",
+      "capture": "capture_0011",
+      "description": "Final unannotated camera observation."
+    },
+    {
+      "file": "sim-bowl-before.mp4",
+      "bytes": 1614010,
+      "sha256": "06c70504226d5d91c84cb75f597c0016a37304e11b54dacd2a63ebdc044f1dd4",
+      "kind": "simulation_rollout",
+      "task": "BowlStackingLeftOnRightTask",
+      "seed": 0,
+      "episode_id": "024",
+      "campaign_id": "runpod-x2-v0-seed0-robo40-20260924t111351z",
+      "playbook_version": "0",
+      "source_date": "2026-09-24",
+      "source_sha256": "3356f8453171081ccc8fd688e9d43ed15d183c69b13b07961b2e3d08fd171fc1",
+      "native_verifier": {
+        "evaluated": true,
+        "task_success": false,
+        "error": null
+      },
+      "source_video_playback_s": 15.466667,
+      "reported_simulation_elapsed_s": 15.333333333333334,
+      "reported_wall_clock_elapsed_s": 658.91,
+      "representation": "Original recorded simulation frames, remuxed for browser playback with metadata removed; no audio.",
+      "playback_speed": "Original recorded playback timing. Wall-clock LLM and planning waits are not represented as continuous video.",
+      "privacy_review": "Initial, middle, and final simulation frames visually inspected; rendered benchmark scene contains no private user footage.",
+      "duration_s": 15.466667,
+      "width": 640,
+      "height": 360,
+      "codec": "h264",
+      "fps": "15/2"
+    },
+    {
+      "file": "sim-bowl-before.jpg",
+      "bytes": 45867,
+      "sha256": "4f3bb87cbfc4ca95cdd20bbc62d4c79aabe5c2f5f60d7e5eff05f2dc6abe3f02",
+      "kind": "poster",
+      "task": "BowlStackingLeftOnRightTask",
+      "description": "First simulation frame."
+    },
+    {
+      "file": "sim-bowl-after.mp4",
+      "bytes": 1639524,
+      "sha256": "9abd2d83e5ef7c7d6fecdd3616092678f1625139b685e9f3321ac200619403cd",
+      "kind": "simulation_rollout",
+      "task": "BowlStackingLeftOnRightTask",
+      "seed": 0,
+      "episode_id": "024",
+      "campaign_id": "runpod-x2-v1-seed0-robo40-20260924t114214z",
+      "playbook_version": "1",
+      "source_date": "2026-09-24",
+      "source_sha256": "0fa4a5c02e998a57ea547c6d4f4a6a82ea34a33b677a12040d36c66e5ad190f7",
+      "native_verifier": {
+        "evaluated": true,
+        "task_success": true,
+        "error": null
+      },
+      "source_video_playback_s": 15.733333,
+      "reported_simulation_elapsed_s": 15.6,
+      "reported_wall_clock_elapsed_s": 696.958,
+      "representation": "Original recorded simulation frames, remuxed for browser playback with metadata removed; no audio.",
+      "playback_speed": "Original recorded playback timing. Wall-clock LLM and planning waits are not represented as continuous video.",
+      "privacy_review": "Initial, middle, and final simulation frames visually inspected; rendered benchmark scene contains no private user footage.",
+      "duration_s": 15.733333,
+      "width": 640,
+      "height": 360,
+      "codec": "h264",
+      "fps": "15/2"
+    },
+    {
+      "file": "sim-bowl-after.jpg",
+      "bytes": 45717,
+      "sha256": "754b2fe3af7eb72ccb5f214dbadce086564d640416ceaf0985bbac93e080d096",
+      "kind": "poster",
+      "task": "BowlStackingLeftOnRightTask",
+      "description": "First simulation frame."
+    },
+    {
+      "file": "alin-bowl-source.mp4",
+      "kind": "original_simulation_video",
+      "case_id": "alin-bowl",
+      "bytes": 1773124,
+      "sha256": "b64e75dd61c52ff99e75e0ced1df81ae4d807e1794caf0cb01e51748d11fd346",
+      "source_sha256": "b64e75dd61c52ff99e75e0ced1df81ae4d807e1794caf0cb01e51748d11fd346",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/rollout.mp4"
+    },
+    {
+      "file": "alin-initial.png",
+      "kind": "native_rgb",
+      "case_id": "alin-bowl",
+      "bytes": 297466,
+      "sha256": "1a8eabadd302fa2c444ef36bcef7e7aad0d8686e7e11b76de713329e1ec7e3e9",
+      "source_sha256": "1a8eabadd302fa2c444ef36bcef7e7aad0d8686e7e11b76de713329e1ec7e3e9",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/rgbd/sensor_001_agentview.png"
+    },
+    {
+      "file": "alin-target.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 258305,
+      "sha256": "d29db22d0a38422f5965d994baec95405b97051042a21baea7abe661402cff0d",
+      "source_sha256": "d29db22d0a38422f5965d994baec95405b97051042a21baea7abe661402cff0d",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/point_0011/overlay.png"
+    },
+    {
+      "file": "alin-target-focus.jpg",
+      "kind": "native_image_crop",
+      "case_id": "alin-bowl",
+      "bytes": 37235,
+      "sha256": "eba2802e4c1cd86241f3c06ff30fbd25323e9ec8f150f3dcf2be1164aee4d1cd",
+      "source_file": "alin-target.png",
+      "source_sha256": "d29db22d0a38422f5965d994baec95405b97051042a21baea7abe661402cff0d",
+      "crop_xyxy": [
+        17,
+        79,
+        517,
+        360
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "alin-destination.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 312374,
+      "sha256": "b18874edfc4570d40a8b77a3e7e9cd2226ef112713f9f206f960de8b256707e8",
+      "source_sha256": "b18874edfc4570d40a8b77a3e7e9cd2226ef112713f9f206f960de8b256707e8",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/point_0013/overlay.png"
+    },
+    {
+      "file": "alin-destination-focus.jpg",
+      "kind": "native_image_crop",
+      "case_id": "alin-bowl",
+      "bytes": 39115,
+      "sha256": "6749228de09c0cf0747454b1238cfa7172bc39aad95cb2958c98910b2f338804",
+      "source_file": "alin-destination.png",
+      "source_sha256": "b18874edfc4570d40a8b77a3e7e9cd2226ef112713f9f206f960de8b256707e8",
+      "crop_xyxy": [
+        160,
+        87,
+        640,
+        357
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "alin-grasp-1.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 113431,
+      "sha256": "afe2c96611ec9dbe717a22e36eee403168d5144a0f780be4474008a75841576e",
+      "source_sha256": "afe2c96611ec9dbe717a22e36eee403168d5144a0f780be4474008a75841576e",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/g_179c18d6a70d429098169b12f792284c_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "alin-grasp-2.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 109843,
+      "sha256": "6b3f0aeb8ade58d157131fc3e210a177521e7a54710e774e84414a7e751856b6",
+      "source_sha256": "6b3f0aeb8ade58d157131fc3e210a177521e7a54710e774e84414a7e751856b6",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/g_6ddf285336404ec79090e29d14830631_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "alin-grasp-3.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 120459,
+      "sha256": "8b0727fd19679f888efe331e492fb68258e8061b8200b74404aafb9ca8fd0a41",
+      "source_sha256": "8b0727fd19679f888efe331e492fb68258e8061b8200b74404aafb9ca8fd0a41",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/g_6a40d1f60f3c4dc492afe9aea90e37b4_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "alin-candidates.jpg",
+      "kind": "native_candidate_contact_sheet",
+      "case_id": "alin-bowl",
+      "bytes": 78429,
+      "sha256": "7938c7adace8376e725890bfb56cfc91665411ff0d567b505109ec84dacd4b1c",
+      "source_files": [
+        "alin-grasp-1.png",
+        "alin-grasp-2.png",
+        "alin-grasp-3.png"
+      ],
+      "representation": "Crops of the native gripper projections arranged with recorded candidate labels; selected candidate outlined",
+      "source_crops": [
+        {
+          "file": "alin-grasp-1.png",
+          "crop_xyxy": [
+            180,
+            85,
+            450,
+            330
+          ]
+        },
+        {
+          "file": "alin-grasp-2.png",
+          "crop_xyxy": [
+            180,
+            85,
+            450,
+            330
+          ]
+        },
+        {
+          "file": "alin-grasp-3.png",
+          "crop_xyxy": [
+            180,
+            85,
+            450,
+            330
+          ]
+        }
+      ]
+    },
+    {
+      "file": "alin-grasp-editor.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 323174,
+      "sha256": "1dd6d892c09e1f0cb8cfaca66c49514459cf0434c46970041c87ccd75eb294a5",
+      "source_sha256": "1dd6d892c09e1f0cb8cfaca66c49514459cf0434c46970041c87ccd75eb294a5",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/pose_editor/g_179c18d6a70d429098169b12f792284c.png"
+    },
+    {
+      "file": "alin-grasp-inspection.jpg",
+      "kind": "native_image_crop",
+      "case_id": "alin-bowl",
+      "bytes": 109184,
+      "sha256": "083df163a3a319389f30a2b620eab8d9622d1bf767b58ea580a3beca56f05244",
+      "source_file": "alin-grasp-editor.png",
+      "source_sha256": "1dd6d892c09e1f0cb8cfaca66c49514459cf0434c46970041c87ccd75eb294a5",
+      "crop_xyxy": [
+        0,
+        0,
+        1440,
+        650
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "alin-pregrasp.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 116038,
+      "sha256": "7f280c180b3c16ad2558ec2d1c4159c9420cc9589eb5965401871fb2da46edc0",
+      "source_sha256": "7f280c180b3c16ad2558ec2d1c4159c9420cc9589eb5965401871fb2da46edc0",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/inflight_8edb8a75dbf84e02a99652a979b1998f/preview-agentview.png"
+    },
+    {
+      "file": "alin-pregrasp-wrist.png",
+      "kind": "native_rgb",
+      "case_id": "alin-bowl",
+      "bytes": 291675,
+      "sha256": "4bd057de539388e1c5f74f4e472f53ed18b79e7d3abe0d49ca1ceedc37f9a80c",
+      "source_sha256": "4bd057de539388e1c5f74f4e472f53ed18b79e7d3abe0d49ca1ceedc37f9a80c",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/rgbd/sensor_004_robot0_eye_in_hand.png"
+    },
+    {
+      "file": "alin-lift.png",
+      "kind": "native_rgb",
+      "case_id": "alin-bowl",
+      "bytes": 312342,
+      "sha256": "bfb3af29db0507bb3398140f087493dac1bd22d32c2834c3c9f43fd28135b357",
+      "source_sha256": "bfb3af29db0507bb3398140f087493dac1bd22d32c2834c3c9f43fd28135b357",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/rgbd/sensor_009_agentview.png"
+    },
+    {
+      "file": "alin-place-draft.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 140369,
+      "sha256": "e511757d41d26f09a96216bfa0a48a3d12342be7e2cba6082a5565bd7962fdcc",
+      "source_sha256": "e511757d41d26f09a96216bfa0a48a3d12342be7e2cba6082a5565bd7962fdcc",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/x1_place_projection_92e38132039c43fbaf5fef69385132dc/preview-agentview.png"
+    },
+    {
+      "file": "alin-place-shift.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 138363,
+      "sha256": "f4b457516b4ee6d1732933ba78ab9f54e3131a4463bf7e007774fd1d5bd18105",
+      "source_sha256": "f4b457516b4ee6d1732933ba78ab9f54e3131a4463bf7e007774fd1d5bd18105",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/x1_place_projection_ad88fb38741843b49d6c0d36c67adc85/preview-agentview.png"
+    },
+    {
+      "file": "alin-place-final.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 137266,
+      "sha256": "d67fb196c3a0214c1f43a08e55aaf1909486b8f7ffb753d52b4112ec1a3942ab",
+      "source_sha256": "d67fb196c3a0214c1f43a08e55aaf1909486b8f7ffb753d52b4112ec1a3942ab",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/x1_place_projection_8a0b4b6927b04a39acf126696409dd87/preview-agentview.png"
+    },
+    {
+      "file": "alin-place-editor.png",
+      "kind": "native_tool_image",
+      "case_id": "alin-bowl",
+      "bytes": 484686,
+      "sha256": "bb566577f42f213efdc672e65dc0fc65d06d070a47900eda9f653089a6ae3206",
+      "source_sha256": "bb566577f42f213efdc672e65dc0fc65d06d070a47900eda9f653089a6ae3206",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/pose_editor/x1wp_8fef55e05a9549a4bd4d049c78c6e128.png"
+    },
+    {
+      "file": "alin-outcome.png",
+      "kind": "native_rgb",
+      "case_id": "alin-bowl",
+      "bytes": 314686,
+      "sha256": "508c3b6ba68ecbd5a65a08ad59d3da4be281d0c8bcc5150eaedb429b0c43bff1",
+      "source_sha256": "508c3b6ba68ecbd5a65a08ad59d3da4be281d0c8bcc5150eaedb429b0c43bff1",
+      "representation": "Unaltered native original",
+      "source_artifact": "alin/assets/rgbd/sensor_012_agentview.png"
+    },
+    {
+      "file": "panda-pick-capture_0001.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 743796,
+      "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c",
+      "source_sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0001/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0002.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 744038,
+      "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1",
+      "source_sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0002/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0003.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 938636,
+      "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7",
+      "source_sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0003/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0004.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 911072,
+      "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378",
+      "source_sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0004/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0005.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 912248,
+      "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa",
+      "source_sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0005/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0006.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 912565,
+      "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b",
+      "source_sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0006/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0007.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 910221,
+      "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5",
+      "source_sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0007/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0008.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 762304,
+      "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d",
+      "source_sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0008/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0009.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 759336,
+      "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be",
+      "source_sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0009/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0010.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 760333,
+      "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a",
+      "source_sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0010/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0011.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 761484,
+      "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b",
+      "source_sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0011/right_side.png"
+    },
+    {
+      "file": "panda-pick-capture_0012.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 744185,
+      "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420",
+      "source_sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0012/right_side.png"
+    },
+    {
+      "file": "panda-pick-g_008.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 436329,
+      "sha256": "269de2bc58e35463f743294bba730299b402287464b96cfab0cefada09418159",
+      "source_sha256": "269de2bc58e35463f743294bba730299b402287464b96cfab0cefada09418159",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/g_008_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-pick-g_009.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 214356,
+      "sha256": "f40b3a7ea484b40cc520384107c1aab049d978045529b2a2376227c2f6e42219",
+      "source_sha256": "f40b3a7ea484b40cc520384107c1aab049d978045529b2a2376227c2f6e42219",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/g_009_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-pick-candidates.jpg",
+      "kind": "native_candidate_contact_sheet",
+      "case_id": "panda-pick-place",
+      "bytes": 84694,
+      "sha256": "b6f4f37ac5dfe442ee3ffd52aea23631e5672bc96d5c53be60167db38c368cb5",
+      "source_files": [
+        "panda-pick-g_008.png",
+        "panda-pick-g_009.png"
+      ],
+      "representation": "Crops of the native gripper projections arranged with recorded candidate labels; selected candidate outlined",
+      "source_crops": [
+        {
+          "file": "panda-pick-g_008.png",
+          "crop_xyxy": [
+            300,
+            90,
+            980,
+            660
+          ]
+        },
+        {
+          "file": "panda-pick-g_009.png",
+          "crop_xyxy": [
+            300,
+            90,
+            980,
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "file": "panda-pick-phase-01.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 743796,
+      "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c",
+      "source_sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0001/right_side.png"
+    },
+    {
+      "file": "panda-pick-phase-02.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 743705,
+      "sha256": "2c5779803129e7ecbbe617bf934e5330169b073fab91fd8fb0998f014349f85c",
+      "source_sha256": "2c5779803129e7ecbbe617bf934e5330169b073fab91fd8fb0998f014349f85c",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/perception/point_0001/overlay.png"
+    },
+    {
+      "file": "panda-pick-target-focus.jpg",
+      "kind": "native_image_crop",
+      "case_id": "panda-pick-place",
+      "bytes": 30133,
+      "sha256": "23df4c4ae0f4fb491b4e7a78816b47c3f7aa2adccdbbfed970fa3bb06c1efe21",
+      "source_file": "panda-pick-phase-02.png",
+      "source_sha256": "2c5779803129e7ecbbe617bf934e5330169b073fab91fd8fb0998f014349f85c",
+      "crop_xyxy": [
+        392,
+        439,
+        892,
+        720
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "panda-pick-phase-03.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 436329,
+      "sha256": "269de2bc58e35463f743294bba730299b402287464b96cfab0cefada09418159",
+      "source_sha256": "269de2bc58e35463f743294bba730299b402287464b96cfab0cefada09418159",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/g_008_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-pick-phase-04.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 229491,
+      "sha256": "d17832143f26b101696f77b342ee1ffea3630812857d75fa8ff71a63a6bec6b4",
+      "source_sha256": "d17832143f26b101696f77b342ee1ffea3630812857d75fa8ff71a63a6bec6b4",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/pose_editor/g_009.png"
+    },
+    {
+      "file": "panda-pick-grasp-inspection.jpg",
+      "kind": "native_image_crop",
+      "case_id": "panda-pick-place",
+      "bytes": 95994,
+      "sha256": "5aaba7068254382ca740faa43752f65b9d0344408558152e34331c544c3bd8b5",
+      "source_file": "panda-pick-phase-04.png",
+      "source_sha256": "d17832143f26b101696f77b342ee1ffea3630812857d75fa8ff71a63a6bec6b4",
+      "crop_xyxy": [
+        0,
+        0,
+        1440,
+        650
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "panda-pick-phase-05.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 744038,
+      "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1",
+      "source_sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0002/right_side.png"
+    },
+    {
+      "file": "panda-pick-phase-06.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 307340,
+      "sha256": "bf9236ecf168893419e2fab82ceb6c713b263f55abaa8b81ebc578b56d31203e",
+      "source_sha256": "bf9236ecf168893419e2fab82ceb6c713b263f55abaa8b81ebc578b56d31203e",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/inflight_00d1a11b27834527a8800b7b5e9a0928/preview-agentview.png"
+    },
+    {
+      "file": "panda-pick-pregrasp-wrist.png",
+      "kind": "native_rgb",
+      "case_id": "panda-pick-place",
+      "bytes": 398791,
+      "sha256": "d7d2bd0ba47fe12bcd06c6c4760719e431686861834abb576949d69cad52e4e1",
+      "source_sha256": "d7d2bd0ba47fe12bcd06c6c4760719e431686861834abb576949d69cad52e4e1",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0003/wrist.png"
+    },
+    {
+      "file": "panda-pick-phase-07.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 270373,
+      "sha256": "7e88eeccb3465691d4344598663f5c4f854af5a41ef8ee797f1d99182837eaf0",
+      "source_sha256": "7e88eeccb3465691d4344598663f5c4f854af5a41ef8ee797f1d99182837eaf0",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0007/wrist.png"
+    },
+    {
+      "file": "panda-pick-phase-08.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 910189,
+      "sha256": "4ec5866b88fe758c4e8edda7c74a7bef1042cf6087602d9db4f74233e9713cc5",
+      "source_sha256": "4ec5866b88fe758c4e8edda7c74a7bef1042cf6087602d9db4f74233e9713cc5",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/perception/point_0002/overlay.png"
+    },
+    {
+      "file": "panda-pick-destination-focus.jpg",
+      "kind": "native_image_crop",
+      "case_id": "panda-pick-place",
+      "bytes": 36958,
+      "sha256": "5988c2c425303cc9363edc98700745161c69bd5f8375b2dbd143fe04b9a1a1cf",
+      "source_file": "panda-pick-phase-08.png",
+      "source_sha256": "4ec5866b88fe758c4e8edda7c74a7bef1042cf6087602d9db4f74233e9713cc5",
+      "crop_xyxy": [
+        498,
+        272,
+        998,
+        553
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "panda-pick-phase-09.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 212995,
+      "sha256": "c0f58d4b01a7ffe2e1366cf020c027631de90d671e707ecc2ab654b6e93e0f9b",
+      "source_sha256": "c0f58d4b01a7ffe2e1366cf020c027631de90d671e707ecc2ab654b6e93e0f9b",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/x1_place_projection_023/preview-agentview.png"
+    },
+    {
+      "file": "panda-pick-phase-10.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 240912,
+      "sha256": "016214e0e7d370a470f05051778dc00db327e102897356f9f82f01022f992d7f",
+      "source_sha256": "016214e0e7d370a470f05051778dc00db327e102897356f9f82f01022f992d7f",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0008/wrist.png"
+    },
+    {
+      "file": "panda-pick-phase-11.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 271052,
+      "sha256": "f77a1ef9ef83ebf99180b6adf65ca4ed51c93393075ae7507583d8c9c610a6cc",
+      "source_sha256": "f77a1ef9ef83ebf99180b6adf65ca4ed51c93393075ae7507583d8c9c610a6cc",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0010/wrist.png"
+    },
+    {
+      "file": "panda-pick-phase-12.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-pick-place",
+      "bytes": 744185,
+      "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420",
+      "source_sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_112917_91cce9d7/capture_0012/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0001.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 896103,
+      "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc",
+      "source_sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0001/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0002.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 743432,
+      "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef",
+      "source_sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0002/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0003.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 898481,
+      "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9",
+      "source_sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0003/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0004.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 855289,
+      "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198",
+      "source_sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0004/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0005.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 850806,
+      "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8",
+      "source_sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0005/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0006.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 901214,
+      "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08",
+      "source_sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0006/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0007.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 904186,
+      "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753",
+      "source_sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0007/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0008.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 862851,
+      "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f",
+      "source_sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0008/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0009.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 863396,
+      "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c",
+      "source_sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0009/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0010.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 862335,
+      "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c",
+      "source_sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0010/right_side.png"
+    },
+    {
+      "file": "panda-stack-capture_0011.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 899096,
+      "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b",
+      "source_sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0011/right_side.png"
+    },
+    {
+      "file": "panda-stack-g_004.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 447566,
+      "sha256": "bcf07722fa8da5d285a25ac17e66f7af6caa8a1951c0ed4f775545bf549c1ec1",
+      "source_sha256": "bcf07722fa8da5d285a25ac17e66f7af6caa8a1951c0ed4f775545bf549c1ec1",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/g_004_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-stack-g_005.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 223075,
+      "sha256": "24756648892f1fdf50d9c7b931d9b4e71b642415205943245754f1a50886d2a8",
+      "source_sha256": "24756648892f1fdf50d9c7b931d9b4e71b642415205943245754f1a50886d2a8",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/g_005_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-stack-g_006.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 301522,
+      "sha256": "fe5b239f9998a98311e4c624cc23364b778f02829dfcad036734f16e2210d764",
+      "source_sha256": "fe5b239f9998a98311e4c624cc23364b778f02829dfcad036734f16e2210d764",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/g_006_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-stack-candidates.jpg",
+      "kind": "native_candidate_contact_sheet",
+      "case_id": "panda-stack-cubes",
+      "bytes": 75041,
+      "sha256": "0c1b327eea2194bc97c7d9d6212395c074c4b1403343abe922a748248006ae75",
+      "source_files": [
+        "panda-stack-g_004.png",
+        "panda-stack-g_005.png",
+        "panda-stack-g_006.png"
+      ],
+      "representation": "Crops of the native gripper projections arranged with recorded candidate labels; selected candidate outlined",
+      "source_crops": [
+        {
+          "file": "panda-stack-g_004.png",
+          "crop_xyxy": [
+            300,
+            90,
+            980,
+            660
+          ]
+        },
+        {
+          "file": "panda-stack-g_005.png",
+          "crop_xyxy": [
+            300,
+            90,
+            980,
+            660
+          ]
+        },
+        {
+          "file": "panda-stack-g_006.png",
+          "crop_xyxy": [
+            300,
+            90,
+            980,
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "file": "panda-stack-phase-01.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 896103,
+      "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc",
+      "source_sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0001/right_side.png"
+    },
+    {
+      "file": "panda-stack-phase-02.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 895893,
+      "sha256": "1cc63f3f7cd49273557eef965b921298983526ceb252b76c131b227b6c81fcfd",
+      "source_sha256": "1cc63f3f7cd49273557eef965b921298983526ceb252b76c131b227b6c81fcfd",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/perception/point_0001/overlay.png"
+    },
+    {
+      "file": "panda-stack-target-focus.jpg",
+      "kind": "native_image_crop",
+      "case_id": "panda-stack-cubes",
+      "bytes": 30785,
+      "sha256": "0be59cd1208749f591ffd111849664a2aff2e12b1bb6958a2ecfdc0e3e927639",
+      "source_file": "panda-stack-phase-02.png",
+      "source_sha256": "1cc63f3f7cd49273557eef965b921298983526ceb252b76c131b227b6c81fcfd",
+      "crop_xyxy": [
+        349,
+        316,
+        849,
+        597
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "panda-stack-phase-03.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 447566,
+      "sha256": "bcf07722fa8da5d285a25ac17e66f7af6caa8a1951c0ed4f775545bf549c1ec1",
+      "source_sha256": "bcf07722fa8da5d285a25ac17e66f7af6caa8a1951c0ed4f775545bf549c1ec1",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/g_004_cyan_projection/preview-agentview.png"
+    },
+    {
+      "file": "panda-stack-phase-04.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 233613,
+      "sha256": "cc6c389ddceacf4d645f3bb27885a8f00832b47df839ef606c3398ae7f682fa6",
+      "source_sha256": "cc6c389ddceacf4d645f3bb27885a8f00832b47df839ef606c3398ae7f682fa6",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/pose_editor/g_005.png"
+    },
+    {
+      "file": "panda-stack-grasp-inspection.jpg",
+      "kind": "native_image_crop",
+      "case_id": "panda-stack-cubes",
+      "bytes": 98072,
+      "sha256": "2137190d13d42d08204e9daf1dba465266199af75dd87bcd22b7b6c544928bbb",
+      "source_file": "panda-stack-phase-04.png",
+      "source_sha256": "cc6c389ddceacf4d645f3bb27885a8f00832b47df839ef606c3398ae7f682fa6",
+      "crop_xyxy": [
+        0,
+        0,
+        1440,
+        650
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "panda-stack-phase-05.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 743432,
+      "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef",
+      "source_sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0002/right_side.png"
+    },
+    {
+      "file": "panda-stack-phase-06.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 280402,
+      "sha256": "3d838924c428fc1f3e31aad617d78d0e7d9db1ed8faf863817c1d2b3749ae028",
+      "source_sha256": "3d838924c428fc1f3e31aad617d78d0e7d9db1ed8faf863817c1d2b3749ae028",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/inflight_28d7b72e3d5645b48b773f2d8f0c49d1/preview-agentview.png"
+    },
+    {
+      "file": "panda-stack-pregrasp-wrist.png",
+      "kind": "native_rgb",
+      "case_id": "panda-stack-cubes",
+      "bytes": 356555,
+      "sha256": "2e7a23179d1af261b4d9b2e585dfc0250d8893bd86d70fb6605034f81a997f73",
+      "source_sha256": "2e7a23179d1af261b4d9b2e585dfc0250d8893bd86d70fb6605034f81a997f73",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0003/wrist.png"
+    },
+    {
+      "file": "panda-stack-phase-07.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 260014,
+      "sha256": "812f006755baf4e19c881d232d34fd8fbca7ff22e8bb7dd96b44baf08554791f",
+      "source_sha256": "812f006755baf4e19c881d232d34fd8fbca7ff22e8bb7dd96b44baf08554791f",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0007/wrist.png"
+    },
+    {
+      "file": "panda-stack-phase-08.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 904238,
+      "sha256": "cca40e3bae139025d401a2a8428996a91124163a79d3f464f107b62dfc11966c",
+      "source_sha256": "cca40e3bae139025d401a2a8428996a91124163a79d3f464f107b62dfc11966c",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/perception/point_0002/overlay.png"
+    },
+    {
+      "file": "panda-stack-destination-focus.jpg",
+      "kind": "native_image_crop",
+      "case_id": "panda-stack-cubes",
+      "bytes": 31907,
+      "sha256": "e5073f9ec26d28b152b220fcb00d7474a82ac869e249e1273a089673cfa9d1cf",
+      "source_file": "panda-stack-phase-08.png",
+      "source_sha256": "cca40e3bae139025d401a2a8428996a91124163a79d3f464f107b62dfc11966c",
+      "crop_xyxy": [
+        586,
+        376,
+        1086,
+        657
+      ],
+      "representation": "Crop of the original native image; no added marker or pose geometry"
+    },
+    {
+      "file": "panda-stack-phase-09.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 201455,
+      "sha256": "e7a5d8d19844c34e5517149ee3e9b5d1a9ebccc87ce085b3d35f71774777b384",
+      "source_sha256": "e7a5d8d19844c34e5517149ee3e9b5d1a9ebccc87ce085b3d35f71774777b384",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/x1_place_projection_019/preview-agentview.png"
+    },
+    {
+      "file": "panda-stack-phase-10.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 287829,
+      "sha256": "fd24d8303e1a9c0f5763b3d846600c1daa4b4ba1fb862250f4b4f2e0f3eb6b60",
+      "source_sha256": "fd24d8303e1a9c0f5763b3d846600c1daa4b4ba1fb862250f4b4f2e0f3eb6b60",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0008/wrist.png"
+    },
+    {
+      "file": "panda-stack-phase-11.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 284027,
+      "sha256": "7fb04dd885f6523f36d4e59ebacb71c5200eb5e04fbb78977eac293b56cd17dc",
+      "source_sha256": "7fb04dd885f6523f36d4e59ebacb71c5200eb5e04fbb78977eac293b56cd17dc",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0010/wrist.png"
+    },
+    {
+      "file": "panda-stack-phase-12.png",
+      "kind": "native_tool_image",
+      "case_id": "panda-stack-cubes",
+      "bytes": 899096,
+      "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b",
+      "source_sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b",
+      "representation": "Unaltered native original",
+      "source_artifact": "real/gui_20260926_121447_90cfdaad/capture_0011/right_side.png"
+    },
+    {
+      "file": "alin-bowl-demo.mp4",
+      "kind": "visual_handoff_demo",
+      "bytes": 1921927,
+      "sha256": "f91aac8aa85b88063b57aa008294ce13cfb2a676718f8fd27334b44a8a5e4b14",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "alin-bowl",
+      "representation": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked.",
+      "width": 1600,
+      "height": 900,
+      "fps": 18,
+      "duration_s": 52.611111111111114
+    },
+    {
+      "file": "alin-bowl-motion.mp4",
+      "kind": "execution_with_decision_holds",
+      "bytes": 553712,
+      "sha256": "5145769d9c23aaad46a20f82b7d1ae3d62bbe696982e293c48214a13d427119e",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "alin-bowl",
+      "representation": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked.",
+      "width": 640,
+      "height": 360,
+      "fps": 18,
+      "duration_s": 52.611111111111114
+    },
+    {
+      "file": "alin-bowl-demo.jpg",
+      "kind": "poster",
+      "bytes": 246587,
+      "sha256": "03562f67c60914ab8c6a8cc038bbcd90f2e9d6b306d0682263c620153a18387c",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "alin-bowl",
+      "representation": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked."
+    },
+    {
+      "file": "panda-pick-place-demo.mp4",
+      "kind": "visual_handoff_demo",
+      "bytes": 1973388,
+      "sha256": "5c283ef38136ffa8bba745a9bfe90d357834b9eaf1c46ad74289a02fc319232b",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "panda-pick-place",
+      "representation": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "width": 1600,
+      "height": 900,
+      "fps": 18,
+      "duration_s": 45.0
+    },
+    {
+      "file": "panda-pick-place-motion.mp4",
+      "kind": "execution_with_decision_holds",
+      "bytes": 2042486,
+      "sha256": "e2c90d69047ae1b07d1191292de2780d071ce0288e50f1018c19b8386e2cc291",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "panda-pick-place",
+      "representation": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "width": 1280,
+      "height": 720,
+      "fps": 18,
+      "duration_s": 45.0
+    },
+    {
+      "file": "panda-pick-place-demo.jpg",
+      "kind": "poster",
+      "bytes": 235550,
+      "sha256": "b7975cc808e17ef2c3def3e322ab3f50b12a2f1974d9f2bc18208349155c2888",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "panda-pick-place",
+      "representation": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed."
+    },
+    {
+      "file": "panda-stack-cubes-demo.mp4",
+      "kind": "visual_handoff_demo",
+      "bytes": 1972064,
+      "sha256": "8bc3025408ac697673ef29810f898518b6e85f82daf9e8ae1e5e6edb0fffeb44",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "panda-stack-cubes",
+      "representation": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "width": 1600,
+      "height": 900,
+      "fps": 18,
+      "duration_s": 45.0
+    },
+    {
+      "file": "panda-stack-cubes-motion.mp4",
+      "kind": "execution_with_decision_holds",
+      "bytes": 2068206,
+      "sha256": "26ecb3a627afbd5d268e7a8befc50ba577c943b31c30018f3357f85de66b3ce7",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "panda-stack-cubes",
+      "representation": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "width": 1280,
+      "height": 720,
+      "fps": 18,
+      "duration_s": 45.0
+    },
+    {
+      "file": "panda-stack-cubes-demo.jpg",
+      "kind": "poster",
+      "bytes": 238081,
+      "sha256": "c6d6c0689302ee0616daa5e01dc8b8e8affdd1979536154d90689ef16ddca3da",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "1ebc17830fc8656f030509afb69942da6e14527e99d43a98c935b5b27c35ec5e",
+      "case_id": "panda-stack-cubes",
+      "representation": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed."
+    }
+  ],
+  "representation_note": "Native point/mask overlays, actual gripper mesh previews and measured pose-editor panels. Crops retain original pixels and link full original images. No reconstructed gripper geometry."
+}

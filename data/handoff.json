@@ -1,0 +1,2290 @@
+{
+  "schema_version": 3,
+  "title": "Language\u2013visual handoff",
+  "display_nodes": [
+    {
+      "id": "main",
+      "label": "Main agent"
+    },
+    {
+      "id": "subagent",
+      "label": "Subagent"
+    },
+    {
+      "id": "backend",
+      "label": "Backend"
+    }
+  ],
+  "caption_policy": "Captions summarize recorded tool arguments, assessments and results; they are not verbatim dialogue. Internal executors are presented as Backend. Selected local roles are grouped under Subagent.",
+  "visual_policy": "Native point/mask overlays, actual gripper mesh previews and measured pose-editor panels. Crops retain original pixels and link full original images. No reconstructed gripper geometry.",
+  "cases": [
+    {
+      "id": "alin-bowl",
+      "label": "RoboLab \u00b7 Bowl stacking",
+      "task": "Stack the left bowl on the right bowl.",
+      "episode_id": "alin-x2-20260923-bowlstack-job258573",
+      "recording_date": "2026-09-23",
+      "native_verifier": {
+        "evaluated": true,
+        "task_success": true,
+        "first_grasp_success": true
+      },
+      "source_video_file": "alin-bowl-source.mp4",
+      "source_video_sha256": "b64e75dd61c52ff99e75e0ced1df81ae4d807e1794caf0cb01e51748d11fd346",
+      "source_video_fps": 7.5,
+      "source_video_duration_s": 17.733333,
+      "video_file": "alin-bowl-motion.mp4",
+      "demo_file": "alin-bowl-demo.mp4",
+      "poster_file": "alin-initial.png",
+      "motion_label": "Recorded simulator motion",
+      "timing_note": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked.",
+      "selection_note": "Condensed successful path after fresh target reselection. Earlier stale-reference attempts, rejected placement draft, and narrow-angle generation are omitted; private raw logs preserve them.",
+      "phases": [
+        {
+          "short": "Goal",
+          "title": "A language goal",
+          "detail": "Stack the left bowl on the right bowl.",
+          "active_node": "main",
+          "flow": [
+            "main",
+            "subagent"
+          ],
+          "handoff_label": "Main agent \u2192 Subagent \u00b7 a language goal",
+          "messages": {
+            "main": "Stack the left bowl on the right bowl."
+          },
+          "visual": {
+            "file": "alin-initial.png",
+            "original_file": "alin-initial.png",
+            "label": "A language goal",
+            "kind": "Recorded RGB",
+            "alt": "Stack the left bowl on the right bowl.",
+            "note": "Move overhead for a clear view of the scene."
+          },
+          "evidence": {
+            "event_sequences": [
+              3,
+              19,
+              23,
+              26,
+              29,
+              34,
+              37,
+              39
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 1.4666666666666666,
+          "start_s": 0,
+          "end_s": 1.5
+        },
+        {
+          "short": "Point",
+          "title": "Point to the left bowl",
+          "detail": "Select the bowl at (418, 625) in the wrist image.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 point to the left bowl",
+          "messages": {
+            "subagent": "Select the bowl at (418, 625) in the wrist image."
+          },
+          "visual": {
+            "file": "alin-target-focus.jpg",
+            "original_file": "alin-target.png",
+            "label": "Point to the left bowl",
+            "kind": "Native point + mask",
+            "alt": "Select the bowl at (418, 625) in the wrist image.",
+            "note": "The original red cross marks the selected point; cyan shows the returned segmentation. Enlarged crop; open the original for the full view."
+          },
+          "evidence": {
+            "event_sequences": [
+              79,
+              83,
+              84,
+              86,
+              88
+            ]
+          },
+          "source_start_s": 1.4666666666666666,
+          "source_end_s": 1.4666666666666666,
+          "selection": {
+            "view_id": "robot0_eye_in_hand",
+            "normalization": "0..1000",
+            "u": 418,
+            "v": 625,
+            "normalized_xy": [
+              0.418,
+              0.625
+            ],
+            "native_pixel_xy": [
+              267,
+              224
+            ]
+          },
+          "start_s": 1.5,
+          "end_s": 5.5
+        },
+        {
+          "short": "Grasps",
+          "title": "Compare three grasp poses",
+          "detail": "Inspect three Contact-GraspNet proposals.",
+          "active_node": "backend",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 compare three grasp poses",
+          "messages": {
+            "backend": "Inspect three Contact-GraspNet proposals."
+          },
+          "visual": {
+            "file": "alin-grasp-1.png",
+            "original_file": "alin-grasp-1.png",
+            "label": "Compare three grasp poses",
+            "kind": "Native mesh projections",
+            "alt": "Inspect three Contact-GraspNet proposals.",
+            "note": "Each cyan mesh is the actual backend preview. Grasp 1 is the recorded selection; occlusion is not tested by these overlays. Use the thumbnails below to inspect each original proposal."
+          },
+          "evidence": {
+            "event_sequences": [
+              94,
+              101,
+              102,
+              104,
+              105,
+              107,
+              109,
+              110,
+              116,
+              117,
+              119,
+              121,
+              123
+            ]
+          },
+          "source_start_s": 1.4666666666666666,
+          "source_end_s": 1.4666666666666666,
+          "candidates": [
+            {
+              "file": "alin-grasp-1.png",
+              "label": "Grasp 1 \u00b7 selected",
+              "selected": true,
+              "source_candidate_index": 0,
+              "score": 0.23478765785694122
+            },
+            {
+              "file": "alin-grasp-2.png",
+              "label": "Grasp 2",
+              "selected": false,
+              "source_candidate_index": 2,
+              "score": 0.16471675038337708
+            },
+            {
+              "file": "alin-grasp-3.png",
+              "label": "Grasp 3",
+              "selected": false,
+              "source_candidate_index": 1,
+              "score": 0.1591050624847412
+            }
+          ],
+          "start_s": 5.5,
+          "end_s": 9.5
+        },
+        {
+          "short": "Inspect",
+          "title": "Inspect the chosen gripper",
+          "detail": "Accept Grasp 1 after inspecting its measured geometry.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "main"
+          ],
+          "handoff_label": "Subagent \u2192 Main agent \u00b7 inspect the chosen gripper",
+          "messages": {
+            "subagent": "Accept Grasp 1 after inspecting its measured geometry."
+          },
+          "visual": {
+            "file": "alin-grasp-inspection.jpg",
+            "original_file": "alin-grasp-editor.png",
+            "label": "Inspect the chosen gripper",
+            "kind": "Native point-cloud view",
+            "alt": "Accept Grasp 1 after inspecting its measured geometry.",
+            "note": "Original SIDE / TOP / CLOSING PLANE panels. Nominal gripper opening: 44 mm. Rotation examples in the full editor are explanatory; no rotation edit was applied."
+          },
+          "evidence": {
+            "event_sequences": [
+              94,
+              101,
+              102,
+              104,
+              105,
+              107,
+              109,
+              110,
+              116,
+              117,
+              119,
+              121,
+              123
+            ]
+          },
+          "source_start_s": 1.4666666666666666,
+          "source_end_s": 1.4666666666666666,
+          "selected_candidate_index": 0,
+          "nominal_opening_mm": 44,
+          "start_s": 9.5,
+          "end_s": 13.5
+        },
+        {
+          "short": "Approach",
+          "title": "Approach with open fingers",
+          "detail": "Move to the accepted gripper pose with the fingers open.",
+          "active_node": "backend",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 approach with open fingers",
+          "messages": {
+            "backend": "Move to the accepted gripper pose with the fingers open."
+          },
+          "visual": {
+            "file": "alin-grasp-1.png",
+            "original_file": "alin-grasp-1.png",
+            "label": "Approach with open fingers",
+            "kind": "Native selected pose",
+            "alt": "Move to the accepted gripper pose with the fingers open.",
+            "note": "Original approach motion plays on the left; the accepted cyan pose stays visible on the right."
+          },
+          "evidence": {
+            "event_sequences": [
+              125
+            ]
+          },
+          "source_start_s": 1.4666666666666666,
+          "source_end_s": 7.733333333333333,
+          "start_s": 13.5,
+          "end_s": 19.777778
+        },
+        {
+          "short": "Check",
+          "title": "Check before closing",
+          "detail": "Inspect the fresh paused pregrasp; continue without a pose nudge.",
+          "active_node": "subagent",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 check before closing",
+          "messages": {
+            "subagent": "Inspect the fresh paused pregrasp; continue without a pose nudge."
+          },
+          "visual": {
+            "file": "alin-pregrasp.png",
+            "original_file": "alin-pregrasp.png",
+            "label": "Check before closing",
+            "kind": "Native paused preview",
+            "alt": "Inspect the fresh paused pregrasp; continue without a pose nudge.",
+            "note": "Fresh preview of the pending grasp on the measured scene. The recorded decision is continue; no grasp edit is applied."
+          },
+          "evidence": {
+            "event_sequences": [
+              129,
+              130,
+              132
+            ]
+          },
+          "source_start_s": 7.733333333333333,
+          "source_end_s": 7.733333333333333,
+          "candidates": [
+            {
+              "file": "alin-pregrasp.png",
+              "label": "Paused mesh",
+              "selected": true
+            },
+            {
+              "file": "alin-pregrasp-wrist.png",
+              "label": "Fresh wrist RGB",
+              "selected": false
+            }
+          ],
+          "start_s": 19.777778,
+          "end_s": 23.777778
+        },
+        {
+          "short": "Lift",
+          "title": "Close and lift",
+          "detail": "Close the gripper and lift the selected bowl.",
+          "active_node": "backend",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 close and lift",
+          "messages": {
+            "backend": "Close the gripper and lift the selected bowl."
+          },
+          "visual": {
+            "file": "alin-pregrasp-wrist.png",
+            "original_file": "alin-pregrasp-wrist.png",
+            "label": "Close and lift",
+            "kind": "Fresh wrist RGB",
+            "alt": "Close the gripper and lift the selected bowl.",
+            "note": "The original motion continues from the inspected open-hand pose."
+          },
+          "evidence": {
+            "event_sequences": [
+              135,
+              136,
+              137,
+              138
+            ]
+          },
+          "source_start_s": 7.733333333333333,
+          "source_end_s": 13.8,
+          "start_s": 23.777778,
+          "end_s": 29.833333
+        },
+        {
+          "short": "Receiver",
+          "title": "Point to the receiving bowl",
+          "detail": "Select the receiving bowl at (630, 617).",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 point to the receiving bowl",
+          "messages": {
+            "subagent": "Select the receiving bowl at (630, 617)."
+          },
+          "visual": {
+            "file": "alin-destination-focus.jpg",
+            "original_file": "alin-destination.png",
+            "label": "Point to the receiving bowl",
+            "kind": "Native point + mask",
+            "alt": "Select the receiving bowl at (630, 617).",
+            "note": "Select the destination in the fresh post-grasp image. The native cross and mask are preserved."
+          },
+          "evidence": {
+            "event_sequences": [
+              139,
+              143,
+              144,
+              146,
+              148,
+              149,
+              150
+            ]
+          },
+          "source_start_s": 13.8,
+          "source_end_s": 13.8,
+          "selection": {
+            "view_id": "agentview",
+            "normalization": "0..1000",
+            "u": 630,
+            "v": 617,
+            "normalized_xy": [
+              0.63,
+              0.617
+            ],
+            "native_pixel_xy": [
+              403,
+              222
+            ]
+          },
+          "start_s": 29.833333,
+          "end_s": 33.833333
+        },
+        {
+          "short": "Pose",
+          "title": "Inspect the placement draft",
+          "detail": "Compare the held-bowl footprint with the measured receiving bowl.",
+          "active_node": "subagent",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 inspect the placement draft",
+          "messages": {
+            "subagent": "Compare the held-bowl footprint with the measured receiving bowl."
+          },
+          "visual": {
+            "file": "alin-place-draft.png",
+            "original_file": "alin-place-draft.png",
+            "label": "Inspect the placement draft",
+            "kind": "Native placement preview",
+            "alt": "Compare the held-bowl footprint with the measured receiving bowl.",
+            "note": "The agent inspects the mean-reference draft before adjusting its translation."
+          },
+          "evidence": {
+            "event_sequences": [
+              153,
+              158,
+              159,
+              167,
+              168
+            ]
+          },
+          "source_start_s": 13.8,
+          "source_end_s": 13.8,
+          "start_s": 33.833333,
+          "end_s": 37.833333
+        },
+        {
+          "short": "Shift",
+          "title": "Shift the placement",
+          "detail": "Adjust X by +20 mm and Y by \u221230 mm.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 shift the placement",
+          "messages": {
+            "subagent": "Adjust X by +20 mm and Y by \u221230 mm."
+          },
+          "visual": {
+            "file": "alin-place-shift.png",
+            "original_file": "alin-place-shift.png",
+            "label": "Shift the placement",
+            "kind": "Native edited pose",
+            "alt": "Adjust X by +20 mm and Y by \u221230 mm.",
+            "note": "First recorded translation adjustment. Rotation stays unchanged."
+          },
+          "evidence": {
+            "event_sequences": [
+              170,
+              171
+            ]
+          },
+          "source_start_s": 13.8,
+          "source_end_s": 13.8,
+          "adjustment_mm": [
+            20,
+            -30,
+            0
+          ],
+          "start_s": 37.833333,
+          "end_s": 41.833333
+        },
+        {
+          "short": "Adjust",
+          "title": "Inspect the final placement",
+          "detail": "Refine X by +1 mm and Y by \u221212 mm, then accept the pose.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "main"
+          ],
+          "handoff_label": "Subagent \u2192 Main agent \u00b7 inspect the final placement",
+          "messages": {
+            "subagent": "Refine X by +1 mm and Y by \u221212 mm, then accept the pose."
+          },
+          "visual": {
+            "file": "alin-place-final.png",
+            "original_file": "alin-place-editor.png",
+            "label": "Inspect the final placement",
+            "kind": "Native edited pose",
+            "alt": "Refine X by +1 mm and Y by \u221212 mm, then accept the pose.",
+            "note": "Total translation: +21 / \u221242 / 0 mm; rotation: 0\u00b0. The original editor records these totals."
+          },
+          "evidence": {
+            "event_sequences": [
+              173,
+              174,
+              176,
+              178,
+              180,
+              184,
+              185,
+              187,
+              189
+            ]
+          },
+          "source_start_s": 13.8,
+          "source_end_s": 13.8,
+          "adjustment_mm": [
+            1,
+            -12,
+            0
+          ],
+          "cumulative_translation_mm": [
+            21,
+            -42,
+            0
+          ],
+          "start_s": 41.833333,
+          "end_s": 45.833333
+        },
+        {
+          "short": "Place",
+          "title": "Execute the inspected placement",
+          "detail": "Move the bowl to the accepted final placement.",
+          "active_node": "backend",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 execute the inspected placement",
+          "messages": {
+            "backend": "Move the bowl to the accepted final placement."
+          },
+          "visual": {
+            "file": "alin-place-final.png",
+            "original_file": "alin-place-final.png",
+            "label": "Execute the inspected placement",
+            "kind": "Native accepted pose",
+            "alt": "Move the bowl to the accepted final placement.",
+            "note": "Original transport and placement motion, from the same episode as all previews."
+          },
+          "evidence": {
+            "event_sequences": [
+              190,
+              191,
+              193
+            ]
+          },
+          "source_start_s": 13.8,
+          "source_end_s": 17.6,
+          "start_s": 45.833333,
+          "end_s": 49.611111
+        },
+        {
+          "short": "Outcome",
+          "title": "Native task outcome",
+          "detail": "The native task verifier records success.",
+          "active_node": "main",
+          "flow": [
+            "backend",
+            "main"
+          ],
+          "handoff_label": "Backend \u2192 Main agent \u00b7 native task outcome",
+          "messages": {
+            "main": "The native task verifier records success."
+          },
+          "visual": {
+            "file": "alin-outcome.png",
+            "original_file": "alin-outcome.png",
+            "label": "Native task outcome",
+            "kind": "Recorded final RGB",
+            "alt": "The native task verifier records success.",
+            "note": "The final sensor is one physics step beyond the last video frame. The release request ends with the episode; successful release is not claimed."
+          },
+          "evidence": {
+            "event_sequences": [
+              194,
+              196,
+              197,
+              198
+            ]
+          },
+          "source_start_s": 17.6,
+          "source_end_s": 17.6,
+          "start_s": 49.611111,
+          "end_s": 52.611111
+        }
+      ],
+      "presentation_duration_s": 52.611111
+    },
+    {
+      "id": "panda-pick-place",
+      "label": "Panda \u00b7 Pick & place",
+      "task": "Pick up the orange cube and place it in the tray.",
+      "episode_id": "gui_20260926_112917_91cce9d7",
+      "recording_date": "2026-09-26",
+      "video_file": "panda-pick-place-motion.mp4",
+      "demo_file": "panda-pick-place-demo.mp4",
+      "poster_file": "panda-pick-capture_0001.png",
+      "motion_label": "Recorded camera observations",
+      "timing_note": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "camera_frames": [
+        {
+          "file": "panda-pick-capture_0001.png",
+          "capture_id": "capture_0001",
+          "offset_s": 0.0,
+          "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
+        },
+        {
+          "file": "panda-pick-capture_0002.png",
+          "capture_id": "capture_0002",
+          "offset_s": 170.653879,
+          "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1"
+        },
+        {
+          "file": "panda-pick-capture_0003.png",
+          "capture_id": "capture_0003",
+          "offset_s": 218.758902,
+          "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7"
+        },
+        {
+          "file": "panda-pick-capture_0004.png",
+          "capture_id": "capture_0004",
+          "offset_s": 250.377646,
+          "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378"
+        },
+        {
+          "file": "panda-pick-capture_0005.png",
+          "capture_id": "capture_0005",
+          "offset_s": 257.582338,
+          "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa"
+        },
+        {
+          "file": "panda-pick-capture_0006.png",
+          "capture_id": "capture_0006",
+          "offset_s": 276.330213,
+          "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b"
+        },
+        {
+          "file": "panda-pick-capture_0007.png",
+          "capture_id": "capture_0007",
+          "offset_s": 280.934119,
+          "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
+        },
+        {
+          "file": "panda-pick-capture_0008.png",
+          "capture_id": "capture_0008",
+          "offset_s": 395.152773,
+          "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d"
+        },
+        {
+          "file": "panda-pick-capture_0009.png",
+          "capture_id": "capture_0009",
+          "offset_s": 406.630769,
+          "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be"
+        },
+        {
+          "file": "panda-pick-capture_0010.png",
+          "capture_id": "capture_0010",
+          "offset_s": 411.236256,
+          "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a"
+        },
+        {
+          "file": "panda-pick-capture_0011.png",
+          "capture_id": "capture_0011",
+          "offset_s": 430.641864,
+          "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b"
+        },
+        {
+          "file": "panda-pick-capture_0012.png",
+          "capture_id": "capture_0012",
+          "offset_s": 478.144051,
+          "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420"
+        }
+      ],
+      "camera_captured_span_s": 478.144051,
+      "outcome": {
+        "agent_status": "completed",
+        "agent_verified": false,
+        "physical_task_success_flag": false,
+        "display_label": "Agent-reported completion; final camera observation shown",
+        "independent_physical_success_verifier": false
+      },
+      "selection_note": "Compact accepted sequence; earlier proposal attempts and tool-contract retries omitted. All displayed tool images and camera samples come from the same execution.",
+      "grasp_source": "mean",
+      "selected_candidate": "g_009",
+      "phases": [
+        {
+          "short": "Goal",
+          "title": "Language goal",
+          "detail": "The main agent asks a subagent to locate the orange cube.",
+          "active_node": "main",
+          "flow": [
+            "main",
+            "subagent"
+          ],
+          "handoff_label": "Main agent \u2192 Subagent \u00b7 language goal",
+          "messages": {
+            "main": "Pick up the orange cube and place it in the tray."
+          },
+          "visual": {
+            "file": "panda-pick-phase-01.png",
+            "original_file": "panda-pick-phase-01.png",
+            "label": "Language goal",
+            "kind": "Recorded RGB",
+            "alt": "The main agent asks a subagent to locate the orange cube.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              3,
+              4
+            ],
+            "event_time_offsets_s": [
+              3.302034,
+              10.573555
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
+            }
+          ],
+          "start_s": 0,
+          "end_s": 2.0
+        },
+        {
+          "short": "Point",
+          "title": "Point to measured mask",
+          "detail": "The subagent chooses a point on the orange cube. The backend returns the measured SAM region.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 point to measured mask",
+          "messages": {
+            "subagent": "Select the orange cube in the current image."
+          },
+          "visual": {
+            "file": "panda-pick-target-focus.jpg",
+            "original_file": "panda-pick-phase-02.png",
+            "label": "Point to measured mask",
+            "kind": "Native point + mask",
+            "alt": "The subagent chooses a point on the orange cube. The backend returns the measured SAM region.",
+            "note": "Original selection cross and segmentation mask, enlarged from the recorded camera view."
+          },
+          "evidence": {
+            "event_sequences": [
+              8,
+              9,
+              11,
+              13
+            ],
+            "event_time_offsets_s": [
+              14.975057,
+              28.002992,
+              33.71645,
+              33.716918
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
+            }
+          ],
+          "selection": {
+            "normalized_uv": [
+              502,
+              810
+            ],
+            "normalized_coordinate_range": [
+              0,
+              1000
+            ],
+            "native_marker_pixel_xy": [
+              642,
+              582
+            ],
+            "depth_refinement_seed_pixel_xy": [
+              644,
+              582
+            ],
+            "observation_id": "obs_0001",
+            "point_ref": "pt_002"
+          },
+          "start_s": 2.0,
+          "end_s": 6.0
+        },
+        {
+          "short": "Grasps",
+          "title": "Grasp candidates",
+          "detail": "The backend returns two feasible geometric mean grasp candidates after earlier proposals are rejected.",
+          "active_node": "backend",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 grasp candidates",
+          "messages": {
+            "backend": "Return 2 geometric mean gripper proposals."
+          },
+          "visual": {
+            "file": "panda-pick-g_009.png",
+            "original_file": "panda-pick-g_009.png",
+            "label": "Grasp candidates",
+            "kind": "Native mesh projections",
+            "alt": "The backend returns two feasible geometric mean grasp candidates after earlier proposals are rejected.",
+            "note": "2 feasible geometric mean proposals. g_009 is the recorded selection. Preview occlusion is not tested. Use the thumbnails below to inspect each original proposal."
+          },
+          "evidence": {
+            "event_sequences": [
+              16,
+              20,
+              21,
+              23,
+              24,
+              26,
+              27
+            ],
+            "event_time_offsets_s": [
+              38.848455,
+              43.95401,
+              67.221842,
+              74.350532,
+              99.259406,
+              103.795772,
+              144.238841
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
+            }
+          ],
+          "candidates": [
+            {
+              "file": "panda-pick-g_008.png",
+              "label": "g_008",
+              "selected": false,
+              "yaw_deg": -45.0,
+              "source": "mean",
+              "contact_center_xyz_m": [
+                0.41921181172132493,
+                -0.09160453364253045,
+                0.11
+              ],
+              "transit": {
+                "pre_pick_z_m": 0.5467970209939896,
+                "post_pick_z_m": 0.32
+              }
+            },
+            {
+              "file": "panda-pick-g_009.png",
+              "label": "g_009 \u00b7 selected",
+              "selected": true,
+              "yaw_deg": 0.0,
+              "source": "mean",
+              "contact_center_xyz_m": [
+                0.41921181172132493,
+                -0.09160453364253045,
+                0.11
+              ],
+              "transit": {
+                "pre_pick_z_m": 0.5467970209939896,
+                "post_pick_z_m": 0.32
+              }
+            }
+          ],
+          "start_s": 6.0,
+          "end_s": 10.0
+        },
+        {
+          "short": "Inspect",
+          "title": "Inspect and choose",
+          "detail": "The subagent inspects both feasible candidates and returns g_009, with a 0.11 m contact height and a 0.32 m lift height.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "main"
+          ],
+          "handoff_label": "Subagent \u2192 Main agent \u00b7 inspect and choose",
+          "messages": {
+            "subagent": "Return selected grasp: g_009."
+          },
+          "visual": {
+            "file": "panda-pick-grasp-inspection.jpg",
+            "original_file": "panda-pick-phase-04.png",
+            "label": "Inspect and choose",
+            "kind": "Native point-cloud view",
+            "alt": "The subagent inspects both feasible candidates and returns g_009, with a 0.11 m contact height and a 0.32 m lift height.",
+            "note": "SIDE / TOP / CLOSING PLANE panels of g_009. Opening: 80 mm. Lower rotation examples are explanatory; no pose edit was applied."
+          },
+          "evidence": {
+            "event_sequences": [
+              29,
+              30,
+              32,
+              33,
+              35,
+              37
+            ],
+            "event_time_offsets_s": [
+              151.39026,
+              155.779187,
+              160.703115,
+              164.815728,
+              168.696438,
+              168.696946
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
+            }
+          ],
+          "selected_candidate": "g_009",
+          "nominal_opening_mm": 80,
+          "start_s": 10.0,
+          "end_s": 14.0
+        },
+        {
+          "short": "Approach",
+          "title": "Approach",
+          "detail": "The backend validates g_009 and starts the physical grasp primitive.",
+          "active_node": "backend",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 approach",
+          "messages": {
+            "backend": "Validate g_009; start the physical grasp."
+          },
+          "visual": {
+            "file": "panda-pick-g_009.png",
+            "original_file": "panda-pick-g_009.png",
+            "label": "Approach",
+            "kind": "Native selected pose",
+            "alt": "The backend validates g_009 and starts the physical grasp primitive.",
+            "note": "The backend validates g_009 and starts the physical grasp primitive."
+          },
+          "evidence": {
+            "event_sequences": [
+              38,
+              39,
+              40
+            ],
+            "event_time_offsets_s": [
+              168.697394,
+              168.700179,
+              168.700363
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0002.png",
+          "capture_offset_s": 170.653879,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0002.png",
+              "capture_id": "capture_0002",
+              "offset_s": 170.653879,
+              "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1"
+            }
+          ],
+          "start_s": 14.0,
+          "end_s": 17.0
+        },
+        {
+          "short": "Check",
+          "title": "Fresh pregrasp check",
+          "detail": "A subagent inspects fresh open-hand RGB and the pending pose, then returns continue without applying a nudge.",
+          "active_node": "subagent",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 fresh pregrasp check",
+          "messages": {
+            "subagent": "Fresh view checked. Continue without a nudge."
+          },
+          "visual": {
+            "file": "panda-pick-phase-06.png",
+            "original_file": "panda-pick-phase-06.png",
+            "label": "Fresh pregrasp check",
+            "kind": "Native paused preview",
+            "alt": "A subagent inspects fresh open-hand RGB and the pending pose, then returns continue without applying a nudge.",
+            "note": "The subagent checks the fresh open-hand scene and returns continue. No nudge is applied."
+          },
+          "evidence": {
+            "event_sequences": [
+              41,
+              44,
+              45,
+              47,
+              48
+            ],
+            "event_time_offsets_s": [
+              226.885176,
+              226.887111,
+              239.296193,
+              239.296479,
+              239.296616
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0003.png",
+          "capture_offset_s": 218.758902,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0003.png",
+              "capture_id": "capture_0003",
+              "offset_s": 218.758902,
+              "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7"
+            }
+          ],
+          "decision": "continue",
+          "nudge_applied": false,
+          "candidates": [
+            {
+              "file": "panda-pick-phase-06.png",
+              "label": "Paused mesh",
+              "selected": true
+            },
+            {
+              "file": "panda-pick-pregrasp-wrist.png",
+              "label": "Fresh wrist RGB",
+              "selected": false
+            }
+          ],
+          "start_s": 17.0,
+          "end_s": 21.0
+        },
+        {
+          "short": "Lift",
+          "title": "Close and lift",
+          "detail": "The backend closes and lifts, then returns fresh camera observations and a succeeded command result.",
+          "active_node": "backend",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 close and lift",
+          "messages": {
+            "backend": "Close, lift, and return a fresh view."
+          },
+          "visual": {
+            "file": "panda-pick-phase-07.png",
+            "original_file": "panda-pick-phase-07.png",
+            "label": "Close and lift",
+            "kind": "Recorded RGB",
+            "alt": "The backend closes and lifts, then returns fresh camera observations and a succeeded command result.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "event_time_offsets_s": [
+              283.762674,
+              283.762902,
+              283.763069,
+              283.763504,
+              283.764092
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0004.png",
+          "capture_offset_s": 250.377646,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0004.png",
+              "capture_id": "capture_0004",
+              "offset_s": 250.377646,
+              "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378"
+            },
+            {
+              "file": "panda-pick-capture_0005.png",
+              "capture_id": "capture_0005",
+              "offset_s": 257.582338,
+              "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa"
+            },
+            {
+              "file": "panda-pick-capture_0006.png",
+              "capture_id": "capture_0006",
+              "offset_s": 276.330213,
+              "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b"
+            },
+            {
+              "file": "panda-pick-capture_0007.png",
+              "capture_id": "capture_0007",
+              "offset_s": 280.934119,
+              "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
+            }
+          ],
+          "start_s": 21.0,
+          "end_s": 27.0
+        },
+        {
+          "short": "Receiver",
+          "title": "Select destination",
+          "detail": "The main agent asks a subagent to locate the inside bottom of the tray. The backend measures the selected region.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 select destination",
+          "messages": {
+            "subagent": "Select the tray interior."
+          },
+          "visual": {
+            "file": "panda-pick-destination-focus.jpg",
+            "original_file": "panda-pick-phase-08.png",
+            "label": "Select destination",
+            "kind": "Native point + mask",
+            "alt": "The main agent asks a subagent to locate the inside bottom of the tray. The backend measures the selected region.",
+            "note": "Original selection cross and segmentation mask, enlarged from the recorded camera view."
+          },
+          "evidence": {
+            "event_sequences": [
+              54,
+              58,
+              59,
+              61,
+              63,
+              64,
+              65,
+              66
+            ],
+            "event_time_offsets_s": [
+              289.690671,
+              294.430892,
+              303.951231,
+              312.139446,
+              312.139722,
+              312.139855,
+              312.391641,
+              312.391782
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0007.png",
+          "capture_offset_s": 280.934119,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0007.png",
+              "capture_id": "capture_0007",
+              "offset_s": 280.934119,
+              "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
+            }
+          ],
+          "selection": {
+            "normalized_uv": [
+              585,
+              575
+            ],
+            "normalized_coordinate_range": [
+              0,
+              1000
+            ],
+            "native_marker_pixel_xy": [
+              748,
+              413
+            ],
+            "depth_refinement_seed_pixel_xy": [
+              744,
+              405
+            ],
+            "observation_id": "obs_0007",
+            "point_ref": "pt_014"
+          },
+          "start_s": 27.0,
+          "end_s": 31.0
+        },
+        {
+          "short": "Pose",
+          "title": "Prepare placement",
+          "detail": "The subagent prepares a placement using the tray region: median XY and segment median height plus 0.04 m.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "main"
+          ],
+          "handoff_label": "Subagent \u2192 Main agent \u00b7 prepare placement",
+          "messages": {
+            "subagent": "Prepare placement 40 mm above the median surface."
+          },
+          "visual": {
+            "file": "panda-pick-phase-09.png",
+            "original_file": "panda-pick-phase-09.png",
+            "label": "Prepare placement",
+            "kind": "Native placement preview",
+            "alt": "The subagent prepares a placement using the tray region: median XY and segment median height plus 0.04 m.",
+            "note": "The accepted prepared placement, linked to its original camera projection."
+          },
+          "evidence": {
+            "event_sequences": [
+              68,
+              73,
+              74,
+              76,
+              77,
+              79,
+              81
+            ],
+            "event_time_offsets_s": [
+              322.679777,
+              327.178157,
+              330.045784,
+              336.78043,
+              350.102264,
+              356.197708,
+              356.198266
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0007.png",
+          "capture_offset_s": 280.934119,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0007.png",
+              "capture_id": "capture_0007",
+              "offset_s": 280.934119,
+              "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
+            }
+          ],
+          "placement_plan": [
+            0.7643049955368042,
+            -0.11497705057263374,
+            0.13033192321658135
+          ],
+          "start_s": 31.0,
+          "end_s": 35.0
+        },
+        {
+          "short": "Place",
+          "title": "Execute placement",
+          "detail": "The backend executes the validated placement and returns a fresh observation before release.",
+          "active_node": "backend",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 execute placement",
+          "messages": {
+            "backend": "Execute the accepted placement pose."
+          },
+          "visual": {
+            "file": "panda-pick-phase-10.png",
+            "original_file": "panda-pick-phase-10.png",
+            "label": "Execute placement",
+            "kind": "Recorded RGB",
+            "alt": "The backend executes the validated placement and returns a fresh observation before release.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              82,
+              83,
+              84,
+              85
+            ],
+            "event_time_offsets_s": [
+              356.198453,
+              397.791434,
+              397.791892,
+              397.792658
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0008.png",
+          "capture_offset_s": 395.152773,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0008.png",
+              "capture_id": "capture_0008",
+              "offset_s": 395.152773,
+              "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d"
+            }
+          ],
+          "start_s": 35.0,
+          "end_s": 38.0
+        },
+        {
+          "short": "Release",
+          "title": "Release",
+          "detail": "The main agent opens the gripper and commands a 0.15 m upward retreat; fresh observations follow.",
+          "active_node": "main",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 release",
+          "messages": {
+            "main": "Open the gripper and inspect the fresh image."
+          },
+          "visual": {
+            "file": "panda-pick-phase-11.png",
+            "original_file": "panda-pick-phase-11.png",
+            "label": "Release",
+            "kind": "Recorded RGB",
+            "alt": "The main agent opens the gripper and commands a 0.15 m upward retreat; fresh observations follow.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              86,
+              87,
+              88,
+              89,
+              91,
+              92
+            ],
+            "event_time_offsets_s": [
+              402.912741,
+              414.032539,
+              414.033136,
+              414.03345,
+              420.598439,
+              433.286181
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0009.png",
+          "capture_offset_s": 406.630769,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0009.png",
+              "capture_id": "capture_0009",
+              "offset_s": 406.630769,
+              "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be"
+            },
+            {
+              "file": "panda-pick-capture_0010.png",
+              "capture_id": "capture_0010",
+              "offset_s": 411.236256,
+              "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a"
+            },
+            {
+              "file": "panda-pick-capture_0011.png",
+              "capture_id": "capture_0011",
+              "offset_s": 430.641864,
+              "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b"
+            }
+          ],
+          "start_s": 38.0,
+          "end_s": 42.0
+        },
+        {
+          "short": "Outcome",
+          "title": "Outcome observation",
+          "detail": "Return the arm home and report completion from fresh camera images.",
+          "active_node": "main",
+          "flow": [
+            "backend",
+            "main"
+          ],
+          "handoff_label": "Backend \u2192 Main agent \u00b7 outcome observation",
+          "messages": {
+            "main": "Report completion from the final camera observation."
+          },
+          "visual": {
+            "file": "panda-pick-phase-12.png",
+            "original_file": "panda-pick-phase-12.png",
+            "label": "Outcome observation",
+            "kind": "Recorded RGB",
+            "alt": "The main agent returns the arm home and reports completion from fresh camera images. The orange cube is visible inside the tray.",
+            "note": "The final camera image shows the requested object relation. Completion is agent-reported; no independent physical task verifier is available."
+          },
+          "evidence": {
+            "event_sequences": [
+              94,
+              95,
+              96,
+              97
+            ],
+            "event_time_offsets_s": [
+              440.840929,
+              480.998539,
+              481.000028,
+              488.027573
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-pick-capture_0012.png",
+          "capture_offset_s": 478.144051,
+          "camera_sequence": [
+            {
+              "file": "panda-pick-capture_0012.png",
+              "capture_id": "capture_0012",
+              "offset_s": 478.144051,
+              "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420"
+            }
+          ],
+          "start_s": 42.0,
+          "end_s": 45.0
+        }
+      ],
+      "presentation_duration_s": 45.0
+    },
+    {
+      "id": "panda-stack-cubes",
+      "label": "Panda \u00b7 Stack cubes",
+      "task": "Stack the orange cube on top of the green cube.",
+      "episode_id": "gui_20260926_121447_90cfdaad",
+      "recording_date": "2026-09-26",
+      "video_file": "panda-stack-cubes-motion.mp4",
+      "demo_file": "panda-stack-cubes-demo.mp4",
+      "poster_file": "panda-stack-capture_0001.png",
+      "motion_label": "Recorded camera observations",
+      "timing_note": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "camera_frames": [
+        {
+          "file": "panda-stack-capture_0001.png",
+          "capture_id": "capture_0001",
+          "offset_s": 0.0,
+          "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
+        },
+        {
+          "file": "panda-stack-capture_0002.png",
+          "capture_id": "capture_0002",
+          "offset_s": 140.708796,
+          "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef"
+        },
+        {
+          "file": "panda-stack-capture_0003.png",
+          "capture_id": "capture_0003",
+          "offset_s": 185.609399,
+          "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9"
+        },
+        {
+          "file": "panda-stack-capture_0004.png",
+          "capture_id": "capture_0004",
+          "offset_s": 208.163691,
+          "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198"
+        },
+        {
+          "file": "panda-stack-capture_0005.png",
+          "capture_id": "capture_0005",
+          "offset_s": 215.764478,
+          "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8"
+        },
+        {
+          "file": "panda-stack-capture_0006.png",
+          "capture_id": "capture_0006",
+          "offset_s": 229.375849,
+          "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08"
+        },
+        {
+          "file": "panda-stack-capture_0007.png",
+          "capture_id": "capture_0007",
+          "offset_s": 234.111918,
+          "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
+        },
+        {
+          "file": "panda-stack-capture_0008.png",
+          "capture_id": "capture_0008",
+          "offset_s": 340.26035,
+          "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f"
+        },
+        {
+          "file": "panda-stack-capture_0009.png",
+          "capture_id": "capture_0009",
+          "offset_s": 352.807123,
+          "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c"
+        },
+        {
+          "file": "panda-stack-capture_0010.png",
+          "capture_id": "capture_0010",
+          "offset_s": 357.407095,
+          "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c"
+        },
+        {
+          "file": "panda-stack-capture_0011.png",
+          "capture_id": "capture_0011",
+          "offset_s": 400.905748,
+          "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b"
+        }
+      ],
+      "camera_captured_span_s": 400.905748,
+      "outcome": {
+        "agent_status": "completed",
+        "agent_verified": false,
+        "physical_task_success_flag": false,
+        "display_label": "Agent-reported completion; final camera observation shown",
+        "independent_physical_success_verifier": false
+      },
+      "selection_note": "Compact accepted sequence; earlier proposal attempts and tool-contract retries omitted. All displayed tool images and camera samples come from the same execution.",
+      "grasp_source": "median",
+      "selected_candidate": "g_005",
+      "phases": [
+        {
+          "short": "Goal",
+          "title": "Language goal",
+          "detail": "The main agent asks a subagent to locate the orange cube.",
+          "active_node": "main",
+          "flow": [
+            "main",
+            "subagent"
+          ],
+          "handoff_label": "Main agent \u2192 Subagent \u00b7 language goal",
+          "messages": {
+            "main": "Stack the orange cube on top of the green cube."
+          },
+          "visual": {
+            "file": "panda-stack-phase-01.png",
+            "original_file": "panda-stack-phase-01.png",
+            "label": "Language goal",
+            "kind": "Recorded RGB",
+            "alt": "The main agent asks a subagent to locate the orange cube.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              3,
+              4
+            ],
+            "event_time_offsets_s": [
+              2.923653,
+              9.416119
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
+            }
+          ],
+          "start_s": 0,
+          "end_s": 2.0
+        },
+        {
+          "short": "Point",
+          "title": "Point to measured mask",
+          "detail": "The subagent chooses a point on the orange cube. The backend returns the measured SAM region.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 point to measured mask",
+          "messages": {
+            "subagent": "Select the orange cube in the current image."
+          },
+          "visual": {
+            "file": "panda-stack-target-focus.jpg",
+            "original_file": "panda-stack-phase-02.png",
+            "label": "Point to measured mask",
+            "kind": "Native point + mask",
+            "alt": "The subagent chooses a point on the orange cube. The backend returns the measured SAM region.",
+            "note": "Original selection cross and segmentation mask, enlarged from the recorded camera view."
+          },
+          "evidence": {
+            "event_sequences": [
+              8,
+              9,
+              11,
+              13
+            ],
+            "event_time_offsets_s": [
+              15.498578,
+              28.38489,
+              36.607842,
+              36.608235
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
+            }
+          ],
+          "selection": {
+            "normalized_uv": [
+              468,
+              635
+            ],
+            "normalized_coordinate_range": [
+              0,
+              1000
+            ],
+            "native_marker_pixel_xy": [
+              599,
+              457
+            ],
+            "depth_refinement_seed_pixel_xy": [
+              599,
+              459
+            ],
+            "observation_id": "obs_0001",
+            "point_ref": "pt_002"
+          },
+          "start_s": 2.0,
+          "end_s": 6.0
+        },
+        {
+          "short": "Grasps",
+          "title": "Grasp candidates",
+          "detail": "The backend returns three feasible geometric median grasp candidates after the vertical proposal is rejected.",
+          "active_node": "backend",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 grasp candidates",
+          "messages": {
+            "backend": "Return 3 geometric median gripper proposals."
+          },
+          "visual": {
+            "file": "panda-stack-g_005.png",
+            "original_file": "panda-stack-g_005.png",
+            "label": "Grasp candidates",
+            "kind": "Native mesh projections",
+            "alt": "The backend returns three feasible geometric median grasp candidates after the vertical proposal is rejected.",
+            "note": "3 feasible geometric median proposals. g_005 is the recorded selection. Preview occlusion is not tested. Use the thumbnails below to inspect each original proposal."
+          },
+          "evidence": {
+            "event_sequences": [
+              16,
+              20,
+              21,
+              23,
+              24
+            ],
+            "event_time_offsets_s": [
+              45.75485,
+              50.413927,
+              67.867306,
+              71.731234,
+              117.032696
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
+            }
+          ],
+          "candidates": [
+            {
+              "file": "panda-stack-g_004.png",
+              "label": "g_004",
+              "selected": false,
+              "yaw_deg": -45.0,
+              "source": "median",
+              "contact_center_xyz_m": [
+                0.6129314219951629,
+                0.0173236451111734,
+                0.10416273772716521
+              ],
+              "transit": {
+                "pre_pick_z_m": 0.3541627377271652,
+                "post_pick_z_m": 0.3541627377271652
+              }
+            },
+            {
+              "file": "panda-stack-g_005.png",
+              "label": "g_005 \u00b7 selected",
+              "selected": true,
+              "yaw_deg": 0.0,
+              "source": "median",
+              "contact_center_xyz_m": [
+                0.6129314219951629,
+                0.0173236451111734,
+                0.10416273772716521
+              ],
+              "transit": {
+                "pre_pick_z_m": 0.3541627377271652,
+                "post_pick_z_m": 0.3541627377271652
+              }
+            },
+            {
+              "file": "panda-stack-g_006.png",
+              "label": "g_006",
+              "selected": false,
+              "yaw_deg": 45.0,
+              "source": "median",
+              "contact_center_xyz_m": [
+                0.6129314219951629,
+                0.0173236451111734,
+                0.10416273772716521
+              ],
+              "transit": {
+                "pre_pick_z_m": 0.3541627377271652,
+                "post_pick_z_m": 0.3541627377271652
+              }
+            }
+          ],
+          "start_s": 6.0,
+          "end_s": 10.0
+        },
+        {
+          "short": "Inspect",
+          "title": "Inspect and choose",
+          "detail": "The subagent inspects g_005 and returns this top-down grasp, with incoming and outgoing heights 0.25 m above contact.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "main"
+          ],
+          "handoff_label": "Subagent \u2192 Main agent \u00b7 inspect and choose",
+          "messages": {
+            "subagent": "Return selected grasp: g_005."
+          },
+          "visual": {
+            "file": "panda-stack-grasp-inspection.jpg",
+            "original_file": "panda-stack-phase-04.png",
+            "label": "Inspect and choose",
+            "kind": "Native point-cloud view",
+            "alt": "The subagent inspects g_005 and returns this top-down grasp, with incoming and outgoing heights 0.25 m above contact.",
+            "note": "SIDE / TOP / CLOSING PLANE panels of g_005. Opening: 80 mm. Lower rotation examples are explanatory; no pose edit was applied."
+          },
+          "evidence": {
+            "event_sequences": [
+              26,
+              27,
+              29,
+              31,
+              33
+            ],
+            "event_time_offsets_s": [
+              125.284133,
+              129.885131,
+              134.547571,
+              138.762254,
+              138.762687
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0001.png",
+          "capture_offset_s": 0.0,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0001.png",
+              "capture_id": "capture_0001",
+              "offset_s": 0.0,
+              "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
+            }
+          ],
+          "selected_candidate": "g_005",
+          "nominal_opening_mm": 80,
+          "start_s": 10.0,
+          "end_s": 14.0
+        },
+        {
+          "short": "Approach",
+          "title": "Approach",
+          "detail": "The backend validates g_005 and starts the physical grasp primitive.",
+          "active_node": "backend",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 approach",
+          "messages": {
+            "backend": "Validate g_005; start the physical grasp."
+          },
+          "visual": {
+            "file": "panda-stack-g_005.png",
+            "original_file": "panda-stack-g_005.png",
+            "label": "Approach",
+            "kind": "Native selected pose",
+            "alt": "The backend validates g_005 and starts the physical grasp primitive.",
+            "note": "The backend validates g_005 and starts the physical grasp primitive."
+          },
+          "evidence": {
+            "event_sequences": [
+              34,
+              35,
+              36
+            ],
+            "event_time_offsets_s": [
+              138.763102,
+              138.765923,
+              138.766073
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0002.png",
+          "capture_offset_s": 140.708796,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0002.png",
+              "capture_id": "capture_0002",
+              "offset_s": 140.708796,
+              "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef"
+            }
+          ],
+          "start_s": 14.0,
+          "end_s": 17.0
+        },
+        {
+          "short": "Check",
+          "title": "Fresh pregrasp check",
+          "detail": "A subagent inspects fresh open-hand RGB and the pending pose, then returns continue without applying a nudge.",
+          "active_node": "subagent",
+          "flow": [
+            "backend",
+            "subagent"
+          ],
+          "handoff_label": "Backend \u2192 Subagent \u00b7 fresh pregrasp check",
+          "messages": {
+            "subagent": "Fresh view checked. Continue without a nudge."
+          },
+          "visual": {
+            "file": "panda-stack-phase-06.png",
+            "original_file": "panda-stack-phase-06.png",
+            "label": "Fresh pregrasp check",
+            "kind": "Native paused preview",
+            "alt": "A subagent inspects fresh open-hand RGB and the pending pose, then returns continue without applying a nudge.",
+            "note": "The subagent checks the fresh open-hand scene and returns continue. No nudge is applied."
+          },
+          "evidence": {
+            "event_sequences": [
+              37,
+              40,
+              41,
+              43,
+              44
+            ],
+            "event_time_offsets_s": [
+              193.756265,
+              193.758171,
+              202.536695,
+              202.536995,
+              202.53715
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0003.png",
+          "capture_offset_s": 185.609399,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0003.png",
+              "capture_id": "capture_0003",
+              "offset_s": 185.609399,
+              "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9"
+            }
+          ],
+          "decision": "continue",
+          "nudge_applied": false,
+          "candidates": [
+            {
+              "file": "panda-stack-phase-06.png",
+              "label": "Paused mesh",
+              "selected": true
+            },
+            {
+              "file": "panda-stack-pregrasp-wrist.png",
+              "label": "Fresh wrist RGB",
+              "selected": false
+            }
+          ],
+          "start_s": 17.0,
+          "end_s": 21.0
+        },
+        {
+          "short": "Lift",
+          "title": "Close and lift",
+          "detail": "The backend closes and lifts, then returns fresh camera observations and a succeeded command result.",
+          "active_node": "backend",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 close and lift",
+          "messages": {
+            "backend": "Close, lift, and return a fresh view."
+          },
+          "visual": {
+            "file": "panda-stack-phase-07.png",
+            "original_file": "panda-stack-phase-07.png",
+            "label": "Close and lift",
+            "kind": "Recorded RGB",
+            "alt": "The backend closes and lifts, then returns fresh camera observations and a succeeded command result.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              45,
+              46,
+              47,
+              48,
+              49
+            ],
+            "event_time_offsets_s": [
+              236.832684,
+              236.832924,
+              236.833094,
+              236.833411,
+              236.833901
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0004.png",
+          "capture_offset_s": 208.163691,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0004.png",
+              "capture_id": "capture_0004",
+              "offset_s": 208.163691,
+              "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198"
+            },
+            {
+              "file": "panda-stack-capture_0005.png",
+              "capture_id": "capture_0005",
+              "offset_s": 215.764478,
+              "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8"
+            },
+            {
+              "file": "panda-stack-capture_0006.png",
+              "capture_id": "capture_0006",
+              "offset_s": 229.375849,
+              "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08"
+            },
+            {
+              "file": "panda-stack-capture_0007.png",
+              "capture_id": "capture_0007",
+              "offset_s": 234.111918,
+              "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
+            }
+          ],
+          "start_s": 21.0,
+          "end_s": 27.0
+        },
+        {
+          "short": "Receiver",
+          "title": "Select destination",
+          "detail": "The main agent asks a subagent to locate the top of the green cube. The backend measures the selected region.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "backend"
+          ],
+          "handoff_label": "Subagent \u2192 Backend \u00b7 select destination",
+          "messages": {
+            "subagent": "Select the top of the green cube."
+          },
+          "visual": {
+            "file": "panda-stack-destination-focus.jpg",
+            "original_file": "panda-stack-phase-08.png",
+            "label": "Select destination",
+            "kind": "Native point + mask",
+            "alt": "The main agent asks a subagent to locate the top of the green cube. The backend measures the selected region.",
+            "note": "Original selection cross and segmentation mask, enlarged from the recorded camera view."
+          },
+          "evidence": {
+            "event_sequences": [
+              50,
+              54,
+              55,
+              57,
+              59,
+              60,
+              61,
+              62
+            ],
+            "event_time_offsets_s": [
+              245.748627,
+              249.926791,
+              263.322733,
+              272.022076,
+              272.022387,
+              272.02253,
+              272.32396,
+              272.32409
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0007.png",
+          "capture_offset_s": 234.111918,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0007.png",
+              "capture_id": "capture_0007",
+              "offset_s": 234.111918,
+              "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
+            }
+          ],
+          "selection": {
+            "normalized_uv": [
+              654,
+              717
+            ],
+            "normalized_coordinate_range": [
+              0,
+              1000
+            ],
+            "native_marker_pixel_xy": [
+              836,
+              516
+            ],
+            "depth_refinement_seed_pixel_xy": [
+              836,
+              516
+            ],
+            "observation_id": "obs_0007",
+            "point_ref": "pt_010"
+          },
+          "start_s": 27.0,
+          "end_s": 31.0
+        },
+        {
+          "short": "Pose",
+          "title": "Prepare placement",
+          "detail": "The subagent prepares a placement using the green cube region: median XY and observed maximum height plus 0.04 m.",
+          "active_node": "subagent",
+          "flow": [
+            "subagent",
+            "main"
+          ],
+          "handoff_label": "Subagent \u2192 Main agent \u00b7 prepare placement",
+          "messages": {
+            "subagent": "Prepare placement 40 mm above the observed top surface."
+          },
+          "visual": {
+            "file": "panda-stack-phase-09.png",
+            "original_file": "panda-stack-phase-09.png",
+            "label": "Prepare placement",
+            "kind": "Native placement preview",
+            "alt": "The subagent prepares a placement using the green cube region: median XY and observed maximum height plus 0.04 m.",
+            "note": "The accepted prepared placement, linked to its original camera projection."
+          },
+          "evidence": {
+            "event_sequences": [
+              64,
+              69,
+              70,
+              72,
+              73,
+              75,
+              77
+            ],
+            "event_time_offsets_s": [
+              285.64799,
+              291.68361,
+              294.461733,
+              301.613592,
+              314.245304,
+              321.379878,
+              321.38018
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0007.png",
+          "capture_offset_s": 234.111918,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0007.png",
+              "capture_id": "capture_0007",
+              "offset_s": 234.111918,
+              "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
+            }
+          ],
+          "placement_plan": [
+            0.49527250245213505,
+            -0.25663151405751705,
+            0.16449765205383302
+          ],
+          "start_s": 31.0,
+          "end_s": 35.0
+        },
+        {
+          "short": "Place",
+          "title": "Execute placement",
+          "detail": "The backend executes the validated placement and returns a fresh observation before release.",
+          "active_node": "backend",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 execute placement",
+          "messages": {
+            "backend": "Execute the accepted placement pose."
+          },
+          "visual": {
+            "file": "panda-stack-phase-10.png",
+            "original_file": "panda-stack-phase-10.png",
+            "label": "Execute placement",
+            "kind": "Recorded RGB",
+            "alt": "The backend executes the validated placement and returns a fresh observation before release.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              78,
+              79,
+              80,
+              81
+            ],
+            "event_time_offsets_s": [
+              321.380319,
+              342.877987,
+              342.878298,
+              342.878781
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0008.png",
+          "capture_offset_s": 340.26035,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0008.png",
+              "capture_id": "capture_0008",
+              "offset_s": 340.26035,
+              "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f"
+            }
+          ],
+          "start_s": 35.0,
+          "end_s": 38.0
+        },
+        {
+          "short": "Release",
+          "title": "Release",
+          "detail": "The main agent opens the gripper; the backend returns fresh observations after release.",
+          "active_node": "main",
+          "flow": [
+            "main",
+            "backend"
+          ],
+          "handoff_label": "Main agent \u2192 Backend \u00b7 release",
+          "messages": {
+            "main": "Open the gripper and inspect the fresh image."
+          },
+          "visual": {
+            "file": "panda-stack-phase-11.png",
+            "original_file": "panda-stack-phase-11.png",
+            "label": "Release",
+            "kind": "Recorded RGB",
+            "alt": "The main agent opens the gripper; the backend returns fresh observations after release.",
+            "note": "Original camera observation from this physical execution."
+          },
+          "evidence": {
+            "event_sequences": [
+              82,
+              83,
+              84,
+              85
+            ],
+            "event_time_offsets_s": [
+              348.944793,
+              360.062136,
+              360.062386,
+              360.062635
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0009.png",
+          "capture_offset_s": 352.807123,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0009.png",
+              "capture_id": "capture_0009",
+              "offset_s": 352.807123,
+              "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c"
+            },
+            {
+              "file": "panda-stack-capture_0010.png",
+              "capture_id": "capture_0010",
+              "offset_s": 357.407095,
+              "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c"
+            }
+          ],
+          "start_s": 38.0,
+          "end_s": 42.0
+        },
+        {
+          "short": "Outcome",
+          "title": "Outcome observation",
+          "detail": "Retreat upward by 0.15 m and report completion from fresh camera images.",
+          "active_node": "main",
+          "flow": [
+            "backend",
+            "main"
+          ],
+          "handoff_label": "Backend \u2192 Main agent \u00b7 outcome observation",
+          "messages": {
+            "main": "Report completion from the final camera observation."
+          },
+          "visual": {
+            "file": "panda-stack-phase-12.png",
+            "original_file": "panda-stack-phase-12.png",
+            "label": "Outcome observation",
+            "kind": "Recorded RGB",
+            "alt": "The main agent commands a 0.15 m upward retreat and reports completion from fresh camera images. The orange cube is visible on the green cube.",
+            "note": "The final camera image shows the requested object relation. Completion is agent-reported; no independent physical task verifier is available."
+          },
+          "evidence": {
+            "event_sequences": [
+              87,
+              88,
+              89,
+              90
+            ],
+            "event_time_offsets_s": [
+              381.294254,
+              403.755015,
+              403.755624,
+              409.751464
+            ]
+          },
+          "source_start_s": 0,
+          "source_end_s": 0,
+          "camera_file": "panda-stack-capture_0011.png",
+          "capture_offset_s": 400.905748,
+          "camera_sequence": [
+            {
+              "file": "panda-stack-capture_0011.png",
+              "capture_id": "capture_0011",
+              "offset_s": 400.905748,
+              "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b"
+            }
+          ],
+          "start_s": 42.0,
+          "end_s": 45.0
+        }
+      ],
+      "presentation_duration_s": 45.0
+    }
+  ]
+}

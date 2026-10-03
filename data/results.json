@@ -1,0 +1,115 @@
+{
+  "metric": "full_task_success_percent",
+  "tasks": 40,
+  "difficulty_tasks": {
+    "simple": 21,
+    "moderate": 13,
+    "complex": 6
+  },
+  "methods": [
+    {
+      "method": "RobotUse",
+      "overall": 45.0,
+      "simple": 53.97,
+      "moderate": 35.9,
+      "complex": 33.33,
+      "episodes": 120,
+      "successes": 54,
+      "successes_by_difficulty": {
+        "simple": 34,
+        "moderate": 14,
+        "complex": 6
+      }
+    },
+    {
+      "method": "CaP-X",
+      "overall": 38.33,
+      "simple": 42.86,
+      "moderate": 35.9,
+      "complex": 27.78,
+      "episodes": 120,
+      "successes": 46,
+      "successes_by_difficulty": {
+        "simple": 27,
+        "moderate": 14,
+        "complex": 5
+      }
+    },
+    {
+      "method": "Open Robot Skill",
+      "overall": 20.0,
+      "simple": 31.75,
+      "moderate": 10.26,
+      "complex": 0,
+      "episodes": 120,
+      "successes": 24,
+      "successes_by_difficulty": {
+        "simple": 20,
+        "moderate": 4,
+        "complex": 0
+      }
+    },
+    {
+      "method": "mini-SWE",
+      "overall": 20.83,
+      "simple": 25.4,
+      "moderate": 17.95,
+      "complex": 11.11,
+      "episodes": 120,
+      "successes": 25,
+      "successes_by_difficulty": {
+        "simple": 16,
+        "moderate": 7,
+        "complex": 2
+      }
+    },
+    {
+      "method": "\u03c0\u2080.\u2085",
+      "overall": 30.75,
+      "simple": 30.48,
+      "moderate": 33.08,
+      "complex": 26.67,
+      "episodes": 400,
+      "successes": 123,
+      "successes_by_difficulty": {
+        "simple": 64,
+        "moderate": 43,
+        "complex": 16
+      }
+    },
+    {
+      "method": "Cosmos 3",
+      "overall": 42.25,
+      "simple": 44.76,
+      "moderate": 45.38,
+      "complex": 26.67,
+      "episodes": 400,
+      "successes": 169,
+      "successes_by_difficulty": {
+        "simple": 94,
+        "moderate": 59,
+        "complex": 16
+      }
+    }
+  ],
+  "continual_success_counts": [
+    19,
+    20,
+    22,
+    22
+  ],
+  "continual_episodes_per_revision": 40,
+  "sources": [
+    "Completed 40-task campaign aggregates, report 142",
+    "Continual-harness revision aggregates, report 154",
+    "Native episode audits for pi0.5 and mini-SWE",
+    "Author-supplied per-task Cosmos 3 report"
+  ],
+  "source_notes": {
+    "pi05": "Recomputed from 400 native episode results.",
+    "mini_SWE": "Recomputed from 120 native verifiers.",
+    "Cosmos_3": "User-supplied per-task report; raw server logs not independently inspected.",
+    "language_agents": "Completed selected-episode campaign aggregates; comparison conditions documented in this file. Original campaign reports are archived by the authors."
+  },
+  "conditions": "Method-specific execution limits, rerun selection, and episode counts differ. Continual revisions include implementation and execution changes alongside playbook updates."
+}
