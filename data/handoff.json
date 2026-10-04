@@ -911,87 +911,73 @@
       "label": "Panda \u00b7 Pick & place",
       "task": "Pick up the orange cube and place it in the tray.",
       "episode_id": "gui_20260926_112917_91cce9d7",
-      "recording_date": "2026-09-26",
       "video_file": "panda-pick-place-motion.mp4",
       "demo_file": "panda-pick-place-demo.mp4",
       "poster_file": "panda-pick-capture_0001.png",
       "motion_label": "Recorded camera observations",
-      "timing_note": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "timing_note": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene.",
       "camera_frames": [
         {
           "file": "panda-pick-capture_0001.png",
           "capture_id": "capture_0001",
-          "offset_s": 0.0,
           "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
         },
         {
           "file": "panda-pick-capture_0002.png",
           "capture_id": "capture_0002",
-          "offset_s": 170.653879,
           "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1"
         },
         {
           "file": "panda-pick-capture_0003.png",
           "capture_id": "capture_0003",
-          "offset_s": 218.758902,
           "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7"
         },
         {
           "file": "panda-pick-capture_0004.png",
           "capture_id": "capture_0004",
-          "offset_s": 250.377646,
           "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378"
         },
         {
           "file": "panda-pick-capture_0005.png",
           "capture_id": "capture_0005",
-          "offset_s": 257.582338,
           "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa"
         },
         {
           "file": "panda-pick-capture_0006.png",
           "capture_id": "capture_0006",
-          "offset_s": 276.330213,
           "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b"
         },
         {
           "file": "panda-pick-capture_0007.png",
           "capture_id": "capture_0007",
-          "offset_s": 280.934119,
           "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
         },
         {
           "file": "panda-pick-capture_0008.png",
           "capture_id": "capture_0008",
-          "offset_s": 395.152773,
           "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d"
         },
         {
           "file": "panda-pick-capture_0009.png",
           "capture_id": "capture_0009",
-          "offset_s": 406.630769,
           "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be"
         },
         {
           "file": "panda-pick-capture_0010.png",
           "capture_id": "capture_0010",
-          "offset_s": 411.236256,
           "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a"
         },
         {
           "file": "panda-pick-capture_0011.png",
           "capture_id": "capture_0011",
-          "offset_s": 430.641864,
           "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b"
         },
         {
           "file": "panda-pick-capture_0012.png",
           "capture_id": "capture_0012",
-          "offset_s": 478.144051,
           "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420"
         }
       ],
-      "camera_captured_span_s": 478.144051,
       "outcome": {
         "agent_status": "completed",
         "agent_verified": false,
@@ -1030,21 +1016,15 @@
             "event_sequences": [
               3,
               4
-            ],
-            "event_time_offsets_s": [
-              3.302034,
-              10.573555
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
             }
           ],
@@ -1095,23 +1075,15 @@
               9,
               11,
               13
-            ],
-            "event_time_offsets_s": [
-              14.975057,
-              28.002992,
-              33.71645,
-              33.716918
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
             }
           ],
@@ -1192,26 +1164,15 @@
               24,
               26,
               27
-            ],
-            "event_time_offsets_s": [
-              38.848455,
-              43.95401,
-              67.221842,
-              74.350532,
-              99.259406,
-              103.795772,
-              144.238841
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
             }
           ],
@@ -1298,25 +1259,15 @@
               33,
               35,
               37
-            ],
-            "event_time_offsets_s": [
-              151.39026,
-              155.779187,
-              160.703115,
-              164.815728,
-              168.696438,
-              168.696946
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
             }
           ],
@@ -1375,22 +1326,15 @@
               38,
               39,
               40
-            ],
-            "event_time_offsets_s": [
-              168.697394,
-              168.700179,
-              168.700363
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0002.png",
-          "capture_offset_s": 170.653879,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0002.png",
               "capture_id": "capture_0002",
-              "offset_s": 170.653879,
               "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1"
             }
           ],
@@ -1449,24 +1393,15 @@
               45,
               47,
               48
-            ],
-            "event_time_offsets_s": [
-              226.885176,
-              226.887111,
-              239.296193,
-              239.296479,
-              239.296616
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0003.png",
-          "capture_offset_s": 218.758902,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0003.png",
               "capture_id": "capture_0003",
-              "offset_s": 218.758902,
               "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7"
             }
           ],
@@ -1546,42 +1481,30 @@
               51,
               52,
               53
-            ],
-            "event_time_offsets_s": [
-              283.762674,
-              283.762902,
-              283.763069,
-              283.763504,
-              283.764092
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0004.png",
-          "capture_offset_s": 250.377646,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0004.png",
               "capture_id": "capture_0004",
-              "offset_s": 250.377646,
               "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378"
             },
             {
               "file": "panda-pick-capture_0005.png",
               "capture_id": "capture_0005",
-              "offset_s": 257.582338,
               "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa"
             },
             {
               "file": "panda-pick-capture_0006.png",
               "capture_id": "capture_0006",
-              "offset_s": 276.330213,
               "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b"
             },
             {
               "file": "panda-pick-capture_0007.png",
               "capture_id": "capture_0007",
-              "offset_s": 280.934119,
               "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
             }
           ],
@@ -1643,27 +1566,15 @@
               64,
               65,
               66
-            ],
-            "event_time_offsets_s": [
-              289.690671,
-              294.430892,
-              303.951231,
-              312.139446,
-              312.139722,
-              312.139855,
-              312.391641,
-              312.391782
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0007.png",
-          "capture_offset_s": 280.934119,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0007.png",
               "capture_id": "capture_0007",
-              "offset_s": 280.934119,
               "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
             }
           ],
@@ -1744,26 +1655,15 @@
               77,
               79,
               81
-            ],
-            "event_time_offsets_s": [
-              322.679777,
-              327.178157,
-              330.045784,
-              336.78043,
-              350.102264,
-              356.197708,
-              356.198266
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0007.png",
-          "capture_offset_s": 280.934119,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0007.png",
               "capture_id": "capture_0007",
-              "offset_s": 280.934119,
               "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
             }
           ],
@@ -1826,23 +1726,15 @@
               83,
               84,
               85
-            ],
-            "event_time_offsets_s": [
-              356.198453,
-              397.791434,
-              397.791892,
-              397.792658
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0008.png",
-          "capture_offset_s": 395.152773,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0008.png",
               "capture_id": "capture_0008",
-              "offset_s": 395.152773,
               "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d"
             }
           ],
@@ -1902,37 +1794,25 @@
               89,
               91,
               92
-            ],
-            "event_time_offsets_s": [
-              402.912741,
-              414.032539,
-              414.033136,
-              414.03345,
-              420.598439,
-              433.286181
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0009.png",
-          "capture_offset_s": 406.630769,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0009.png",
               "capture_id": "capture_0009",
-              "offset_s": 406.630769,
               "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be"
             },
             {
               "file": "panda-pick-capture_0010.png",
               "capture_id": "capture_0010",
-              "offset_s": 411.236256,
               "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a"
             },
             {
               "file": "panda-pick-capture_0011.png",
               "capture_id": "capture_0011",
-              "offset_s": 430.641864,
               "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b"
             }
           ],
@@ -1990,23 +1870,15 @@
               95,
               96,
               97
-            ],
-            "event_time_offsets_s": [
-              440.840929,
-              480.998539,
-              481.000028,
-              488.027573
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-pick-capture_0012.png",
-          "capture_offset_s": 478.144051,
           "camera_sequence": [
             {
               "file": "panda-pick-capture_0012.png",
               "capture_id": "capture_0012",
-              "offset_s": 478.144051,
               "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420"
             }
           ],
@@ -2044,81 +1916,68 @@
       "label": "Panda \u00b7 Stack cubes",
       "task": "Stack the orange cube on top of the green cube.",
       "episode_id": "gui_20260926_121447_90cfdaad",
-      "recording_date": "2026-09-26",
       "video_file": "panda-stack-cubes-motion.mp4",
       "demo_file": "panda-stack-cubes-demo.mp4",
       "poster_file": "panda-stack-capture_0001.png",
       "motion_label": "Recorded camera observations",
-      "timing_note": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "timing_note": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene.",
       "camera_frames": [
         {
           "file": "panda-stack-capture_0001.png",
           "capture_id": "capture_0001",
-          "offset_s": 0.0,
           "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
         },
         {
           "file": "panda-stack-capture_0002.png",
           "capture_id": "capture_0002",
-          "offset_s": 140.708796,
           "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef"
         },
         {
           "file": "panda-stack-capture_0003.png",
           "capture_id": "capture_0003",
-          "offset_s": 185.609399,
           "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9"
         },
         {
           "file": "panda-stack-capture_0004.png",
           "capture_id": "capture_0004",
-          "offset_s": 208.163691,
           "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198"
         },
         {
           "file": "panda-stack-capture_0005.png",
           "capture_id": "capture_0005",
-          "offset_s": 215.764478,
           "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8"
         },
         {
           "file": "panda-stack-capture_0006.png",
           "capture_id": "capture_0006",
-          "offset_s": 229.375849,
           "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08"
         },
         {
           "file": "panda-stack-capture_0007.png",
           "capture_id": "capture_0007",
-          "offset_s": 234.111918,
           "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
         },
         {
           "file": "panda-stack-capture_0008.png",
           "capture_id": "capture_0008",
-          "offset_s": 340.26035,
           "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f"
         },
         {
           "file": "panda-stack-capture_0009.png",
           "capture_id": "capture_0009",
-          "offset_s": 352.807123,
           "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c"
         },
         {
           "file": "panda-stack-capture_0010.png",
           "capture_id": "capture_0010",
-          "offset_s": 357.407095,
           "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c"
         },
         {
           "file": "panda-stack-capture_0011.png",
           "capture_id": "capture_0011",
-          "offset_s": 400.905748,
           "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b"
         }
       ],
-      "camera_captured_span_s": 400.905748,
       "outcome": {
         "agent_status": "completed",
         "agent_verified": false,
@@ -2157,21 +2016,15 @@
             "event_sequences": [
               3,
               4
-            ],
-            "event_time_offsets_s": [
-              2.923653,
-              9.416119
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
             }
           ],
@@ -2222,23 +2075,15 @@
               9,
               11,
               13
-            ],
-            "event_time_offsets_s": [
-              15.498578,
-              28.38489,
-              36.607842,
-              36.608235
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
             }
           ],
@@ -2317,24 +2162,15 @@
               21,
               23,
               24
-            ],
-            "event_time_offsets_s": [
-              45.75485,
-              50.413927,
-              67.867306,
-              71.731234,
-              117.032696
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
             }
           ],
@@ -2436,24 +2272,15 @@
               29,
               31,
               33
-            ],
-            "event_time_offsets_s": [
-              125.284133,
-              129.885131,
-              134.547571,
-              138.762254,
-              138.762687
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0001.png",
-          "capture_offset_s": 0.0,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0001.png",
               "capture_id": "capture_0001",
-              "offset_s": 0.0,
               "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
             }
           ],
@@ -2512,22 +2339,15 @@
               34,
               35,
               36
-            ],
-            "event_time_offsets_s": [
-              138.763102,
-              138.765923,
-              138.766073
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0002.png",
-          "capture_offset_s": 140.708796,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0002.png",
               "capture_id": "capture_0002",
-              "offset_s": 140.708796,
               "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef"
             }
           ],
@@ -2586,24 +2406,15 @@
               41,
               43,
               44
-            ],
-            "event_time_offsets_s": [
-              193.756265,
-              193.758171,
-              202.536695,
-              202.536995,
-              202.53715
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0003.png",
-          "capture_offset_s": 185.609399,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0003.png",
               "capture_id": "capture_0003",
-              "offset_s": 185.609399,
               "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9"
             }
           ],
@@ -2683,42 +2494,30 @@
               47,
               48,
               49
-            ],
-            "event_time_offsets_s": [
-              236.832684,
-              236.832924,
-              236.833094,
-              236.833411,
-              236.833901
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0004.png",
-          "capture_offset_s": 208.163691,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0004.png",
               "capture_id": "capture_0004",
-              "offset_s": 208.163691,
               "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198"
             },
             {
               "file": "panda-stack-capture_0005.png",
               "capture_id": "capture_0005",
-              "offset_s": 215.764478,
               "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8"
             },
             {
               "file": "panda-stack-capture_0006.png",
               "capture_id": "capture_0006",
-              "offset_s": 229.375849,
               "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08"
             },
             {
               "file": "panda-stack-capture_0007.png",
               "capture_id": "capture_0007",
-              "offset_s": 234.111918,
               "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
             }
           ],
@@ -2780,27 +2579,15 @@
               60,
               61,
               62
-            ],
-            "event_time_offsets_s": [
-              245.748627,
-              249.926791,
-              263.322733,
-              272.022076,
-              272.022387,
-              272.02253,
-              272.32396,
-              272.32409
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0007.png",
-          "capture_offset_s": 234.111918,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0007.png",
               "capture_id": "capture_0007",
-              "offset_s": 234.111918,
               "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
             }
           ],
@@ -2881,26 +2668,15 @@
               73,
               75,
               77
-            ],
-            "event_time_offsets_s": [
-              285.64799,
-              291.68361,
-              294.461733,
-              301.613592,
-              314.245304,
-              321.379878,
-              321.38018
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0007.png",
-          "capture_offset_s": 234.111918,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0007.png",
               "capture_id": "capture_0007",
-              "offset_s": 234.111918,
               "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
             }
           ],
@@ -2963,23 +2739,15 @@
               79,
               80,
               81
-            ],
-            "event_time_offsets_s": [
-              321.380319,
-              342.877987,
-              342.878298,
-              342.878781
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0008.png",
-          "capture_offset_s": 340.26035,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0008.png",
               "capture_id": "capture_0008",
-              "offset_s": 340.26035,
               "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f"
             }
           ],
@@ -3037,29 +2805,20 @@
               83,
               84,
               85
-            ],
-            "event_time_offsets_s": [
-              348.944793,
-              360.062136,
-              360.062386,
-              360.062635
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0009.png",
-          "capture_offset_s": 352.807123,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0009.png",
               "capture_id": "capture_0009",
-              "offset_s": 352.807123,
               "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c"
             },
             {
               "file": "panda-stack-capture_0010.png",
               "capture_id": "capture_0010",
-              "offset_s": 357.407095,
               "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c"
             }
           ],
@@ -3117,23 +2876,15 @@
               88,
               89,
               90
-            ],
-            "event_time_offsets_s": [
-              381.294254,
-              403.755015,
-              403.755624,
-              409.751464
             ]
           },
           "source_start_s": 0,
           "source_end_s": 0,
           "camera_file": "panda-stack-capture_0011.png",
-          "capture_offset_s": 400.905748,
           "camera_sequence": [
             {
               "file": "panda-stack-capture_0011.png",
               "capture_id": "capture_0011",
-              "offset_s": 400.905748,
               "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b"
             }
           ],

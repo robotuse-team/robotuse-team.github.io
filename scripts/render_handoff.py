@@ -91,7 +91,9 @@ def panel(replay,phase,index,count,fonts,visual):
             draw.text((box[0]+17,box[1]+72+25*i),line,font=body_font,fill=INK)
     arrow(draw,connection(phase['flow']))
     draw.text((44,1029),f'{index+1:02d} / {count:02d} · {phase["title"]}',font=fonts['caption_bold'],fill=BLUE)
-    draw.text((44,1064),'Condensed recorded instructions + native visual evidence · Reading pauses added',font=fonts['footer'],fill=MUTED)
+    footer='Condensed recorded instructions + native visual evidence'
+    if not replay.get('camera_frames'):footer+=' · Reading pauses added'
+    draw.text((44,1064),footer,font=fonts['footer'],fill=MUTED)
     return canvas
 
 def read_exact(stream,length):
@@ -146,7 +148,7 @@ def main():
                     draw=ImageDraw.Draw(canvas);draw.ellipse((x-6,y-6,x+6,y+6),fill=BLUE)
                     if cameras:
                         draw.rectangle((VIDEO_BOX[0]+1,VIDEO_BOX[3]-34,VIDEO_BOX[2]-1,VIDEO_BOX[3]-1),fill='white')
-                        draw.text((VIDEO_BOX[0]+14,VIDEO_BOX[3]-28),f'Recorded camera observation · capture +{camera_sequence[camera_index]["offset_s"]:.1f} s',font=fonts['small'],fill=MUTED)
+                        draw.text((VIDEO_BOX[0]+14,VIDEO_BOX[3]-28),'Recorded camera observation',font=fonts['small'],fill=MUTED)
                     motion_encoder.stdin.write(source_frame.tobytes());composite_encoder.stdin.write(canvas.tobytes());output_count+=1
                 if index==1:canvas.save(poster,quality=92)
         finally:composite_encoder.stdin.close();motion_encoder.stdin.close()
@@ -154,6 +156,7 @@ def main():
         manifest_path=root/'data/media.json';manifest=json.loads(manifest_path.read_text());outputs=[demo,motion,poster];names={p.name for p in outputs};manifest['files']=[x for x in manifest['files'] if x['file'] not in names]
         for path in outputs:
             entry={'file':path.name,'kind':'visual_handoff_demo' if path==demo else 'execution_with_decision_holds' if path==motion else 'poster','bytes':path.stat().st_size,'sha256':digest(path),'source_timeline':'data/handoff.json','source_timeline_sha256':digest(timeline_path),'case_id':replay['id'],'representation':replay['timing_note']}
+            if replay.get('camera_frames') and path==motion:entry['representation']='Recorded camera observations in capture order. Discrete camera stills with original images preserved.'
             if path.suffix=='.mp4':entry.update(width=SIZE[0] if path==demo else width,height=SIZE[1] if path==demo else height,fps=args.fps,duration_s=output_count/args.fps)
             manifest['files'].append(entry)
         manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')

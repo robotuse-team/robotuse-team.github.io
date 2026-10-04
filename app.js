@@ -51,14 +51,9 @@ function renderPhase() {
    button.addEventListener('click',()=>{setVisual({...candidate,alt:candidate.label});});gallery.append(button);
   });
  }
- document.querySelector('#replay-time').textContent = `${video.currentTime.toFixed(1)} s`;
+ document.querySelector('#replay-time').textContent = replay.camera_frames ? '' : `${video.currentTime.toFixed(1)} s`;
  const camera = replay.camera_frames;
- if (camera) {
-  const sequence=phase.camera_sequence || [];
-  const progress=(video.currentTime-phase.start_s)/(phase.end_s-phase.start_s);
-  const observation=sequence[Math.min(Math.floor(Math.max(0,progress)*sequence.length),sequence.length-1)];
-  document.querySelector('#capture-label').textContent = observation ? `Camera capture ${observation.capture_id} · +${observation.offset_s.toFixed(1)} s in the recorded run` : '';
- } else document.querySelector('#capture-label').textContent='Original arm motion with pauses for reading.';
+ document.querySelector('#capture-label').textContent = camera ? 'Recorded camera observations.' : 'Original arm motion with pauses for reading.';
 }
 function renderPlayback() {toggle.textContent=video.paused?(video.ended?'Replay demo':'Play demo'):'Pause demo';toggle.setAttribute('aria-pressed',String(!video.paused));}
 function animate() {renderPhase();if(!video.paused)animationFrame=requestAnimationFrame(animate);}

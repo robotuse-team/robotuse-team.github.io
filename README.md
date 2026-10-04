@@ -27,14 +27,14 @@ Three executions are included:
   cross/mask, three Contact-GraspNet mesh previews, selected 44 mm opening, fresh
   pregrasp inspection and two recorded placement translations. The native task
   verifier reports success. The release request ends with the episode.
-- Physical Panda pick/place, September 26: geometric mean proposals, selected
+- Physical Panda pick/place: geometric mean proposals, selected
   `g_009`, pregrasp check and prepared tray placement.
-- Physical Panda cube stacking, September 26: geometric median proposals,
+- Physical Panda cube stacking: geometric median proposals,
   selected `g_005`, pregrasp check and prepared placement on the green cube.
 
-Real replays use timestamped camera observations, with reading intervals. They
-are sampled stills. Completion is agent-reported; final images show the requested
-object relations. An independent physical task-success verifier is unavailable.
+Real replays use sampled camera observations. Completion is agent-reported;
+final images show the requested object relations. An independent physical
+task-success verifier is unavailable.
 One physical pick/place segment misses its arrival tolerance before a later
 segment reaches the target; command completion is distinct from task success.
 

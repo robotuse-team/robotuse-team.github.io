@@ -4,79 +4,64 @@
   "files": [
     {
       "file": "panda-pick-place.mp4",
-      "bytes": 1243371,
-      "sha256": "e86b4cec56509e0875ea25bd2d1d705fd0b7273f35a1a16fae080c02c68be75b",
+      "bytes": 1238349,
+      "sha256": "6c5a26b86fdbc87d6fd165b18f1d3d3598a7ecdcf64bc20c5f22c0462881d912",
       "kind": "physical_robot_observation_timelapse",
       "task": "Pick & Place",
       "episode_id": "gui_20260926_112917_91cce9d7",
-      "source_date": "2026-09-26",
       "capture_count": 12,
-      "captured_span_s": 478.144,
-      "representation": "All right-side camera observations in capture order. Each sample held 1 second; final sample held 2 seconds. Discrete observations, no motion interpolation. Header and footer are outside the original 1280x720 camera pixels.",
-      "playback_speed": "One second per observation, not real-time or a uniform motion speed.",
+      "representation": "All right-side camera observations in capture order. Discrete observations, no motion interpolation. Header and footer are outside the original 1280x720 camera pixels.",
       "outcome": "Agent reported completed; final camera observation visually confirms the requested object relation. No independent physical success flag.",
       "outcome_detail": "Orange cube visible inside the tray after arm return.",
       "privacy_review": "All exported right-side frames visually inspected. No people or readable private text observed.",
       "source_frame_hashes": [
         {
           "capture": "capture_0001",
-          "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c",
-          "elapsed_s": 0.0
+          "sha256": "fcd6d2f66c565fa6d25725b22fe10b9aeaa233b3bd8245cfedeb9d03a2b6b54c"
         },
         {
           "capture": "capture_0002",
-          "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1",
-          "elapsed_s": 170.654
+          "sha256": "75d024df95379eacacd40f17f6010d804db96aa4a9b26577cefaacf3de9be3e1"
         },
         {
           "capture": "capture_0003",
-          "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7",
-          "elapsed_s": 218.759
+          "sha256": "fe4c7b235036bb6c79297e8d1e67af511e92c4d43896dde810ad39d42672a1c7"
         },
         {
           "capture": "capture_0004",
-          "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378",
-          "elapsed_s": 250.378
+          "sha256": "358320f773e45706d524860d475478d01cdff2fbaaca4eb5cec0fe6454322378"
         },
         {
           "capture": "capture_0005",
-          "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa",
-          "elapsed_s": 257.582
+          "sha256": "db83059a3eaad85c9cc77a3a5592cba4b68728198b42feb3533edc45e0f581fa"
         },
         {
           "capture": "capture_0006",
-          "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b",
-          "elapsed_s": 276.33
+          "sha256": "500baa65ec5c97380b9eb49ad1a68972c617d7efdf56ae76c19b985ecf38f05b"
         },
         {
           "capture": "capture_0007",
-          "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5",
-          "elapsed_s": 280.934
+          "sha256": "a50401b908fcc3a8eeeef311ce2cbf7dd2a9e946b1bcfc59285bc0c505af1da5"
         },
         {
           "capture": "capture_0008",
-          "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d",
-          "elapsed_s": 395.153
+          "sha256": "b7a4c7898e7970bbb1108d25eae40ffb9d21078a05ae21ee47b06e3a64aaa49d"
         },
         {
           "capture": "capture_0009",
-          "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be",
-          "elapsed_s": 406.631
+          "sha256": "6c7f01ca951fea2acdb79c251243effc442970bbd5327ca433c13d86a47607be"
         },
         {
           "capture": "capture_0010",
-          "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a",
-          "elapsed_s": 411.236
+          "sha256": "293343b51d0ffc331939d44ffdbcb740c1c065a122cdc7e832af386c9aeba82a"
         },
         {
           "capture": "capture_0011",
-          "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b",
-          "elapsed_s": 430.642
+          "sha256": "8bbad2754659f90265425e79c5fc3405f3b6984215641acb9c907d5f8c28268b"
         },
         {
           "capture": "capture_0012",
-          "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420",
-          "elapsed_s": 478.144
+          "sha256": "c948a11be7daff7670db518fb722c0d9fd3c8f4e1d522e3498395273daed0420"
         }
       ],
       "duration_s": 13.0,
@@ -96,74 +81,60 @@
     },
     {
       "file": "panda-stack-cubes.mp4",
-      "bytes": 1180771,
-      "sha256": "847cf64fc5e64f8921196d3f03e550ebb123b1b0f3d051398c437e766cd7e552",
+      "bytes": 1176341,
+      "sha256": "7db957d76360d36e2324c7723846a98b4c7082c1b854c5290d7492db69476cef",
       "kind": "physical_robot_observation_timelapse",
       "task": "Cube Stacking",
       "episode_id": "gui_20260926_121447_90cfdaad",
-      "source_date": "2026-09-26",
       "capture_count": 11,
-      "captured_span_s": 400.906,
-      "representation": "All right-side camera observations in capture order. Each sample held 1 second; final sample held 2 seconds. Discrete observations, no motion interpolation. Header and footer are outside the original 1280x720 camera pixels.",
-      "playback_speed": "One second per observation, not real-time or a uniform motion speed.",
+      "representation": "All right-side camera observations in capture order. Discrete observations, no motion interpolation. Header and footer are outside the original 1280x720 camera pixels.",
       "outcome": "Agent reported completed; final camera observation visually confirms the requested object relation. No independent physical success flag.",
       "outcome_detail": "Orange cube visible resting on the green cube after gripper release and arm retraction.",
       "privacy_review": "All exported right-side frames visually inspected. No people or readable private text observed.",
       "source_frame_hashes": [
         {
           "capture": "capture_0001",
-          "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc",
-          "elapsed_s": 0.0
+          "sha256": "f69fbaa02c8c6626a0a751ac1bf7909e7e37117b9d61bd98307ec616137e74dc"
         },
         {
           "capture": "capture_0002",
-          "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef",
-          "elapsed_s": 140.709
+          "sha256": "2e11cfbdf49d50ab1ab80bffc16d5158d7244451a617a6c1b5d8f4ef54fcfbef"
         },
         {
           "capture": "capture_0003",
-          "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9",
-          "elapsed_s": 185.609
+          "sha256": "fc5d3651eced39a4684a9bb9895cb8202d07995d2890822836092804407dc1b9"
         },
         {
           "capture": "capture_0004",
-          "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198",
-          "elapsed_s": 208.164
+          "sha256": "39b16c67acd7ec6fa36c37f7f970aad0e441648e0e1f2d81cdfa5144113b1198"
         },
         {
           "capture": "capture_0005",
-          "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8",
-          "elapsed_s": 215.764
+          "sha256": "17735454f57e7d022020f67ffda3acb24dca82f736726d6134dad757100beef8"
         },
         {
           "capture": "capture_0006",
-          "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08",
-          "elapsed_s": 229.376
+          "sha256": "219d5731a7151f46b50c02a0d4717a56b003c3be1bf99028a09a14a907f67a08"
         },
         {
           "capture": "capture_0007",
-          "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753",
-          "elapsed_s": 234.112
+          "sha256": "d1dc885da448439c755d66e01ed5c4c882c9c2020d55ce1641e4131b47f4b753"
         },
         {
           "capture": "capture_0008",
-          "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f",
-          "elapsed_s": 340.26
+          "sha256": "7a78f730b0f7921bf49df2aed80ba78621874ffa836027b1a38029eac9877f5f"
         },
         {
           "capture": "capture_0009",
-          "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c",
-          "elapsed_s": 352.807
+          "sha256": "ec515503ec45dca99195bc2c96f55c4b9ea754db58889cbb8a88f8c00b4f7a6c"
         },
         {
           "capture": "capture_0010",
-          "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c",
-          "elapsed_s": 357.407
+          "sha256": "be4b26690ee0c1af4689967679a89bdd963485a58a18e211d51dfb4a6a4e719c"
         },
         {
           "capture": "capture_0011",
-          "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b",
-          "elapsed_s": 400.906
+          "sha256": "6a4363cdea582dab28680a8aba89da4ba2372ea1dcdc6cde54a17e77c2c9b66b"
         }
       ],
       "duration_s": 12.0,
@@ -1221,7 +1192,7 @@
       "bytes": 2435823,
       "sha256": "02d5aac4d65b7e1cfdcc8d347e0ad25fa4a8bfc0e1b2e6d0a0a495797e995efa",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "alin-bowl",
       "representation": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked.",
       "width": 1920,
@@ -1235,7 +1206,7 @@
       "bytes": 553712,
       "sha256": "5145769d9c23aaad46a20f82b7d1ae3d62bbe696982e293c48214a13d427119e",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "alin-bowl",
       "representation": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked.",
       "width": 640,
@@ -1249,19 +1220,19 @@
       "bytes": 315974,
       "sha256": "f0563ae3eafb2c1e419bc8b689f200c41d132ca97235f951e3f4fa6f9df1a434",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "alin-bowl",
       "representation": "Original motion and native tool images from the same execution. Reading pauses are added; model and planning waits are compressed. The point views are enlarged crops with the original images linked."
     },
     {
       "file": "panda-pick-place-demo.mp4",
       "kind": "visual_handoff_demo",
-      "bytes": 2695709,
-      "sha256": "3b79f0ff34e20db9a69713341794a93b4b58bbbfd717eb90d44ac6bead23589c",
+      "bytes": 2680807,
+      "sha256": "d72d3bb061b0a759f77547901fde78f736e601c410d688b8307d8bbc5914ed5e",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-pick-place",
-      "representation": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "representation": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene.",
       "width": 1920,
       "height": 1080,
       "fps": 18,
@@ -1273,9 +1244,9 @@
       "bytes": 2042486,
       "sha256": "e2c90d69047ae1b07d1191292de2780d071ce0288e50f1018c19b8386e2cc291",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-pick-place",
-      "representation": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "representation": "Recorded camera observations in capture order. Discrete camera stills with original images preserved.",
       "width": 1280,
       "height": 720,
       "fps": 18,
@@ -1284,22 +1255,22 @@
     {
       "file": "panda-pick-place-demo.jpg",
       "kind": "poster",
-      "bytes": 300597,
-      "sha256": "3572581916c37afed25a01d07ae6b8af1b959de3b168c988a9f188ccdd467ee3",
+      "bytes": 297222,
+      "sha256": "552a9774255a4b103816da1e5e0a411e5278b6a7c2155c7153b3c669a6e7489f",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-pick-place",
-      "representation": "12 timestamped camera observations over 478.1 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed."
+      "representation": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene."
     },
     {
       "file": "panda-stack-cubes-demo.mp4",
       "kind": "visual_handoff_demo",
-      "bytes": 2697272,
-      "sha256": "5a83dbb8e2d03a20c42f224e5fe8fe980c3dfb47a60544c8e1300bd066868815",
+      "bytes": 2683358,
+      "sha256": "1be24ec6ddf2ebeea49666227a75c7f6277caed2e2fbcc803c632cfe390d84de",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-stack-cubes",
-      "representation": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "representation": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene.",
       "width": 1920,
       "height": 1080,
       "fps": 18,
@@ -1311,9 +1282,9 @@
       "bytes": 2068206,
       "sha256": "26ecb3a627afbd5d268e7a8befc50ba577c943b31c30018f3357f85de66b3ce7",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-stack-cubes",
-      "representation": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed.",
+      "representation": "Recorded camera observations in capture order. Discrete camera stills with original images preserved.",
       "width": 1280,
       "height": 720,
       "fps": 18,
@@ -1322,12 +1293,12 @@
     {
       "file": "panda-stack-cubes-demo.jpg",
       "kind": "poster",
-      "bytes": 306201,
-      "sha256": "1a874ee9c31d6e29d6dfa0fc9d5b40b30e394342b60903aec4783a629be5ccd2",
+      "bytes": 302985,
+      "sha256": "8ab9522c4a590f7d47b8691ea419287aadb4a228675cffd570d9fcd76003ebd4",
       "source_timeline": "data/handoff.json",
-      "source_timeline_sha256": "0f9352c35b853c25ef6b021907ded3b93e144e226cbb2cb09b87bbdddd47e700",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-stack-cubes",
-      "representation": "11 timestamped camera observations over 400.9 s, paired with original tool images. This replay uses camera stills with reading intervals; model and planning waits are compressed."
+      "representation": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene."
     }
   ],
   "representation_note": "Native point/mask overlays, actual gripper mesh previews and measured pose-editor panels. Crops retain original pixels and link full original images. No reconstructed gripper geometry."
