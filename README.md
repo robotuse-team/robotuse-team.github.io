@@ -14,6 +14,7 @@ python3 -m http.server 8323 --bind 127.0.0.1
 
 The opening replay follows **language → point → gripper → inspection → execution**.
 Main agent, Subagent and Backend remain visible beside the recorded execution.
+LANGUAGE, VISUAL and EXECUTION labels emphasize the Main agent's instructions, the Subagent's point and pose choices, and the Backend's motion planning and control.
 Each replay starts with a sent instruction. The role boxes keep that instruction
 visible through the local visual choice, the subagent's report and backend output.
 Short captions condense recorded requests and reports; a collapsed disclosure

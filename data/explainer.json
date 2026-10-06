@@ -9,22 +9,24 @@
       "id": "opening",
       "duration": 4,
       "layout": "intro",
-      "title": "Language goals.\nVisual decisions.\nReports back.",
-      "body": "A robot agent harness for physical action.",
+      "title": "Main agent: language.\nSubagent: visual action.",
+      "body": "Words specify a goal. Points and poses specify the action.",
       "image": "alin-initial.png",
       "phase": "Request",
       "flow": [
         "main",
         "subagent"
       ],
-      "packet_kind": "GOAL",
-      "packet": "Stack the left bowl on the right bowl."
+      "packet_kind": "LANGUAGE GOAL",
+      "packet": "Stack the left bowl on the right bowl.",
+      "scene_owner": "Subagent · VISUAL ACTION SPECIFICATION",
+      "packet_medium": "language"
     },
     {
       "id": "delegate-view",
       "duration": 4,
       "layout": "still",
-      "title": "Delegate a\nphysical subgoal",
+      "title": "Main agent:\nlanguage",
       "body": "Get an overhead view of both bowls.",
       "direction": "Main agent → Subagent",
       "image": "alin-initial.png",
@@ -34,8 +36,10 @@
         "main",
         "subagent"
       ],
-      "packet_kind": "INSTRUCTION",
-      "packet": "Get an overhead view of both bowls."
+      "packet_kind": "LANGUAGE INSTRUCTION",
+      "packet": "Get an overhead view of both bowls.",
+      "scene_owner": "Subagent · SCENE CONTEXT",
+      "packet_medium": "language"
     },
     {
       "id": "observe",
@@ -52,13 +56,15 @@
         "backend"
       ],
       "packet_kind": "VIEW REQUEST",
-      "packet": "Observe both bowls from above."
+      "packet": "Observe both bowls from above.",
+      "scene_owner": "Backend · ROBOT EXECUTION",
+      "packet_medium": "command"
     },
     {
       "id": "point",
       "duration": 5,
       "layout": "still",
-      "title": "Ground the goal\nin the image",
+      "title": "Language names\nthe target.",
       "body": "Find the left bowl in the current view.",
       "direction": "Main agent → Subagent",
       "image": "alin-target-focus.jpg",
@@ -69,21 +75,31 @@
         "main",
         "subagent"
       ],
-      "packet_kind": "INSTRUCTION",
+      "packet_kind": "LANGUAGE INSTRUCTION",
       "packet": "Find the left bowl in the current view.",
       "second_flow": [
         "subagent",
         "backend"
       ],
-      "second_kind": "VISUAL REQUEST",
-      "second_packet": "Selected point → mask + 3D geometry",
-      "second_at": 2.5
+      "second_kind": "VISUAL TARGET",
+      "second_packet": "Selected target point",
+      "second_at": 2.5,
+      "scene_owner": "Subagent · VISUAL TARGET",
+      "packet_medium": "language",
+      "second_medium": "visual",
+      "second_image": "alin-target-focus.jpg",
+      "second_crop": [
+        125,
+        55,
+        385,
+        265
+      ]
     },
     {
       "id": "delegate-grasp",
       "duration": 3,
       "layout": "still",
-      "title": "Ask for a grasp",
+      "title": "A language\ngrasp request",
       "body": "Grasp the left bowl by its rim or center for transport.",
       "direction": "Main agent → Subagent",
       "image": "alin-target-focus.jpg",
@@ -93,14 +109,16 @@
         "main",
         "subagent"
       ],
-      "packet_kind": "INSTRUCTION",
-      "packet": "Grasp the left bowl for transport."
+      "packet_kind": "LANGUAGE INSTRUCTION",
+      "packet": "Grasp the left bowl for transport.",
+      "scene_owner": "Subagent · SCENE CONTEXT",
+      "packet_medium": "language"
     },
     {
       "id": "candidates",
       "duration": 5,
       "layout": "candidates",
-      "title": "Compare actual\ngripper poses",
+      "title": "Subagent chooses\nvisually",
       "body": "Three Contact-GraspNet candidates. The recorded selection is Grasp 1.",
       "direction": "Backend → Subagent",
       "image": "alin-candidates.jpg",
@@ -110,15 +128,32 @@
         "backend",
         "subagent"
       ],
-      "packet_kind": "VISUAL FEEDBACK",
-      "packet": "3 grasp candidates → choose a pose",
-      "packet_image": "alin-grasp-1.png"
+      "packet_kind": "BACKEND PROPOSALS",
+      "packet": "Three candidate poses",
+      "packet_image": "alin-candidates.jpg",
+      "scene_owner": "Backend · GRASP PROPOSALS",
+      "packet_medium": "feedback",
+      "second_flow": [
+        "subagent",
+        "backend"
+      ],
+      "second_at": 2.3,
+      "second_kind": "VISUAL GRASP",
+      "second_packet": "Selected Grasp 1\n44 mm opening",
+      "second_medium": "visual",
+      "second_image": "alin-grasp-1.png",
+      "second_crop": [
+        180,
+        60,
+        475,
+        340
+      ]
     },
     {
       "id": "grasp-report",
       "duration": 4,
       "layout": "still",
-      "title": "Return an\ninspected decision",
+      "title": "Return the pose\nwith its report",
       "body": "The rim grasp is aligned for lifting, with clearance above the table.",
       "direction": "Subagent → Main agent",
       "image": "alin-grasp-inspection.jpg",
@@ -129,9 +164,17 @@
         "subagent",
         "main"
       ],
-      "packet_kind": "REPORT",
-      "packet": "Rim grasp inspected. Clearance suitable.",
-      "packet_image": "alin-grasp-1.png"
+      "packet_kind": "POSE + REPORT",
+      "packet": "Rim grasp inspected.\nClearance suitable.",
+      "packet_image": "alin-grasp-1.png",
+      "scene_owner": "Subagent · VISUAL ACTION SPECIFICATION",
+      "packet_medium": "visual",
+      "packet_crop": [
+        180,
+        60,
+        475,
+        340
+      ]
     },
     {
       "id": "approach",
@@ -148,8 +191,17 @@
         "main",
         "backend"
       ],
-      "packet_kind": "EXECUTE",
-      "packet": "Approach the accepted pose, fingers open."
+      "packet_kind": "EXECUTE SELECTED POSE",
+      "packet": "Use the inspected grasp pose.",
+      "scene_owner": "Backend · ROBOT EXECUTION",
+      "packet_medium": "command",
+      "packet_image": "alin-grasp-1.png",
+      "packet_crop": [
+        180,
+        60,
+        475,
+        340
+      ]
     },
     {
       "id": "pregrasp",
@@ -166,16 +218,20 @@
         "backend",
         "subagent"
       ],
-      "packet_kind": "OBSERVATION",
+      "packet_kind": "FRESH OBSERVATION",
       "packet": "Fresh open-hand view",
       "packet_image": "alin-pregrasp-wrist.png",
       "second_flow": [
         "subagent",
         "main"
       ],
-      "second_kind": "REPORT",
+      "second_kind": "VIEW + REPORT",
       "second_packet": "Alignment suitable. Continue to close.",
-      "second_at": 1.8
+      "second_at": 1.8,
+      "scene_owner": "Subagent · VISUAL INSPECTION",
+      "packet_medium": "feedback",
+      "second_medium": "visual",
+      "second_image": "alin-pregrasp-wrist.png"
     },
     {
       "id": "lift",
@@ -192,13 +248,15 @@
         "backend"
       ],
       "packet_kind": "EXECUTE",
-      "packet": "Close, lift, and transport."
+      "packet": "Close, lift, and transport.",
+      "scene_owner": "Backend · ROBOT EXECUTION",
+      "packet_medium": "command"
     },
     {
       "id": "destination",
       "duration": 4,
       "layout": "still",
-      "title": "Ground the\nreceiving target",
+      "title": "Language names\nthe receiver.",
       "body": "Find the receiving bowl on the table.",
       "direction": "Main agent → Subagent",
       "image": "alin-destination-focus.jpg",
@@ -208,22 +266,32 @@
         "main",
         "subagent"
       ],
-      "packet_kind": "INSTRUCTION",
+      "packet_kind": "LANGUAGE INSTRUCTION",
       "packet": "Find the receiving bowl on the table.",
       "source_event_seq": 139,
       "second_flow": [
         "subagent",
         "backend"
       ],
-      "second_kind": "VISUAL REQUEST",
-      "second_packet": "Receiving point → placement geometry",
-      "second_at": 2
+      "second_kind": "VISUAL TARGET",
+      "second_packet": "Selected target point",
+      "second_at": 2,
+      "scene_owner": "Subagent · VISUAL TARGET",
+      "packet_medium": "language",
+      "second_medium": "visual",
+      "second_image": "alin-destination-focus.jpg",
+      "second_crop": [
+        60,
+        50,
+        450,
+        280
+      ]
     },
     {
       "id": "delegate-place",
       "duration": 3.5,
       "layout": "still",
-      "title": "Send the\nnext instruction",
+      "title": "A language\nplacement request",
       "body": "Stack the held bowl directly into the right bowl.",
       "direction": "Main agent → Subagent",
       "image": "alin-lift.png",
@@ -233,14 +301,16 @@
         "main",
         "subagent"
       ],
-      "packet_kind": "INSTRUCTION",
-      "packet": "Stack the held bowl inside the right bowl."
+      "packet_kind": "LANGUAGE INSTRUCTION",
+      "packet": "Stack the held bowl inside the right bowl.",
+      "scene_owner": "Subagent · SCENE CONTEXT",
+      "packet_medium": "language"
     },
     {
       "id": "revise",
       "duration": 4,
       "layout": "revision",
-      "title": "Inspect.\nRevise.\nInspect again.",
+      "title": "Subagent refines\nthe visual pose",
       "body": "Translate +20 / −30 mm, then refine +1 / −12 mm.",
       "direction": "Subagent ↔ Backend",
       "image": "alin-place-draft.png",
@@ -250,21 +320,38 @@
         "subagent",
         "backend"
       ],
-      "packet_kind": "POSE REVISION",
-      "packet": "Shift X +20 mm / Y −30 mm",
+      "packet_kind": "VISUAL POSE EDIT",
+      "packet": "Shift X +20 / Y −30 mm",
       "second_flow": [
         "backend",
         "subagent"
       ],
-      "second_kind": "UPDATED PREVIEW",
+      "second_kind": "BACKEND PREVIEW",
       "second_packet": "Inspect the revised placement",
-      "second_at": 2
+      "second_at": 2,
+      "scene_owner": "Subagent · VISUAL POSE REVISION",
+      "packet_medium": "visual",
+      "packet_image": "alin-place-shift.png",
+      "packet_crop": [
+        180,
+        60,
+        475,
+        340
+      ],
+      "second_medium": "feedback",
+      "second_image": "alin-place-final.png",
+      "second_crop": [
+        180,
+        60,
+        475,
+        340
+      ]
     },
     {
       "id": "place-report",
       "duration": 4,
       "layout": "still",
-      "title": "Report the\naccepted placement",
+      "title": "Return a visual\nplacement decision",
       "body": "The proposed placement is centered over the receiver, with clearance judged suitable.",
       "direction": "Subagent → Main agent",
       "image": "alin-place-final.png",
@@ -275,9 +362,17 @@
         "subagent",
         "main"
       ],
-      "packet_kind": "REPORT",
-      "packet": "Pose aligned. Clearance suitable.",
-      "packet_image": "alin-place-final.png"
+      "packet_kind": "POSE + REPORT",
+      "packet": "Final pose inspected.\nClearance suitable.",
+      "packet_image": "alin-place-final.png",
+      "scene_owner": "Subagent · VISUAL ACTION SPECIFICATION",
+      "packet_medium": "visual",
+      "packet_crop": [
+        180,
+        60,
+        475,
+        340
+      ]
     },
     {
       "id": "place",
@@ -294,8 +389,17 @@
         "main",
         "backend"
       ],
-      "packet_kind": "EXECUTE",
-      "packet": "Move to the accepted placement."
+      "packet_kind": "EXECUTE SELECTED POSE",
+      "packet": "Use the inspected placement pose.",
+      "scene_owner": "Backend · ROBOT EXECUTION",
+      "packet_medium": "command",
+      "packet_image": "alin-place-final.png",
+      "packet_crop": [
+        180,
+        60,
+        475,
+        340
+      ]
     },
     {
       "id": "outcome",
@@ -312,7 +416,9 @@
         "main"
       ],
       "packet_kind": "TASK OUTCOME",
-      "packet": "Native verifier: success."
+      "packet": "Native verifier: success.",
+      "scene_owner": "Backend · TASK OUTCOME",
+      "packet_medium": "feedback"
     },
     {
       "id": "physical",
@@ -326,13 +432,15 @@
         "main"
       ],
       "packet_kind": "VISUAL CONTEXT",
-      "packet": "Observed object relation + agent report"
+      "packet": "Observed object relation + agent report",
+      "scene_owner": "Subagent · VISUAL ACTION SPECIFICATION",
+      "packet_medium": "feedback"
     },
     {
       "id": "closing",
       "duration": 4,
       "layout": "outro",
-      "title": "Instructions go down.\nVisual reports come back.",
+      "title": "Language sets the goal.\nVisual choices specify the action.",
       "body": "RobotUse",
       "phase": "Outcome",
       "flow": [
@@ -341,7 +449,9 @@
       ],
       "packet_kind": "CONCEPT SUMMARY",
       "packet": "Keep the next decision grounded in the scene.",
-      "packet_image": "alin-place-final.png"
+      "packet_image": null,
+      "scene_owner": "Subagent · VISUAL ACTION SPECIFICATION",
+      "packet_medium": "summary"
     }
   ]
 }

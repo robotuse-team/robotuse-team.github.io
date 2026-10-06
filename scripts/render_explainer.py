@@ -22,10 +22,11 @@ TEAL = '#087a6f'
 MUTED = '#606a75'
 LINE = '#d5dde6'
 WASH = '#eef5fc'
-SCENE = (640, 155, 1856, 775)
+SCENE = (640, 190, 1856, 744)
 CENTERS = {'main': 276, 'subagent': 960, 'backend': 1644}
 LABELS = {'main': 'Main agent', 'subagent': 'Subagent', 'backend': 'Backend'}
-STATUSES = {'main': 'Task goal + returned reports', 'subagent': 'Point · choose · inspect · revise', 'backend': 'Geometry · motion · observation'}
+ROLES = {'main': 'LANGUAGE', 'subagent': 'VISUAL', 'backend': 'EXECUTION'}
+STATUSES = {'main': 'Task goal + returned reports', 'subagent': 'Point · gripper pose · pose edits', 'backend': 'Generate previews · execute · observe'}
 INSTRUCTIONS = {
     'Request': 'Get an overhead view of both bowls.',
     'Point': 'Find the left bowl in the current view.',
@@ -77,8 +78,9 @@ class Film:
         self.fonts = {key: ImageFont.truetype(bold if weight else regular, size)
                       for key, size, weight in [('brand', 32, True), ('tiny', 19, False),
                       ('label', 23, True), ('title', 56, True), ('body', 31, False),
-                      ('node', 30, True), ('status', 21, False), ('packet', 23, True),
-                      ('packet_kind', 17, True), ('hero', 76, True)]}
+                      ('node', 30, True), ('status', 18, False), ('packet', 25, True),
+                      ('packet_kind', 21, True), ('language', 33, True), ('hero', 76, True)]}
+        self.direction_y = {}
         source = self.media / 'alin-bowl-source.mp4'
         metadata = json.loads(subprocess.check_output(['ffprobe', '-v', 'error',
             '-select_streams', 'v:0', '-show_entries', 'stream=width,height,r_frame_rate',
@@ -111,23 +113,29 @@ class Film:
         draw.text((1330, 33), 'LANGUAGE–VISUAL HANDOFF', font=self.fonts['tiny'], fill='#d2e3f7')
         layout = segment['layout']
         if layout not in ('intro', 'outro', 'physical'):
-            y = text_block(draw, (64, 157), segment['title'], self.fonts['title'], 500, limit=435)
+            left_label = 'MAIN AGENT · LANGUAGE' if segment['flow'] == ['main', 'subagent'] else 'LANGUAGE → VISUAL HANDOFF'
+            draw.text((64, 123), left_label, font=self.fonts['label'], fill=BLUE)
+            y = text_block(draw, (64, 173), segment['title'], self.fonts['title'], 500, limit=451)
+            self.direction_y[segment['id']] = y + 27
             draw.text((64, y + 27), segment.get('direction', ''), font=self.fonts['label'], fill=BLUE)
             text_block(draw, (64, y + 87), segment['body'], self.fonts['body'], 494, limit=616)
             draw.rounded_rectangle((64, 630, 564, 756), radius=9, fill=WASH, outline=LINE, width=2)
-            draw.text((82, 643), 'MAIN AGENT · CURRENT INSTRUCTION', font=self.fonts['packet_kind'], fill=BLUE)
-            text_block(draw, (82, 673), INSTRUCTIONS[segment['phase']], self.fonts['packet'], 466, leading=1.18, limit=752)
+            draw.text((82, 643), 'MAIN AGENT · LANGUAGE', font=self.fonts['packet_kind'], fill=BLUE)
+            text_block(draw, (82, 673), INSTRUCTIONS[segment['phase']], self.fonts['language'], 466, leading=1.08, limit=752)
+            owner = segment['scene_owner']
+            owner_color = MUTED if owner.startswith('Backend') else TEAL
+            draw.text((640, 130), owner.upper(), font=self.fonts['label'], fill=owner_color)
             draw.rectangle(SCENE, fill='#f5f7fa', outline=LINE, width=2)
             if layout in ('still', 'candidates', 'revision'):
                 put_image(canvas, self.image(segment['image']), SCENE)
             badge = segment.get('badge', 'Recorded simulator motion' if layout == 'motion' else 'Native visual evidence')
-            draw.text((640, 786), badge, font=self.fonts['tiny'], fill=MUTED)
+            draw.text((640, 752), badge, font=self.fonts['tiny'], fill=MUTED)
             if segment.get('inset'):
                 draw.rectangle((1616, 181, 1836, 320), fill='white', outline=BLUE, width=3)
                 put_image(canvas, self.image(segment['inset']), (1621, 186, 1831, 304))
         else:
             self.full_scene(canvas, segment)
-        draw.text((64, 784), 'Condensed recorded handoffs', font=self.fonts['tiny'], fill=MUTED)
+        draw.text((64, 762), 'Condensed recorded handoffs', font=self.fonts['tiny'], fill=MUTED)
         return canvas
 
     def full_scene(self, canvas, segment):
@@ -163,46 +171,57 @@ class Film:
             draw = ImageDraw.Draw(canvas)
             draw.text((box[0], 735), label, font=self.fonts['label'], fill=INK)
         draw = ImageDraw.Draw(canvas)
-        draw.text((991, 784), 'Sampled camera observations · agent-reported completion', font=self.fonts['tiny'], fill=MUTED)
+        draw.text((991, 762), 'Sampled camera observations · agent-reported completion', font=self.fonts['tiny'], fill=MUTED)
 
     def packet(self, segment, local):
         second = segment.get('second_at')
         if second is not None and local >= second:
-            return segment['second_flow'], segment['second_kind'], segment['second_packet'], local - second
-        return segment['flow'], segment['packet_kind'], segment['packet'], local
+            return (segment['second_flow'], segment['second_kind'], segment['second_packet'],
+                    local - second, segment.get('second_medium', 'command'),
+                    segment.get('second_image', segment.get('packet_image')), segment.get('second_crop'))
+        return (segment['flow'], segment['packet_kind'], segment['packet'], local,
+                segment['packet_medium'], segment.get('packet_image'), segment.get('packet_crop'))
 
     def architecture(self, canvas, segment, local):
         draw = ImageDraw.Draw(canvas)
-        flow, kind, message, elapsed = self.packet(segment, local)
-        color = TEAL if kind == 'REPORT' else BLUE
+        flow, kind, message, elapsed, medium, image_name, crop = self.packet(segment, local)
+        color = TEAL if medium == 'visual' else MUTED if medium == 'feedback' else BLUE
         # Message holds at the sender, moves once, then stays at the receiver.
         fraction = ease((elapsed - .45) / 1.25)
         active = flow[0] if fraction < .5 else flow[1]
         for node, center in CENTERS.items():
-            box = (center - 212, 951, center + 212, 1057)
+            box = (center - 212, 943, center + 212, 1057)
             draw.rounded_rectangle(box, radius=9, fill=WASH if node == active else '#f8fafc',
                 outline=color if node == active else LINE, width=3 if node == active else 2)
-            draw.text((box[0] + 20, 964), LABELS[node], font=self.fonts['node'], fill=color if node == active else INK)
-            draw.text((box[0] + 20, 1009), STATUSES[node], font=self.fonts['status'], fill=MUTED)
-            draw.line([(center, 951), (center, 931)], fill=LINE, width=3)
+            role_color = TEAL if node == 'subagent' else BLUE if node == 'main' else MUTED
+            draw.text((box[0] + 20, 950), ROLES[node], font=self.fonts['packet_kind'], fill=role_color)
+            draw.text((box[0] + 20, 978), LABELS[node], font=self.fonts['node'], fill=color if node == active else INK)
+            draw.text((box[0] + 20, 1026), STATUSES[node], font=self.fonts['status'], fill=MUTED)
+            draw.line([(center, 943), (center, 935)], fill=LINE, width=3)
         for a, b in [(276, 960), (960, 1644)]:
-            draw.line([(a, 931), (b, 931)], fill=LINE, width=3)
+            draw.line([(a, 935), (b, 935)], fill=LINE, width=3)
         start, end = [CENTERS[node] for node in flow]
-        draw.line([(start, 931), (end, 931)], fill=color, width=4)
+        draw.line([(start, 935), (end, 935)], fill=color, width=4)
         sign = 1 if end > start else -1
-        draw.polygon([(end, 931), (end - sign * 14, 922), (end - sign * 14, 940)], fill=color)
+        draw.polygon([(end, 935), (end - sign * 14, 930), (end - sign * 14, 940)], fill=color)
         x = start + (end - start) * fraction
-        box = (round(x - 260), 819, round(x + 260), 917)
+        box = (round(x - 260), 790, round(x + 260), 927)
         draw.rounded_rectangle((box[0] + 4, box[1] + 5, box[2] + 4, box[3] + 5), radius=11, fill='#e2e8ee')
-        draw.rounded_rectangle(box, radius=11, fill='white', outline=color, width=3)
-        image_name = segment.get('packet_image')
-        offset = 14
+        draw.rounded_rectangle(box, radius=11, fill=WASH if medium == 'language' else 'white', outline=color, width=3)
+        offset = 18
         if image_name:
-            put_image(canvas, self.image(image_name), (box[0] + 10, 830, box[0] + 120, 907))
-            offset = 132
-        draw.text((box[0] + offset, 828), kind, font=self.fonts['packet_kind'], fill=color)
-        text_block(draw, (box[0] + offset, 853), message, self.fonts['packet'],
-            506 - offset, leading=1.13, limit=917)
+            source = self.image(image_name)
+            if crop:
+                source = source.crop(crop)
+            put_image(canvas, source, (box[0] + 10, 800, box[0] + 212, 917))
+            draw.line((box[0] + 218, 803, box[0] + 218, 914), fill=LINE, width=2)
+            offset = 230
+        kind_font = self.fonts['packet_kind']
+        if draw.textlength(kind, font=kind_font) > 502 - offset:
+            kind_font = ImageFont.truetype(font_path(True), 17)
+        draw.text((box[0] + offset, 803), kind, font=kind_font, fill=color)
+        text_block(draw, (box[0] + offset, 839), message, self.fonts['packet'],
+            502 - offset, leading=1.08, limit=925)
 
     def frame(self, segment, base, local):
         canvas = base.copy()
@@ -221,10 +240,25 @@ class Film:
             put_image(canvas, self.image(steps[step]), SCENE)
             draw = ImageDraw.Draw(canvas)
             labels = ['Initial proposal', '+20 / −30 mm', 'Then +1 / −12 mm']
-            draw.rectangle((660, 688, 1110, 748), fill='white', outline=BLUE, width=2)
-            draw.text((680, 701), labels[step], font=self.fonts['body'], fill=BLUE)
+            draw.rectangle((660, 674, 1110, 734), fill='white', outline=TEAL, width=2)
+            draw.text((680, 687), labels[step], font=self.fonts['body'], fill=TEAL)
+        elif segment['layout'] == 'candidates' and local >= segment['second_at']:
+            # The backend proposes candidates; the subagent selects the recorded pose.
+            put_image(canvas, self.image('alin-grasp-1.png'), SCENE)
+            draw = ImageDraw.Draw(canvas)
+            draw.rectangle((640, 119, 1856, 163), fill='white')
+            draw.text((640, 130), 'SUBAGENT · SELECTED VISUAL GRASP', font=self.fonts['label'], fill=TEAL)
+            draw.rectangle((660, 674, 1150, 734), fill='white', outline=TEAL, width=2)
+            draw.text((680, 687), 'Grasp 1 · opening 44 mm', font=self.fonts['body'], fill=TEAL)
         elif segment['layout'] == 'physical':
             self.physical_pair(canvas, local / segment['duration'])
+        if segment.get('second_at') is not None and local >= segment['second_at']:
+            draw = ImageDraw.Draw(canvas)
+            y = self.direction_y[segment['id']]
+            draw.rectangle((64, y, 564, y + 34), fill='white')
+            flow = segment['second_flow']
+            color = TEAL if segment['second_medium'] == 'visual' else MUTED
+            draw.text((64, y), f'{LABELS[flow[0]]} → {LABELS[flow[1]]}', font=self.fonts['label'], fill=color)
         self.architecture(canvas, segment, local)
         return canvas
 

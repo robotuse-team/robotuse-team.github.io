@@ -1303,10 +1303,10 @@
     {
       "file": "robotuse-explainer.mp4",
       "kind": "concept_film",
-      "bytes": 5171309,
-      "sha256": "1453e031b33e9a18d388de473e57312cded659cc9c354cb1977a42a60776ac1c",
+      "bytes": 5337108,
+      "sha256": "a434c308e9c580c6445ceae185a6a42c638e3fb993dafe4884e003e39040e4aa",
       "source_storyboard": "data/explainer.json",
-      "source_storyboard_sha256": "aa610f2f05353d338af84b706484dcbd473f4076a387b71541c6b4116ea754ce",
+      "source_storyboard_sha256": "1d0643926c611e44c278074a2e4011964b754b83731ea66b098906f73fbbeeb9",
       "source_timeline": "data/handoff.json",
       "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "representation": "Concept film using condensed recorded requests and reports, native tool images, and original simulator motion. Reading pauses are added. Physical examples use sampled camera observations without motion interpolation.",
@@ -1318,10 +1318,10 @@
     {
       "file": "robotuse-explainer.jpg",
       "kind": "poster",
-      "bytes": 267075,
-      "sha256": "140871171be8e3383c52626446f50812969d9380bcf48f35cf8b0b81ebd8a67f",
+      "bytes": 279788,
+      "sha256": "b5a4309a0355e4642e193f96bd800031a33dca6188f41be7ee9415e6ced51cf9",
       "source_storyboard": "data/explainer.json",
-      "source_storyboard_sha256": "aa610f2f05353d338af84b706484dcbd473f4076a387b71541c6b4116ea754ce",
+      "source_storyboard_sha256": "1d0643926c611e44c278074a2e4011964b754b83731ea66b098906f73fbbeeb9",
       "source_timeline": "data/handoff.json",
       "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "representation": "Concept film using condensed recorded requests and reports, native tool images, and original simulator motion. Reading pauses are added. Physical examples use sampled camera observations without motion interpolation."

@@ -21,19 +21,19 @@
 </header>
 <section class="explainer" aria-labelledby="explainer-title">
 <h2 id="explainer-title">How RobotUse works</h2>
-<figure><video src="assets/media/robotuse-explainer.mp4" poster="assets/media/robotuse-explainer.jpg" controls muted playsinline preload="none" aria-label="RobotUse concept film with animated language and visual handoffs"></video><figcaption>Follow an instruction into a visual choice, then watch the Subagent’s report return to the Main agent.</figcaption></figure>
-<div class="explainer-links"><a href="assets/media/robotuse-explainer.mp4" download>Download concept film ↓</a><a href="#recorded-handoffs">Explore the recorded handoffs ↓</a></div>
+<figure><video src="assets/media/robotuse-explainer.mp4?v=language-visual" poster="assets/media/robotuse-explainer.jpg?v=language-visual" controls muted playsinline preload="none" aria-label="RobotUse concept film with animated language and visual handoffs"></video><figcaption>The Main agent gives the language instruction; the Subagent specifies a point and inspected pose visually; the Backend plans and executes the motion.</figcaption></figure>
+<div class="explainer-links"><a href="assets/media/robotuse-explainer.mp4?v=language-visual" download>Download concept film ↓</a><a href="#recorded-handoffs">Explore the recorded handoffs ↓</a></div>
 </section>
 <section class="replay" id="recorded-handoffs" aria-label="Language–visual handoff with recorded robot motion">
 <div class="replay-head"><div><span class="eyebrow">Language → visual choice → robot action</span><p class="replay-intro">Follow the main agent’s instruction into a point, a gripper pose and robot action.</p></div><button id="replay-toggle" aria-pressed="false" type="button">Play demo</button></div>
 <div class="case-nav" id="case-nav" aria-label="Choose a recorded execution"></div>
 <p class="case-goal" id="case-goal">Stack the left bowl on the right bowl.</p>
 <div class="architecture" aria-label="Main agent, subagent, and backend">
-<div class="agent-node active" data-node="main"><div class="node-label"><span>01</span><h2>Main agent</h2></div><div class="node-kind" id="main-kind">Sent instruction → Subagent</div><div class="node-message" id="main-message">Get a clear overhead view of both bowls.</div></div>
+<div class="agent-node active" data-node="main"><div class="node-label"><span>01</span><h2>Main agent</h2><span class="node-role">LANGUAGE</span></div><div class="node-kind" id="main-kind">Sent instruction → Subagent</div><div class="node-message" id="main-message">Get a clear overhead view of both bowls.</div></div>
 <div class="handoff-arrow" id="handoff-down"><span>→</span></div>
-<div class="agent-node" data-node="subagent"><div class="node-label"><span>02</span><h2>Subagent</h2></div><div class="node-kind" id="subagent-kind">Visual choice in progress</div><div class="node-message" id="subagent-message">Choose a view that shows both bowls.</div></div>
+<div class="agent-node" data-node="subagent"><div class="node-label"><span>02</span><h2>Subagent</h2><span class="node-role">VISUAL</span></div><div class="node-kind" id="subagent-kind">Visual choice in progress</div><div class="node-message" id="subagent-message">Choose a view that shows both bowls.</div></div>
 <div class="handoff-arrow" id="backend-arrow"><span>→</span></div>
-<div class="agent-node" data-node="backend"><div class="node-label"><span>03</span><h2>Backend</h2></div><div class="node-kind" id="backend-kind">Visual feedback & execution</div><div class="node-message" id="backend-message">Return the scene and realize the requested viewing pose.</div></div>
+<div class="agent-node" data-node="backend"><div class="node-label"><span>03</span><h2>Backend</h2><span class="node-role">EXECUTION</span></div><div class="node-kind" id="backend-kind">Visual feedback & execution</div><div class="node-message" id="backend-message">Return the scene and realize the requested viewing pose.</div></div>
 </div>
 <div class="flow-label" id="flow-label">Main agent → Subagent · physical subgoal</div>
 <div class="phase-nav" id="phase-nav" aria-label="Jump to a visual action decision"></div>

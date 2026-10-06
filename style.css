@@ -20,3 +20,5 @@
 @media(max-width:760px){.node-kind{font-size:8px;line-height:1.4;min-height:23px}.node-message{font-size:10px;min-height:58px}.recorded-language{font-size:11px}}
 
 .explainer{background:#fff;border:1px solid var(--ink);margin:18px 0;padding:18px 21px}.explainer h2{margin-bottom:15px}.explainer video{border:1px solid var(--ink)}.explainer-links{display:flex;flex-wrap:wrap;gap:9px 23px;margin-top:12px;font-size:12px;color:var(--blue)}@media(max-width:760px){.explainer{padding:14px}.explainer h2{font-size:22px}.explainer-links{font-size:11px}}
+
+.node-label{flex-wrap:wrap}.node-role{margin-left:auto;color:var(--blue);font:9px/1.4 var(--mono);letter-spacing:.05em}@media(max-width:760px){.node-role{display:block;margin:4px 0 0;font-size:9px}}
