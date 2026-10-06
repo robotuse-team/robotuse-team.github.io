@@ -51,7 +51,6 @@ function renderPhase() {
    button.addEventListener('click',()=>{setVisual({...candidate,alt:candidate.label});});gallery.append(button);
   });
  }
- document.querySelector('#replay-time').textContent = replay.camera_frames ? '' : `${video.currentTime.toFixed(1)} s`;
  const camera = replay.camera_frames;
  document.querySelector('#capture-label').textContent = camera ? 'Recorded camera observations.' : 'Original arm motion with pauses for reading.';
 }
