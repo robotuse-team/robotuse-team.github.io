@@ -67,6 +67,10 @@ stays in its original order with reading pauses; physical camera samples remain
 in capture order. Media provenance is updated for generated files. MP4s use
 H.264 with front-loaded metadata. Lower-section videos load when played.
 
+Build the concept film with `python3 scripts/render_explainer.py`. Its storyboard,
+`data/explainer.json`, combines condensed recorded messages and native images with
+continuous simulator motion and sampled physical camera observations.
+
 ## Design reference
 
 VISTA's public page and source informed the masthead, large title, video-first

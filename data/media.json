@@ -1299,6 +1299,32 @@
       "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
       "case_id": "panda-stack-cubes",
       "representation": "Camera observations paired with native tool images. Recorded points and gripper poses are shown alongside the physical scene."
+    },
+    {
+      "file": "robotuse-explainer.mp4",
+      "kind": "concept_film",
+      "bytes": 5171309,
+      "sha256": "1453e031b33e9a18d388de473e57312cded659cc9c354cb1977a42a60776ac1c",
+      "source_storyboard": "data/explainer.json",
+      "source_storyboard_sha256": "aa610f2f05353d338af84b706484dcbd473f4076a387b71541c6b4116ea754ce",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
+      "representation": "Concept film using condensed recorded requests and reports, native tool images, and original simulator motion. Reading pauses are added. Physical examples use sampled camera observations without motion interpolation.",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration_s": 73.625
+    },
+    {
+      "file": "robotuse-explainer.jpg",
+      "kind": "poster",
+      "bytes": 267075,
+      "sha256": "140871171be8e3383c52626446f50812969d9380bcf48f35cf8b0b81ebd8a67f",
+      "source_storyboard": "data/explainer.json",
+      "source_storyboard_sha256": "aa610f2f05353d338af84b706484dcbd473f4076a387b71541c6b4116ea754ce",
+      "source_timeline": "data/handoff.json",
+      "source_timeline_sha256": "2e97467d060034b26137470045babc56b6231c8f087124146323effe029e7d40",
+      "representation": "Concept film using condensed recorded requests and reports, native tool images, and original simulator motion. Reading pauses are added. Physical examples use sampled camera observations without motion interpolation."
     }
   ],
   "representation_note": "Native point/mask overlays, actual gripper mesh previews and measured pose-editor panels. Crops retain original pixels and link full original images. No reconstructed gripper geometry."
