@@ -5,6 +5,17 @@
 <title>RobotUse: Allocating Computation, Context, and Decisions</title>
 <meta name="description" content="A robot agent harness for visually specifying, inspecting, and revising physical actions. Recorded executions, agent handoffs, and public code.">
 <link rel="canonical" href="https://robotuse-team.github.io/">
+<meta name="citation_title" content="RobotUse: Allocating Computation, Context, and Decisions">
+<meta name="citation_author" content="Junhoo Lee">
+<meta name="citation_author" content="Injun Baek">
+<meta name="citation_author" content="Seungyeon Kim">
+<meta name="citation_author" content="Suhyun Jeon">
+<meta name="citation_author" content="Minkyu Kim">
+<meta name="citation_author" content="Baekseung Kim">
+<meta name="citation_author" content="Nojun Kwak">
+<meta name="citation_publication_date" content="2026/10/04">
+<meta name="citation_arxiv_id" content="2610.04929">
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.04929">
 <meta property="og:type" content="website"><meta property="og:title" content="RobotUse: Allocating Computation, Context, and Decisions">
 <meta property="og:description" content="Agents choose physical actions. The backend handles geometry, motion planning, and control."><meta property="og:url" content="https://robotuse-team.github.io/">
 <meta property="og:image" content="https://robotuse-team.github.io/assets/figures/robotuse-overview.png">
@@ -44,7 +55,7 @@
 </section>
 <article class="paper" id="article">
 <nav class="rail" aria-label="Sections"><a href="#harness"><span>1.</span> Language–visual handoff</a><a href="#physical"><span>2.</span> Physical robot demos</a><a href="#results"><span>3.</span> Results on RoboLab</a><a href="#getting-started"><span>4.</span> Code & getting started</a></nav>
-<div class="opening"><p class="lead">A language goal becomes a visual choice, an inspected pose, and a robot action.</p><p>RobotUse connects language-model decisions to physical execution through images and geometry. The agent points to a target, chooses a gripper pose, checks the fresh view, and decides whether to continue or revise. The backend realizes those choices and returns the next observation.</p></div>
+<div class="opening"><p class="lead">A language goal becomes a visual choice, an inspected pose, and a robot action.</p><p>RobotUse is a robot agent harness that connects language-model decisions to physical execution through images and geometry. The agent points to a target, chooses a gripper pose, checks the fresh view, and decides whether to continue or revise. The backend realizes those choices and returns the next observation.</p></div>
 <section class="section" aria-labelledby="harness"><header class="section-heading"><span>1.</span><h2 id="harness">Language–visual handoff</h2></header><div class="section-body"><p>The handoff carries the physical subgoal and its visual evidence. Each local choice stays connected to the scene that prompted it and the robot motion it produces.</p>
 <div class="handoff-story"><button type="button" data-case="alin-bowl" data-step="Point"><img src="assets/media/alin-target-focus.jpg" alt="Native red selection point and segmented bowl"><span class="story-number">01 · Point</span><h3>Ground the language in the image</h3><p>The original tool image shows the selected point and object mask.</p></button><button type="button" data-case="alin-bowl" data-step="Grasps"><img src="assets/media/alin-candidates.jpg" alt="Three actual gripper mesh projections returned by the backend"><span class="story-number">02 · Choose</span><h3>Compare actual gripper poses</h3><p>Inspect the returned cyan mesh projections and the recorded selected candidate.</p></button><button type="button" data-case="alin-bowl" data-step="Adjust"><img src="assets/media/alin-place-final.png" alt="Native placement preview after recorded translation adjustments"><span class="story-number">03 · Revise</span><h3>Inspect and adjust the placement</h3><p>The bowl placement shifts by +20/−30 mm, then +1/−12 mm before execution.</p></button></div>
 <p>Native camera projections and point-cloud views connect each decision to the scene. The simulator replay retains the arm motion; physical replays pair the same interface with recorded camera observations.</p>
