@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse RobotUse rollouts that succeeded within the API budget and their matched Gemini 4 Carbon rollouts from RoboDojo stratified10.">
+  <title>RoboDojo · Rollout Gallery</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="episodes.js"></script>
+  <script defer src="gallery.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-content">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>RoboDojo</a>
+      <nav aria-label="Policy galleries">
+        <a href="#robotuse">RobotUse</a>
+        <a href="#carbon">Gemini 4 Carbon</a>
+        <a href="#comparison">Compare <span aria-hidden="true">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <header class="intro">
+      <div>
+        <p class="eyebrow">STRATIFIED10 EVALUATION</p>
+        <h1>Rollout gallery</h1>
+        <p id="gallery-summary">RoboDojo episode videos</p>
+      </div>
+      <div class="budget-key" id="budget-note">
+        <p><span class="status-dot success-dot" aria-hidden="true"></span><strong>Success</strong> · The task was completed within budget.</p>
+        <p><span class="status-dot budget-dot" aria-hidden="true"></span><strong>Over budget</strong> · $0.75 API cap</p>
+        <p><span class="status-dot task-dot" aria-hidden="true"></span><strong>Task failed</strong> · The task failed</p>
+        <p class="budget-detail">Labels appear at the final frame.</p>
+      </div>
+    </header>
+
+    <div class="toolbar" aria-label="Gallery controls">
+      <div class="camera-controls" role="group" aria-label="Camera angle">
+        <span class="control-label">Camera</span>
+        <button type="button" data-camera="head" aria-pressed="true">Head</button>
+        <button type="button" data-camera="left_wrist" aria-pressed="false">Left wrist</button>
+        <button type="button" data-camera="right_wrist" aria-pressed="false">Right wrist</button>
+      </div>
+      <div class="playback-controls">
+        <button type="button" id="scroll-grid" class="scroll-control" aria-pressed="true">Pause scroll</button>
+        <button type="button" id="restart" class="restart" disabled>Reset clips</button>
+        <button type="button" id="play-grid" class="primary" aria-pressed="false"><span id="play-icon" class="play-icon" aria-hidden="true"></span><span id="play-label">Play grid</span></button>
+      </div>
+    </div>
+
+    <div id="galleries"></div>
+    <p class="gallery-note">Select any tile to enlarge it. Hover or focus the grid to pause scrolling. Episode details show measured wall time.</p>
+    <section id="comparison" class="policy comparison" aria-labelledby="comparison-title">
+      <header class="policy-heading">
+        <div>
+          <h2 id="comparison-title">Matched comparison</h2>
+          <p>Compare the same task and layout in the same position across both policies.</p>
+        </div>
+      </header>
+      <div id="comparison-reel" class="film-reel comparison-reel"></div>
+    </section>
+  </main>
+
+  <dialog id="viewer" aria-labelledby="viewer-title" aria-describedby="viewer-instruction viewer-meta">
+    <header class="viewer-heading">
+      <div>
+        <p id="viewer-policy" class="eyebrow"></p>
+        <h2 id="viewer-title"></h2>
+      </div>
+      <button type="button" id="close-viewer" aria-label="Close video">✕</button>
+    </header>
+    <div class="viewer-media" id="viewer-media"></div>
+    <div class="viewer-footer">
+      <div>
+        <p id="viewer-instruction"></p>
+        <p id="viewer-meta"></p>
+      </div>
+      <button type="button" id="replay-viewer">Replay</button>
+    </div>
+  </dialog>
+</body>
+</html>

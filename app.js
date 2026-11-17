@@ -105,4 +105,12 @@ const observer = new IntersectionObserver(entries => {
 }, {rootMargin:'-5% 0px -65% 0px'});
 document.querySelectorAll('.section h2').forEach(heading => observer.observe(heading));
 document.addEventListener('visibilitychange', () => {if (document.hidden) document.querySelectorAll('video').forEach(v => v.pause());});
+const rolloutGallery = document.querySelector('.robodojo-gallery');
+const galleryOrigin = location.protocol === 'file:' ? 'null' : location.origin;
+window.addEventListener('message', event => {
+ if (event.source !== rolloutGallery?.contentWindow || event.origin !== galleryOrigin) return;
+ if (event.data?.type !== 'robodojo-gallery-height') return;
+ const height = event.data.height;
+ if (Number.isInteger(height) && height > 0 && height <= 5000) rolloutGallery.height = String(height);
+});
 startReplay();
