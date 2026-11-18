@@ -171,4 +171,5 @@ dialog::backdrop { background: #030407d9; }
 .embedded-gallery .toolbar .primary:hover { background: var(--text); color: #fff; }
 @media (min-width: 760px) {
   .comparison-only .film-wall { --tile-width: calc((100cqw - 3 * var(--tile-gap)) / 4); }
+  .comparison-only .three-column-reel { --tile-width: calc((100cqw - 2 * var(--tile-gap)) / 3); }
 }

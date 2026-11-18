@@ -1,10 +1,24 @@
-const budgetUsd = 0.75;
+const isRoboLab = new URLSearchParams(location.search).get('dataset') === 'robolab';
+const budgetUsd = isRoboLab ? Infinity : 0.75;
+const runLabel = isRoboLab ? 'Task' : 'Layout';
 const resultLabels = { budget: 'Over budget', task: 'Task failed', success: 'Success' };
-const policies = [
+const policies = isRoboLab ? [
+  { id: 'RobotUse', anchor: 'robotuse', name: 'RobotUse' },
+  { id: 'PIVOT', anchor: 'pivot', name: 'PIVOT', comparisonRole: 'Matched seed-0 runs' },
+] : [
   { id: 'RobotUse', anchor: 'robotuse', name: 'RobotUse', description: 'Successes within budget · Gemini 4 Carbon', shortClipRate: 1 / 16 },
   { id: 'Gemini_4_Carbon_Direct_EEF', anchor: 'carbon', name: 'Gemini 4 Carbon', description: 'Direct EEF baseline · matched layouts', comparisonRole: 'Direct EEF baseline' },
 ];
-const cameraNames = { head: 'Head', left_wrist: 'Left wrist', right_wrist: 'Right wrist' };
+const cameraNames = isRoboLab ? { external: 'Over-the-shoulder' } : { head: 'Head', left_wrist: 'Left wrist', right_wrist: 'Right wrist' };
+const galleryEpisodes = isRoboLab ? robolabCases.flatMap(task => policies.map(policy => {
+  const method = policy.anchor;
+  const run = task[method];
+  return {
+    ...run, id: task.clip + '-' + method, policy: policy.id, task: task.title, layout: task.number,
+    instruction: task.instruction, success: run.result === 'success',
+    durationSecondsByCamera: { external: run.seconds },
+  };
+})) : episodes;
 const taskInstructions = {
   align_blocks: 'Use the set square to push the three blocks into a straight, aligned row, then reset the robot arm.',
   build_tower: 'Build a tower using the wooden blocks and wooden boards.',
@@ -30,12 +44,23 @@ const galleries = document.querySelector('#galleries');
 const playGrid = document.querySelector('#play-grid');
 const scrollGrid = document.querySelector('#scroll-grid');
 const reset = document.querySelector('#restart');
+if (isRoboLab) {
+  document.title = 'RoboLab · RobotUse and PIVOT';
+  document.querySelector('#budget-note').innerHTML = `
+    <p><span class="status-dot success-dot" aria-hidden="true"></span><strong>Success</strong> · The task verifier confirmed completion.</p>
+    <p><span class="status-dot task-dot" aria-hidden="true"></span><strong>Task failed</strong> · The task failed.</p>
+    <p class="budget-detail">Videos play at 2× speed. Labels appear at the final frame. Costs are per episode.</p>`;
+  const [first, ...others] = document.querySelectorAll('[data-camera]');
+  first.dataset.camera = 'external';
+  first.textContent = cameraNames.external;
+  others.forEach(button => button.remove());
+}
 const cameraButtons = document.querySelectorAll('[data-camera]');
 const viewer = document.querySelector('#viewer');
 const viewerMedia = document.querySelector('#viewer-media');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const comparisonOnly = new URLSearchParams(location.search).get('view') === 'comparison';
-let camera = 'head';
+const comparisonOnly = isRoboLab || new URLSearchParams(location.search).get('view') === 'comparison';
+let camera = cameraButtons[0].dataset.camera;
 let gridPlaying = !reducedMotion.matches;
 let autoScroll = !reducedMotion.matches;
 let animationFrame = 0;
@@ -58,6 +83,7 @@ function taskLabel(task) {
 }
 
 function episodeInstruction(episode) {
+  if (episode.instruction) return episode.instruction;
   if (episode.task === 'stack_blocks_by_language') {
     return `stack the blocks from bottom to top in the order of ${layoutColors[episode.layout]}, then reset the robot arm.`;
   }
@@ -65,16 +91,20 @@ function episodeInstruction(episode) {
 }
 
 function clipUrl(episode) {
+  if (isRoboLab) return `../../assets/media/robolab-seed0/${episode.id}.mp4`;
   const number = String(episode.layout).padStart(7, '0');
   const result = episode.success ? 'success' : 'fail';
   return `../videos/${episode.policy}/${episode.task}/episode_${number}_cam_${camera}_${result}.mp4`;
 }
 
 function posterUrl(episode, ended = false) {
+  if (isRoboLab) return `../../assets/media/robolab-seed0/${episode.id}${ended ? '-end' : ''}.jpg`;
   return `posters/${episode.id}-${camera}${ended ? '-end' : ''}.webp`;
 }
 
 function endResult(episode) {
+  if (episode.result === 'unscored') return 'task';
+  if (episode.result) return episode.result;
   if (episode.costUsd > budgetUsd) return 'budget';
   return episode.success ? 'success' : 'task';
 }
@@ -99,7 +129,7 @@ function refreshTile(tile) {
   tile.poster.src = posterUrl(tile.episode, tile.stopped);
   showResult(tile.button, tile.stopped ? tile.result : null);
   const status = tile.stopped ? `, ${resultLabels[tile.result]}` : '';
-  tile.button.setAttribute('aria-label', `${tile.policy.name}, ${taskLabel(tile.episode.task)}, layout ${episodeLabel(tile.episode)}, final cost ${formatUsd.format(tile.episode.costUsd)}${status}`);
+  tile.button.setAttribute('aria-label', `${tile.policy.name}, ${taskLabel(tile.episode.task)}, ${runLabel} ${episodeLabel(tile.episode)}, final cost ${formatUsd.format(tile.episode.costUsd)}${status}`);
 }
 
 function makeTile(episode, policy) {
@@ -109,7 +139,7 @@ function makeTile(episode, policy) {
   const instruction = episodeInstruction(episode);
   button.title = instruction;
   button.innerHTML = `<span class="media"><img alt="" loading="lazy" decoding="async"></span>
-    <span class="tile-meta"><span class="tile-task">${taskLabel(episode.task)}</span><span class="tile-subtitle">LAYOUT ${episodeLabel(episode)} · ${formatUsd.format(episode.costUsd)}</span></span>
+    <span class="tile-meta"><span class="tile-task">${taskLabel(episode.task)}</span><span class="tile-subtitle">${runLabel.toUpperCase()} ${episodeLabel(episode)} · ${formatUsd.format(episode.costUsd)}</span></span>
     <span class="tile-caption"><span class="tile-instruction"></span></span>`;
   button.querySelector('.tile-instruction').textContent = instruction;
   const media = button.querySelector('.media');
@@ -140,7 +170,14 @@ function makeWall(policy, policyEpisodes, rowCount) {
   policyEpisodes.forEach((episode, index) => {
     rows[index % rowCount].push(makeTile(episode, policy));
   });
+  // Short reels need a second copy for the tiles crossing either edge during scrolling.
+  if (isRoboLab && rows.every(row => row.length === 3)) {
+    wall.classList.add('three-column-reel');
+  }
   for (const row of rows) {
+    if (isRoboLab && row.length && row.length <= 4) {
+      row.push(...row.map(button => makeTile(tiles.get(button).episode, policy)));
+    }
     const lane = document.createElement('div');
     lane.className = 'film-row';
     lane.append(...row);
@@ -150,14 +187,14 @@ function makeWall(policy, policyEpisodes, rowCount) {
 }
 
 function render() {
-  const selectedLayouts = episodes
+  const selectedLayouts = galleryEpisodes
     .filter(episode => episode.policy === 'RobotUse' && episode.success && episode.costUsd <= budgetUsd)
     .sort((left, right) => left.layout - right.layout);
   const layoutOrder = new Map(selectedLayouts.map((episode, index) => [layoutKey(episode), index]));
   const comparisonReel = document.querySelector('#comparison-reel');
   const comparisonRows = [];
   for (const policy of policies) {
-    const policyEpisodes = episodes
+    const policyEpisodes = galleryEpisodes
       .filter(episode => episode.policy === policy.id && layoutOrder.has(layoutKey(episode)))
       .sort((left, right) => layoutOrder.get(layoutKey(left)) - layoutOrder.get(layoutKey(right)));
     if (!comparisonOnly) renderPolicy(policy, policyEpisodes);
@@ -174,7 +211,7 @@ function render() {
   }
   comparisonReel.insertAdjacentHTML('beforeend', reelArrows('matched'));
   registerBoard(comparisonReel, comparisonRows, 2);
-  document.querySelector('#gallery-summary').textContent = `${layoutOrder.size} matched pairs · 3 camera views`;
+  document.querySelector('#gallery-summary').textContent = `${layoutOrder.size} matched pairs · ${Object.keys(cameraNames).length} camera views`;
 }
 
 function renderPolicy(policy, policyEpisodes) {
@@ -313,6 +350,7 @@ function syncScroll() {
 }
 
 function clipPlaybackRate(policy, duration) {
+  if (isRoboLab) return 2;
   return duration < 1 ? (policy.shortClipRate ?? 0.25) : 1;
 }
 
@@ -448,10 +486,11 @@ function openViewer(tile) {
   const { episode, policy, result } = tile;
   viewerClip?.pause();
   document.querySelector('#viewer-policy').textContent = policy.name;
-  document.querySelector('#viewer-title').textContent = `${taskLabel(episode.task)} · Layout ${episodeLabel(episode)}`;
+  document.querySelector('#viewer-title').textContent = `${taskLabel(episode.task)} · ${runLabel} ${episodeLabel(episode)}`;
   document.querySelector('#viewer-instruction').textContent = episodeInstruction(episode);
-  const outcome = episode.success ? 'Task completed' : resultLabels.task;
-  document.querySelector('#viewer-meta').textContent = `${cameraNames[camera]} camera · ${outcome} · Score ${episode.score} · ${formatUsd.format(episode.costUsd)} final cost · ${episode.wallTimeMin} min wall time`;
+  const outcome = episode.result ? resultLabels[result] : (episode.success ? 'Task completed' : resultLabels.task);
+  const score = episode.score == null ? '' : ` · Score ${episode.score}`;
+  document.querySelector('#viewer-meta').textContent = `${cameraNames[camera]} camera · ${outcome}${score} · ${formatUsd.format(episode.costUsd)} final cost · ${episode.wallTimeMin} min wall time`;
   const video = document.createElement('video');
   video.controls = true;
   video.muted = true;
