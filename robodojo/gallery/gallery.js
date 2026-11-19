@@ -423,21 +423,21 @@ function addTileVideo(tile) {
   const video = document.createElement('video');
   video.muted = true;
   video.playsInline = true;
-  video.preload = 'metadata';
+  video.preload = 'auto';
+  const joinAt = elapsedPlaybackSeconds();
   video.setAttribute('aria-hidden', 'true');
   video.addEventListener('loadedmetadata', () => {
     if (tile.video !== video) return;
     video.playbackRate = clipPlaybackRate(tile.policy, video.duration);
-    const elapsed = elapsedPlaybackSeconds();
-    const time = elapsed * video.playbackRate;
+    const time = joinAt * video.playbackRate;
     if (time >= video.duration) finishTile(tile);
-    else if (elapsed > 0.1) video.currentTime = time;
+    else if (joinAt > 0.25) video.currentTime = time;
   });
   video.addEventListener('playing', () => video.classList.add('ready'), { once: true });
   video.addEventListener('ended', () => {
     if (tile.video === video) finishTile(tile);
   });
-  video.src = clipUrl(tile.episode);
+  video.src = `previews/${tile.episode.id}-${camera}.mp4`;
   tile.video = video;
   tile.media.append(video);
   return video;
@@ -458,11 +458,11 @@ function syncTile(tile) {
 const tileObserver = new IntersectionObserver(entries => {
   for (const entry of entries) {
     const tile = tiles.get(entry.target);
-    tile.visible = entry.intersectionRatio >= 0.25;
+    tile.visible = entry.isIntersecting;
   }
   syncPlaybackRound();
   for (const entry of entries) syncTile(tiles.get(entry.target));
-}, { threshold: 0.25 });
+});
 
 function syncGrid() {
   syncPlaybackRound();
